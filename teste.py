@@ -8,6 +8,7 @@ nome = st.text_input("Qual é o seu nome?")
 if nome:
     st.write(f"Olá, {nome}! Seja bem-vindo(a) ao meu app! 😊")
 
+st.header("Botão")
 if st.button("Clique aqui"):
     st.write("Você clicou no botão! 👏")
 else:
