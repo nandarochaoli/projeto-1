@@ -30,8 +30,16 @@ if st.button("Dividir"):
 
 st.title("😄 Como você está hoje?")
 
-humor = st.radio("Escolha seu humor:", ["Feliz", "Cansado(a)", "Animado(a)", "Estressado(a)"])
+humor = st.selectbox("Escolha seu humor:", ["Feliz", "Cansado(a)", "Animado(a)", "Estressado(a)"])
 
-if st.button("Enviar"):
-    st.write(f"Hoje você está: **{humor}** 💬")
+st.write(f"Você está {humor} hoje")
 
+if humor == "Feliz":
+    st.write("Maravilha! Aproveite e vá fazer o que mais gosta!")
+if humor == "Cansado":
+    st.write("Entendo...tente dscansar ao ar livre, costuma me ajudar!")
+if humor == "Animado":
+    st.write("Ótimo, tenha um dia perfeto!")
+if humor == ("Estressado"):
+    st.write("Todos temos esses dias... se aproxime das pessoas que ama, tenho certeza que será relaxante.") 
+    
