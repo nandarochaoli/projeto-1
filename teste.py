@@ -2,7 +2,6 @@ import streamlit as st
 
 st.write("Alô mundo")
 
-import streamlit as st
-
-st.image("projeto 2/imagens/paisagem.jpg", caption="Paisagem", use_container_width=True)
-
+st.title("Meu Primeiro App 🚀")
+st.header("Feito com Streamlit")
+st.write("Estou aprendendo a programar e isso é muito divertido!")
