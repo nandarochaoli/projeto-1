@@ -8,14 +8,9 @@ nome = st.text_input("Qual é o seu nome?")
 if nome:
     st.write(f"Olá, {nome}! Seja bem-vindo(a) ao meu app! 😊")
 
-st.header("Botão")
-if st.button("Clique aqui"):
-    st.write("Você clicou no botão! 👏")
-else:
-    st.write("Aperte o botão acima!")
-
-
-st.header("Calculadora simples 🧮")
+st.title("Calculadora simples 🧮")
+st.header("Instruções:")
+st.write(f"{nome}, digite dois algarismos nas lacunas abaixo e clique nos botões das operações matemáticas desejadas.")
 
 a = st.number_input("Digite o primeiro número:")
 b = st.number_input("Digite o segundo número:")
@@ -30,5 +25,5 @@ if st.button("Multiplicar"):
     st.write("Resultado", a * b)
 
 if st.button("Dividir"):
-    s.write("Resultado", a / b)
+    st.write("Resultado", a / b)
 
