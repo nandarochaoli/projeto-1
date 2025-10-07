@@ -22,3 +22,13 @@ b = st.number_input("Digite o segundo número:")
 
 if st.button("Somar"):
     st.write("Resultado:", a + b)
+
+if st.button("Subtrair"):
+    st.write("Resultado", a - b)
+
+if st.button("Multiplicar"):
+    st.write("Resultado", a * b)
+
+if st.button("Dividir"):
+    s.write("Resultado", a / b)
+
