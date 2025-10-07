@@ -6,4 +6,4 @@ st.write("Só preencha abaixo com algumas informaçõezinhas paa conhecê-lo mel
 
 nome = st.text_input("Qual é o seu nome?")
 if nome:
-    st.write("Olá, (nome)! Seja bem-vindo(a) ao meu app!😊")
+    st.write("Olá," nome "! Seja bem-vindo(a) ao meu app!😊")
