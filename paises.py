@@ -12,5 +12,5 @@ fig = px.choropleth(dataset,
 fig.update_layout(title= 'Mapa Coroplético dos Países',
                   geo_scope='world')
 
-fig.plotly_chart(fig, use_container_width=True, theme="streamlit")
+st.plotly_chart(fig, use_container_width=True, theme="streamlit")
 
