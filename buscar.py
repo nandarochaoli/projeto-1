@@ -7,7 +7,7 @@ import re
 
 def formatar_artigo(texto_artigo):
     """Pega os primeiros 300 caracteres do artigo para dar um 'preview'."""
-    # NOVIDADE: Limite do preview aumentado para 300 caracteres.
+    # Limite do preview aumentado para 300 caracteres.
     LIMITE_PREVIEW = 300 
     
     preview = texto_artigo.strip()
@@ -47,12 +47,13 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
                     encontrados.append(resultado_formatado)
                     
     except FileNotFoundError:
+        # Mensagem de erro que será detectada no bloco principal
         encontrados.append(f"🚨 ERRO: O arquivo '{nome_arquivo}' não foi encontrado!")
     
     return encontrados
 
 # =========================================================================
-# ESTRUTURA DO APLICATIVO STREAMLIT (Com Apresentação Vertical)
+# ESTRUTURA DO APLICATIVO STREAMLIT (CORRIGIDO)
 # =========================================================================
 
 # Título e cabeçalho da página
@@ -67,11 +68,10 @@ termo_pesquisa = st.text_input(
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
-# ... (código acima da linha 69)
-
-# 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
-if termo_pesquisa:
-    # O código começa aqui, com 4 espaços de indentação:
+    
+    # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
+    
+    # --- Busca na Constituição ---
     st.markdown("---") # Separador visual
     st.header("1. Constituição Federal")
     
@@ -107,4 +107,4 @@ if termo_pesquisa:
         st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Civil.")
 
     st.markdown("---")
-# O programa continua aqui, sem indentação, após o bloco if/else
+    # ------------------ FIM DO BLOCO INDENTADO ------------------
