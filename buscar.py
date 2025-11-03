@@ -1,3 +1,5 @@
+import streamlit as st
+
 # Importa uma biblioteca para lidar melhor com a formatação dos artigos
 import re
 
