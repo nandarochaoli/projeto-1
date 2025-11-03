@@ -83,4 +83,23 @@ if termo_pesquisa:
     elif "ERRO" in resultados_cf[0]:
          st.error(resultados_cf[0])
     else:
-        st.info(
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado na Constituição Federal.")
+
+    # --- Busca no Código Civil ---
+    
+    st.markdown("---") # Separador visual
+    st.header("2. Código Civil")
+
+    # Chama a função de busca
+    resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_civil.txt")
+    
+    if resultados_cc and "ERRO" not in resultados_cc[0]:
+        st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código Civil:")
+        for resultado in resultados_cc:
+            st.markdown(resultado)
+    elif "ERRO" in resultados_cc[0]:
+         st.error(resultados_cc[0])
+    else:
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Civil.")
+
+    st.markdown("---")
