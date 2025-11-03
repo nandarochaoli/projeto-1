@@ -1,9 +1,7 @@
 import streamlit as st
 import re
 
-# =========================================================================
-# FUNÇÕES DE BUSCA (A LÓGICA PERFEITA QUE VOCÊ JÁ TINHA)
-# =========================================================================
+
 
 def formatar_artigo(texto_artigo):
     """Pega os primeiros 150 caracteres do artigo para dar um 'preview'."""
@@ -56,19 +54,17 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
 # =========================================================================
 
 # Título e cabeçalho da página
-st.title("🏛️ Buscador Jurídico Rápido")
-st.subheader("Constituição Federal e Código Civil")
+st.title("🏛️ Google Jurídico")
+st.subheader("Constituição Federal, Código Civil")
 
-# 1. Interação do Usuário: Usamos st.text_input no lugar de input()
-termo_pesquisa = st.text_input(
+# 1. Interação do Usuário: st.text_input(
     "Digite a palavra ou expressão exata que deseja buscar:",
     placeholder="Ex: dignidade da pessoa humana"
 )
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
-    # Cria uma coluna para a Constituição e outra para o Código Civil
-    col1, col2 = st.columns(2)
+
 
     # --- Busca na Constituição ---
     with col1:
