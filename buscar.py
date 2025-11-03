@@ -67,48 +67,44 @@ termo_pesquisa = st.text_input(
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
- # --- Busca na Constituição ---
-st.markdown("---") # Separador visual
-st.header("1. Constituição Federal")
+# ... (código acima da linha 69)
 
-# Chama a função de busca
-resultados_cf = buscar_em_arquivo(termo_pesquisa, "constituicao.txt")
+# 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
+if termo_pesquisa:
+    # O código começa aqui, com 4 espaços de indentação:
+    st.markdown("---") # Separador visual
+    st.header("1. Constituição Federal")
+    
+    # Chama a função de busca
+    resultados_cf = buscar_em_arquivo(termo_pesquisa, "constituicao.txt")
 
-# A CORREÇÃO ESTÁ AQUI:
-# 1. Primeiro verificamos se a lista não está vazia (len(resultados_cf) > 0)
-# 2. Depois verificamos se a primeira entrada contém a palavra "ERRO".
+    # Tratamento da Constituição Federal (CF)
+    if len(resultados_cf) > 0 and "ERRO" in resultados_cf[0]:
+        st.error(resultados_cf[0]) 
+    elif len(resultados_cf) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados_cf)} Artigos da CF:")
+        for resultado in resultados_cf:
+            st.markdown(resultado)
+    else:
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado na Constituição Federal.")
 
-if len(resultados_cf) > 0 and "ERRO" in resultados_cf[0]:
-    # Trata o caso de erro de arquivo
-    st.error(resultados_cf[0]) 
-elif len(resultados_cf) > 0:
-    # Trata o caso de sucesso
-    st.success(f"✅ Termo encontrado em {len(resultados_cf)} Artigos da CF:")
-    for resultado in resultados_cf:
-        st.markdown(resultado)
-else:
-    # Trata o caso da lista vazia (termo não encontrado)
-    st.info(f"❌ Termo '{termo_pesquisa}' não encontrado na Constituição Federal.")
+    # --- Busca no Código Civil ---
+    
+    st.markdown("---") # Separador visual
+    st.header("2. Código Civil")
 
-# --- Busca no Código Civil ---
+    # Chama a função de busca
+    resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_civil.txt")
+    
+    # Tratamento do Código Civil (CC)
+    if len(resultados_cc) > 0 and "ERRO" in resultados_cc[0]:
+        st.error(resultados_cc[0])
+    elif len(resultados_cc) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código Civil:")
+        for resultado in resultados_cc:
+            st.markdown(resultado)
+    else:
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Civil.")
 
-st.markdown("---") # Separador visual
-st.header("2. Código Civil")
-
-# Chama a função de busca
-resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_civil.txt")
-
-# Aplicando a mesma correção ao Código Civil
-if len(resultados_cc) > 0 and "ERRO" in resultados_cc[0]:
-    # Trata o caso de erro de arquivo
-    st.error(resultados_cc[0])
-elif len(resultados_cc) > 0:
-    # Trata o caso de sucesso
-    st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código Civil:")
-    for resultado in resultados_cc:
-        st.markdown(resultado)
-else:
-    # Trata o caso da lista vazia (termo não encontrado)
-    st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Civil.")
-
-st.markdown("---")
+    st.markdown("---")
+# O programa continua aqui, sem indentação, após o bloco if/else
