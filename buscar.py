@@ -31,26 +31,39 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
         with open(nome_arquivo, 'r', encoding='utf-8-sig') as f:
             conteudo_completo = f.read()
             
-            # A lógica de divisão por artigo continua a mesma
-            artigos = re.split(r'(\sArt\.\s\d+)', conteudo_completo)
+            # NOVO CÓDIGO AQUI: Expressão regular mais robusta
+            # Ela busca por "Art. [número]" de forma mais isolada
+            # O padrão (Art.\s\d+) captura o número completo do artigo
+            artigos = re.split(r'(?i)(?:\s|\n)(Art\.\s\d+)', conteudo_completo)
 
+            # A lógica de iteração se mantém, mas agora o índice 1 deve ser mais confiável
+            # O primeiro item é o texto antes do primeiro artigo (Preâmbulo, Título, etc.)
             for i in range(1, len(artigos), 2):
-                numero_artigo = artigos[i].strip()
-                texto_do_artigo = artigos[i+1]
+                
+                # O número do artigo (Ex: "Art. 1" ou "Art. 1193")
+                numero_artigo = artigos[i].strip() 
+                
+                # O texto que vem logo depois do número do artigo
+                texto_do_artigo = artigos[i+1] 
 
                 # A busca é feita de forma case-insensitive
                 if termo_pesquisa.lower() in texto_do_artigo.lower():
                     preview = formatar_artigo(texto_do_artigo)
                     
+                    # Remove o "Art." se ele vier no texto (já temos ele no numero_artigo)
+                    if texto_do_artigo.strip().startswith(numero_artigo):
+                        texto_do_artigo = texto_do_artigo.strip()[len(numero_artigo):]
+
                     # Formata o resultado em Markdown para exibição no Streamlit
+                    # Usamos 'numero_artigo' diretamente, sem o 'º' extra
                     resultado_formatado = f"**{numero_artigo}º:** *{preview}*"
                     encontrados.append(resultado_formatado)
                     
     except FileNotFoundError:
-        # Mensagem de erro que será detectada no bloco principal
         encontrados.append(f"🚨 ERRO: O arquivo '{nome_arquivo}' não foi encontrado!")
     
     return encontrados
+
 
 # =========================================================================
 # ESTRUTURA DO APLICATIVO STREAMLIT (CORRIGIDO)
