@@ -2,15 +2,18 @@ import streamlit as st
 import re
 
 # =========================================================================
-# FUNÇÕES DE BUSCA (A LÓGICA PERFEITA QUE VOCÊ JÁ TINHA)
+# FUNÇÕES DE BUSCA (Lógica)
 # =========================================================================
 
 def formatar_artigo(texto_artigo):
-    """Pega os primeiros 150 caracteres do artigo para dar um 'preview'."""
+    """Pega os primeiros 300 caracteres do artigo para dar um 'preview'."""
+    # NOVIDADE: Limite do preview aumentado para 300 caracteres.
+    LIMITE_PREVIEW = 300 
+    
     preview = texto_artigo.strip()
     
-    if len(preview) > 150:
-        preview = preview[:150] + "..."
+    if len(preview) > LIMITE_PREVIEW:
+        preview = preview[:LIMITE_PREVIEW] + "..."
     
     return preview
 
@@ -21,12 +24,10 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
     """
     encontrados = []
     
-    # Verifica se o termo de pesquisa é válido antes de abrir o arquivo
     if not termo_pesquisa:
         return []
 
     try:
-        # 'utf-8-sig' ajuda a ignorar caracteres 'estranhos' que podem vir da web
         with open(nome_arquivo, 'r', encoding='utf-8-sig') as f:
             conteudo_completo = f.read()
             
@@ -46,20 +47,19 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
                     encontrados.append(resultado_formatado)
                     
     except FileNotFoundError:
-        # Se o arquivo não for encontrado, retorna uma mensagem de erro
         encontrados.append(f"🚨 ERRO: O arquivo '{nome_arquivo}' não foi encontrado!")
     
     return encontrados
 
 # =========================================================================
-# ESTRUTURA DO APLICATIVO STREAMLIT
+# ESTRUTURA DO APLICATIVO STREAMLIT (Com Apresentação Vertical)
 # =========================================================================
 
 # Título e cabeçalho da página
 st.title("🏛️ Buscador Jurídico Rápido")
 st.subheader("Constituição Federal e Código Civil")
 
-# 1. Interação do Usuário: Usamos st.text_input no lugar de input()
+# 1. Interação do Usuário
 termo_pesquisa = st.text_input(
     "Digite a palavra ou expressão exata que deseja buscar:",
     placeholder="Ex: dignidade da pessoa humana"
@@ -67,38 +67,20 @@ termo_pesquisa = st.text_input(
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
-    # Cria uma coluna para a Constituição e outra para o Código Civil
-    col1, col2 = st.columns(2)
-
     # --- Busca na Constituição ---
-    with col1:
-        st.header("Constituição Federal")
-        
-        # Chama a função de busca
-        resultados_cf = buscar_em_arquivo(termo_pesquisa, "constituicao.txt")
+    
+    st.markdown("---") # Separador visual
+    st.header("1. Constituição Federal")
+    
+    # Chama a função de busca
+    resultados_cf = buscar_em_arquivo(termo_pesquisa, "constituicao.txt")
 
-        if resultados_cf and "ERRO" not in resultados_cf[0]:
-            st.success(f"✅ Encontrado em {len(resultados_cf)} Artigos:")
-            # 3. Saída de Informação: Usamos st.markdown no lugar de print()
-            for resultado in resultados_cf:
-                st.markdown(resultado)
-        elif "ERRO" in resultados_cf[0]:
-             st.error(resultados_cf[0])
-        else:
-            st.info(f"❌ Termo '{termo_pesquisa}' não encontrado na CF.")
-
-    # --- Busca no Código Civil ---
-    with col2:
-        st.header("Código Civil")
-
-        # Chama a função de busca
-        resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_civil.txt")
-        
-        if resultados_cc and "ERRO" not in resultados_cc[0]:
-            st.success(f"✅ Encontrado em {len(resultados_cc)} Artigos:")
-            for resultado in resultados_cc:
-                st.markdown(resultado)
-        elif "ERRO" in resultados_cc[0]:
-             st.error(resultados_cc[0])
-        else:
-            st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no CC.")
+    if resultados_cf and "ERRO" not in resultados_cf[0]:
+        st.success(f"✅ Termo encontrado em {len(resultados_cf)} Artigos da CF:")
+        # 3. Saída de Informação
+        for resultado in resultados_cf:
+            st.markdown(resultado)
+    elif "ERRO" in resultados_cf[0]:
+         st.error(resultados_cf[0])
+    else:
+        st.info(
