@@ -110,5 +110,24 @@ if termo_pesquisa:
     else:
         st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Civil.")
 
+      # --- Busca no Código Penal ---
+    
+    st.markdown("---") # Separador visual
+    st.header("3. Código Penal")
+
+    # Chama a função de busca
+    resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_penal.txt")
+    
+    # Tratamento do Código Penal (CP)
+    if len(resultados_cc) > 0 and "ERRO" in resultados_cc[0]:
+        st.error(resultados_cc[0])
+    elif len(resultados_cc) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código Penal:")
+        for resultado in resultados_cc:
+            st.markdown(resultado)
+    else:
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Civil.")
+
+    
     st.markdown("---")
     # ------------------ FIM DO BLOCO INDENTADO ------------------
