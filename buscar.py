@@ -32,9 +32,7 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
             conteudo_completo = f.read()
             
             # =================================================================
-            # CORREÇÃO APLICADA:
-            # Trocamos \d+ (apenas dígitos) por [\d\.]+ (dígitos E pontos).
-            # Isso permite que a regex capture "Art. 1.762" corretamente.
+            # Permite a captura de números de artigo com pontos (ex: Art. 1.762)
             # =================================================================
             artigos = re.split(r'(\sArt\.\s[\d\.]+)', conteudo_completo)
 
@@ -46,8 +44,7 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
                 if termo_pesquisa.lower() in texto_do_artigo.lower():
                     preview = formatar_artigo(texto_do_artigo)
                     
-                    # --- FORMATAÇÃO REVERTIDA (AGORA SEM CAIXA SUSPENSA) ---
-                    # O resultado é sempre formatado como corpo de texto Markdown.
+                    # Formato normal (corpo de texto) sem caixas suspensas
                     resultado_formatado = f"**{numero_artigo}:** {preview}"
                     
                     encontrados.append(resultado_formatado)
@@ -64,7 +61,8 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
 
 # Título e cabeçalho da página
 st.title("🏛️ Buscador Jurídico Rápido")
-st.subheader("Constituição Federal, Código Civil, Penal, Processo Penal e CDC")
+# 1. SUBTÍTULO ATUALIZADO
+st.subheader("A ferramenta tem como base: CF/88, CC/02, CP/40 , CPP/41, CDC/90 atualizados até o dia 05/11/2025.")
 
 # 1. Interação do Usuário
 termo_pesquisa = st.text_input(
@@ -72,13 +70,37 @@ termo_pesquisa = st.text_input(
     placeholder="Ex: dignidade da pessoa humana"
 )
 
-# 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
+# 2. BOTÕES DE NAVEGAÇÃO RÁPIDA (inseridos após a caixa de pesquisa)
+if not termo_pesquisa:
+    st.markdown("---")
+    st.markdown("### Navegação Rápida (Clique para rolar até a seção)")
+    
+    # Layout dos botões em colunas para melhor visualização
+    col1, col2, col3, col4, col5 = st.columns(5)
+    
+    with col1:
+        st.markdown("[🇧🇷 CF](#cf_anchor)", unsafe_allow_html=True)
+    with col2:
+        st.markdown("[🤵 CC](#cc_anchor)", unsafe_allow_html=True)
+    with col3:
+        st.markdown("[🚨 CP](#cp_anchor)", unsafe_allow_html=True)
+    with col4:
+        st.markdown("[⚖️ CPP](#cpp_anchor)", unsafe_allow_html=True)
+    with col5:
+        st.markdown("[🛍️ CDC](#cdc_anchor)", unsafe_allow_html=True)
+
+    st.markdown("---")
+
+
+# 3. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
     
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
     # --- Busca na Constituição ---
     st.markdown("---") # Separador visual
+    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
+    st.markdown('<a name="cf_anchor"></a>', unsafe_allow_html=True)
     st.header("1. Constituição Federal")
     
     # Chama a função de busca
@@ -97,6 +119,8 @@ if termo_pesquisa:
     # --- Busca no Código Civil ---
     
     st.markdown("---") # Separador visual
+    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
+    st.markdown('<a name="cc_anchor"></a>', unsafe_allow_html=True)
     st.header("2. Código Civil")
 
     # Chama a função de busca
@@ -115,6 +139,8 @@ if termo_pesquisa:
     # --- Busca no Código Penal ---
     
     st.markdown("---") # Separador visual
+    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
+    st.markdown('<a name="cp_anchor"></a>', unsafe_allow_html=True)
     st.header("3. Código Penal")
 
     # Chama a função de busca
@@ -133,6 +159,8 @@ if termo_pesquisa:
     # --- Busca no Código de Defesa do Consumidor ---
     
     st.markdown("---") # Separador visual
+    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
+    st.markdown('<a name="cdc_anchor"></a>', unsafe_allow_html=True)
     st.header("4. Código de Defesa do Consumidor")
 
     # Chama a função de busca
@@ -152,14 +180,14 @@ if termo_pesquisa:
     # --- Busca no Código de Processo Penal ---
     
     st.markdown("---") # Separador visual
-    # CORREÇÃO: Header alterado de "4." para "5."
+    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
+    st.markdown('<a name="cpp_anchor"></a>', unsafe_allow_html=True)
     st.header("5. Código de Processo Penal")
 
     # Chama a função de busca
     resultados_cpp = buscar_em_arquivo(termo_pesquisa, "codigo_processo_penal.txt")
     
     # Tratamento do Código de Processo Penal (CPP)
-    # CORREÇÃO: Variável de erro corrigida de resultados_XXX para resultados_cpp
     if len(resultados_cpp) > 0 and "ERRO" in resultados_cpp[0]:
         st.error(resultados_cpp[0])
     elif len(resultados_cpp) > 0:
