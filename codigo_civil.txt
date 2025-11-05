@@ -3838,39 +3838,36 @@ Art. 999. As modificações do contrato social, que tenham por objeto matéria i
 
 Parágrafo único. Qualquer modificação do contrato social será averbada, cumprindo-se as formalidades previstas no artigo antecedente.
 
-Art. 1.000. A sociedade simples que instituir sucursal, filial ou agência na circunscrição de outro Registro Civil das Pessoas Jurídicas, neste deverá também inscrevê-la, com a prova da inscrição originária.
+👍 Tarefa concluída!
 
-Parágrafo único. Em qualquer caso, a constituição da sucursal, filial ou agência deverá ser averbada no Registro Civil da respectiva sede.
+Abaixo estão os artigos do Código Civil, de 1001 a 1050, com a remoção do ponto de separação da casa do milhar na numeração dos artigos.
 
-Seção II
-Dos Direitos e Obrigações dos Sócios
+📜 Artigos do Código Civil (1001 a 1050) Sem Ponto Separador
+Art. 1001. As obrigações dos sócios começam imediatamente com o contrato, se este não fixar outra data, e terminam quando, liquidada a sociedade, se extinguirem as responsabilidades sociais.
 
-Art. 1.001. As obrigações dos sócios começam imediatamente com o contrato, se este não fixar outra data, e terminam quando, liquidada a sociedade, se extinguirem as responsabilidades sociais.
+Art. 1002. O sócio não pode ser substituído no exercício das suas funções, sem o consentimento dos demais sócios, expresso em modificação do contrato social.
 
-Art. 1.002. O sócio não pode ser substituído no exercício das suas funções, sem o consentimento dos demais sócios, expresso em modificação do contrato social.
-
-Art. 1.003. A cessão total ou parcial de quota, sem a correspondente modificação do contrato social com o consentimento dos demais sócios, não terá eficácia quanto a estes e à sociedade.
+Art. 1003. A cessão total ou parcial de quota, sem a correspondente modificação do contrato social com o consentimento dos demais sócios, não terá eficácia quanto a estes e à sociedade.
 
 Parágrafo único. Até dois anos depois de averbada a modificação do contrato, responde o cedente solidariamente com o cessionário, perante a sociedade e terceiros, pelas obrigações que tinha como sócio.
 
-Art. 1.004. Os sócios são obrigados, na forma e prazo previstos, às contribuições estabelecidas no contrato social, e aquele que deixar de fazê-lo, nos trinta dias seguintes ao da notificação pela sociedade, responderá perante esta pelo dano emergente da mora.
+Art. 1004. Os sócios são obrigados, na forma e prazo previstos, às contribuições estabelecidas no contrato social, e aquele que deixar de fazê-lo, nos trinta dias seguintes ao da notificação pela sociedade, responderá perante esta pelo dano emergente da mora.
 
-Parágrafo único. Verificada a mora, poderá a maioria dos demais sócios preferir, à indenização, a exclusão do sócio remisso, ou reduzir-lhe a quota ao montante já realizado, aplicando-se, em ambos os casos, o disposto no § 1º do art. 1.031.
+Parágrafo único. Verificada a mora, poderá a maioria dos demais sócios preferir, à indenização, a exclusão do sócio remisso, ou reduzir-lhe a quota ao montante já realizado, aplicando-se, em ambos os casos, o disposto no § 1º do art. 1031.
 
-Art. 1.005. O sócio que, a título de quota social, transmitir domínio, posse ou uso, responde pela evicção; e pela solvência do devedor, aquele que transferir crédito.
+Art. 1005. O sócio que, a título de quota social, transmitir domínio, posse ou uso, responde pela evicção; e pela solvência do devedor, aquele que transferir crédito.
 
-Art. 1.006. O sócio, cuja contribuição consista em serviços, não pode, salvo convenção em contrário, empregar-se em atividade estranha à sociedade, sob pena de ser privado de seus lucros e dela excluído.
+Art. 1006. O sócio, cuja contribuição consista em serviços, não pode, salvo convenção em contrário, empregar-se em atividade estranha à sociedade, sob pena de ser privado de seus lucros e dela excluído.
 
-Art. 1.007. Salvo estipulação em contrário, o sócio participa dos lucros e das perdas, na proporção das respectivas quotas, mas aquele, cuja contribuição consiste em serviços, somente participa dos lucros na proporção da média do valor das quotas.
+Art. 1007. Salvo estipulação em contrário, o sócio participa dos lucros e das perdas, na proporção das respectivas quotas, mas aquele, cuja contribuição consiste em serviços, somente participa dos lucros na proporção da média do valor das quotas.
 
-Art. 1.008. É nula a estipulação contratual que exclua qualquer sócio de participar dos lucros e das perdas.
+Art. 1008. É nula a estipulação contratual que exclua qualquer sócio de participar dos lucros e das perdas.
 
-Art. 1.009. A distribuição de lucros ilícitos ou fictícios acarreta responsabilidade solidária dos administradores que a realizarem e dos sócios que os receberem, conhecendo ou devendo conhecer-lhes a ilegitimidade.
+Art. 1009. A distribuição de lucros ilícitos ou fictícios acarreta responsabilidade solidária dos administradores que a realizarem e dos sócios que os receberem, conhecendo ou devendo conhecer-lhes a ilegitimidade.
 
-Seção III
-Da Administração
+Seção III Da Administração
 
-Art. 1.010. Quando, por lei ou pelo contrato social, competir aos sócios decidir sobre os negócios da sociedade, as deliberações serão tomadas por maioria de votos, contados segundo o valor das quotas de cada um.
+Art. 1010. Quando, por lei ou pelo contrato social, competir aos sócios decidir sobre os negócios da sociedade, as deliberações serão tomadas por maioria de votos, contados segundo o valor das quotas de cada um.
 
 § 1 o Para formação da maioria absoluta são necessários votos correspondentes a mais de metade do capital.
 
@@ -3878,63 +3875,61 @@ Art. 1.010. Quando, por lei ou pelo contrato social, competir aos sócios decidi
 
 § 3 o Responde por perdas e danos o sócio que, tendo em alguma operação interesse contrário ao da sociedade, participar da deliberação que a aprove graças a seu voto.
 
-Art. 1.011. O administrador da sociedade deverá ter, no exercício de suas funções, o cuidado e a diligência que todo homem ativo e probo costuma empregar na administração de seus próprios negócios.
+Art. 1011. O administrador da sociedade deverá ter, no exercício de suas funções, o cuidado e a diligência que todo homem ativo e probo costuma empregar na administração de seus próprios negócios.
 
 § 1 o Não podem ser administradores, além das pessoas impedidas por lei especial, os condenados a pena que vede, ainda que temporariamente, o acesso a cargos públicos; ou por crime falimentar, de prevaricação, peita ou suborno, concussão, peculato; ou contra a economia popular, contra o sistema financeiro nacional, contra as normas de defesa da concorrência, contra as relações de consumo, a fé pública ou a propriedade, enquanto perdurarem os efeitos da condenação.
 
 § 2 o Aplicam-se à atividade dos administradores, no que couber, as disposições concernentes ao mandato.
 
-Art. 1.012. O administrador, nomeado por instrumento em separado, deve averbá-lo à margem da inscrição da sociedade, e, pelos atos que praticar, antes de requerer a averbação, responde pessoal e solidariamente com a sociedade.
+Art. 1012. O administrador, nomeado por instrumento em separado, deve averbá-lo à margem da inscrição da sociedade, e, pelos atos que praticar, antes de requerer a averbação, responde pessoal e solidariamente com a sociedade.
 
-Art. 1.013. A administração da sociedade, nada dispondo o contrato social, compete separadamente a cada um dos sócios.
+Art. 1013. A administração da sociedade, nada dispondo o contrato social, compete separadamente a cada um dos sócios.
 
 § 1 o Se a administração competir separadamente a vários administradores, cada um pode impugnar operação pretendida por outro, cabendo a decisão aos sócios, por maioria de votos.
 
 § 2 o Responde por perdas e danos perante a sociedade o administrador que realizar operações, sabendo ou devendo saber que estava agindo em desacordo com a maioria.
 
-Art. 1.014. Nos atos de competência conjunta de vários administradores, torna-se necessário o concurso de todos, salvo nos casos urgentes, em que a omissão ou retardo das providências possa ocasionar dano irreparável ou grave.
+Art. 1014. Nos atos de competência conjunta de vários administradores, torna-se necessário o concurso de todos, salvo nos casos urgentes, em que a omissão ou retardo das providências possa ocasionar dano irreparável ou grave.
 
-Art. 1.015. No silêncio do contrato, os administradores podem praticar todos os atos pertinentes à gestão da sociedade; não constituindo objeto social, a oneração ou a venda de bens imóveis depende do que a maioria dos sócios decidir.
+Art. 1015. No silêncio do contrato, os administradores podem praticar todos os atos pertinentes à gestão da sociedade; não constituindo objeto social, a oneração ou a venda de bens imóveis depende do que a maioria dos sócios decidir.
 
-Parágrafo único.     (Revogado pela Lei nº 14.195, de 2021)
+Parágrafo único. (Revogado pela Lei nº 14.195, de 2021)
 
-Art. 1.016. Os administradores respondem solidariamente perante a sociedade e os terceiros prejudicados, por culpa no desempenho de suas funções.
+Art. 1016. Os administradores respondem solidariamente perante a sociedade e os terceiros prejudicados, por culpa no desempenho de suas funções.
 
-Art. 1.017. O administrador que, sem consentimento escrito dos sócios, aplicar créditos ou bens sociais em proveito próprio ou de terceiros, terá de restituí-los à sociedade, ou pagar o equivalente, com todos os lucros resultantes, e, se houver prejuízo, por ele também responderá.
+Art. 1017. O administrador que, sem consentimento escrito dos sócios, aplicar créditos ou bens sociais em proveito próprio ou de terceiros, terá de restituí-los à sociedade, ou pagar o equivalente, com todos os lucros resultantes, e, se houver prejuízo, por ele também responderá.
 
 Parágrafo único. Fica sujeito às sanções o administrador que, tendo em qualquer operação interesse contrário ao da sociedade, tome parte na correspondente deliberação.
 
-Art. 1.018. Ao administrador é vedado fazer-se substituir no exercício de suas funções, sendo-lhe facultado, nos limites de seus poderes, constituir mandatários da sociedade, especificados no instrumento os atos e operações que poderão praticar.
+Art. 1018. Ao administrador é vedado fazer-se substituir no exercício de suas funções, sendo-lhe facultado, nos limites de seus poderes, constituir mandatários da sociedade, especificados no instrumento os atos e operações que poderão praticar.
 
-Art. 1.019. São irrevogáveis os poderes do sócio investido na administração por cláusula expressa do contrato social, salvo justa causa, reconhecida judicialmente, a pedido de qualquer dos sócios.
+Art. 1019. São irrevogáveis os poderes do sócio investido na administração por cláusula expressa do contrato social, salvo justa causa, reconhecida judicialmente, a pedido de qualquer dos sócios.
 
 Parágrafo único. São revogáveis, a qualquer tempo, os poderes conferidos a sócio por ato separado, ou a quem não seja sócio.
 
-Art. 1.020. Os administradores são obrigados a prestar aos sócios contas justificadas de sua administração, e apresentar-lhes o inventário anualmente, bem como o balanço patrimonial e o de resultado econômico.
+Art. 1020. Os administradores são obrigados a prestar aos sócios contas justificadas de sua administração, e apresentar-lhes o inventário anualmente, bem como o balanço patrimonial e o de resultado econômico.
 
-Art. 1.021. Salvo estipulação que determine época própria, o sócio pode, a qualquer tempo, examinar os livros e documentos, e o estado da caixa e da carteira da sociedade.
+Art. 1021. Salvo estipulação que determine época própria, o sócio pode, a qualquer tempo, examinar os livros e documentos, e o estado da caixa e da carteira da sociedade.
 
-Seção IV
-Das Relações com Terceiros
+Seção IV Das Relações com Terceiros
 
-Art. 1.022. A sociedade adquire direitos, assume obrigações e procede judicialmente, por meio de administradores com poderes especiais, ou, não os havendo, por intermédio de qualquer administrador.
+Art. 1022. A sociedade adquire direitos, assume obrigações e procede judicialmente, por meio de administradores com poderes especiais, ou, não os havendo, por intermédio de qualquer administrador.
 
-Art. 1.023. Se os bens da sociedade não lhe cobrirem as dívidas, respondem os sócios pelo saldo, na proporção em que participem das perdas sociais, salvo cláusula de responsabilidade solidária.
+Art. 1023. Se os bens da sociedade não lhe cobrirem as dívidas, respondem os sócios pelo saldo, na proporção em que participem das perdas sociais, salvo cláusula de responsabilidade solidária.
 
-Art. 1.024. Os bens particulares dos sócios não podem ser executados por dívidas da sociedade, senão depois de executados os bens sociais.
+Art. 1024. Os bens particulares dos sócios não podem ser executados por dívidas da sociedade, senão depois de executados os bens sociais.
 
-Art. 1.025. O sócio, admitido em sociedade já constituída, não se exime das dívidas sociais anteriores à admissão.
+Art. 1025. O sócio, admitido em sociedade já constituída, não se exime das dívidas sociais anteriores à admissão.
 
-Art. 1.026. O credor particular de sócio pode, na insuficiência de outros bens do devedor, fazer recair a execução sobre o que a este couber nos lucros da sociedade, ou na parte que lhe tocar em liquidação.
+Art. 1026. O credor particular de sócio pode, na insuficiência de outros bens do devedor, fazer recair a execução sobre o que a este couber nos lucros da sociedade, ou na parte que lhe tocar em liquidação.
 
-Parágrafo único. Se a sociedade não estiver dissolvida, pode o credor requerer a liquidação da quota do devedor, cujo valor, apurado na forma do art. 1.031, será depositado em dinheiro, no juízo da execução, até noventa dias após aquela liquidação.
+Parágrafo único. Se a sociedade não estiver dissolvida, pode o credor requerer a liquidação da quota do devedor, cujo valor, apurado na forma do art. 1031, será depositado em dinheiro, no juízo da execução, até noventa dias após aquela liquidação.
 
-Art. 1.027. Os herdeiros do cônjuge de sócio, ou o cônjuge do que se separou judicialmente, não podem exigir desde logo a parte que lhes couber na quota social, mas concorrer à divisão periódica dos lucros, até que se liquide a sociedade.
+Art. 1027. Os herdeiros do cônjuge de sócio, ou o cônjuge do que se separou judicialmente, não podem exigir desde logo a parte que lhes couber na quota social, mas concorrer à divisão periódica dos lucros, até que se liquide a sociedade.
 
-Seção V
-Da Resolução da Sociedade em Relação a um Sócio
+Seção V Da Resolução da Sociedade em Relação a um Sócio
 
-Art. 1.028. No caso de morte de sócio, liquidar-se-á sua quota, salvo:
+Art. 1028. No caso de morte de sócio, liquidar-se-á sua quota, salvo:
 
 I - se o contrato dispuser diferentemente;
 
@@ -3942,26 +3937,25 @@ II - se os sócios remanescentes optarem pela dissolução da sociedade;
 
 III - se, por acordo com os herdeiros, regular-se a substituição do sócio falecido.
 
-Art. 1.029. Além dos casos previstos na lei ou no contrato, qualquer sócio pode retirar-se da sociedade; se de prazo indeterminado, mediante notificação aos demais sócios, com antecedência mínima de sessenta dias; se de prazo determinado, provando judicialmente justa causa.
+Art. 1029. Além dos casos previstos na lei ou no contrato, qualquer sócio pode retirar-se da sociedade; se de prazo indeterminado, mediante notificação aos demais sócios, com antecedência mínima de sessenta dias; se de prazo determinado, provando judicialmente justa causa.
 
 Parágrafo único. Nos trinta dias subseqüentes à notificação, podem os demais sócios optar pela dissolução da sociedade.
 
-Art. 1.030. Ressalvado o disposto no art. 1.004 e seu parágrafo único, pode o sócio ser excluído judicialmente, mediante iniciativa da maioria dos demais sócios, por falta grave no cumprimento de suas obrigações, ou, ainda, por incapacidade superveniente.
+Art. 1030. Ressalvado o disposto no art. 1004 e seu parágrafo único, pode o sócio ser excluído judicialmente, mediante iniciativa da maioria dos demais sócios, por falta grave no cumprimento de suas obrigações, ou, ainda, por incapacidade superveniente.
 
-Parágrafo único. Será de pleno direito excluído da sociedade o sócio declarado falido, ou aquele cuja quota tenha sido liquidada nos termos do parágrafo único do art. 1.026.
+Parágrafo único. Será de pleno direito excluído da sociedade o sócio declarado falido, ou aquele cuja quota tenha sido liquidada nos termos do parágrafo único do art. 1026.
 
-Art. 1.031. Nos casos em que a sociedade se resolver em relação a um sócio, o valor da sua quota, considerada pelo montante efetivamente realizado, liquidar-se-á, salvo disposição contratual em contrário, com base na situação patrimonial da sociedade, à data da resolução, verificada em balanço especialmente levantado.
+Art. 1031. Nos casos em que a sociedade se resolver em relação a um sócio, o valor da sua quota, considerada pelo montante efetivamente realizado, liquidar-se-á, salvo disposição contratual em contrário, com base na situação patrimonial da sociedade, à data da resolução, verificada em balanço especialmente levantado.
 
 § 1 o O capital social sofrerá a correspondente redução, salvo se os demais sócios suprirem o valor da quota.
 
-§ 2 o A quota liquidada será paga em dinheiro, no prazo de noventa dias, a partir da liquidação, salvo acordo, ou estipulação contratual em contrário.  (Vide Lei nº 13.105, de 2015) (Vigência)
+§ 2 o A quota liquidada será paga em dinheiro, no prazo de noventa dias, a partir da liquidação, salvo acordo, ou estipulação contratual em contrário. (Vide Lei nº 13.105, de 2015) (Vigência)
 
-Art. 1.032. A retirada, exclusão ou morte do sócio, não o exime, ou a seus herdeiros, da responsabilidade pelas obrigações sociais anteriores, até dois anos após averbada a resolução da sociedade; nem nos dois primeiros casos, pelas posteriores e em igual prazo, enquanto não se requerer a averbação.
+Art. 1032. A retirada, exclusão ou morte do sócio, não o exime, ou a seus herdeiros, da responsabilidade pelas obrigações sociais anteriores, até dois anos após averbada a resolução da sociedade; nem nos dois primeiros casos, pelas posteriores e em igual prazo, enquanto não se requerer a averbação.
 
-Seção VI
-Da Dissolução
+Seção VI Da Dissolução
 
-Art. 1.033. Dissolve-se a sociedade quando ocorrer:
+Art. 1033. Dissolve-se a sociedade quando ocorrer:
 
 I - o vencimento do prazo de duração, salvo se, vencido este e sem oposição de sócio, não entrar a sociedade em liquidação, caso em que se prorrogará por tempo indeterminado;
 
@@ -3975,23 +3969,23 @@ V - a extinção, na forma da lei, de autorização para funcionar.
 
 Parágrafo único. (Revogado pela Lei nº 14.195, de 2021)
 
-Art. 1.034. A sociedade pode ser dissolvida judicialmente, a requerimento de qualquer dos sócios, quando:
+Art. 1034. A sociedade pode ser dissolvida judicialmente, a requerimento de qualquer dos sócios, quando:
 
 I - anulada a sua constituição;
 
 II - exaurido o fim social, ou verificada a sua inexeqüibilidade.
 
-Art. 1.035. O contrato pode prever outras causas de dissolução, a serem verificadas judicialmente quando contestadas.
+Art. 1035. O contrato pode prever outras causas de dissolução, a serem verificadas judicialmente quando contestadas.
 
-Art. 1.036. Ocorrida a dissolução, cumpre aos administradores providenciar imediatamente a investidura do liquidante, e restringir a gestão própria aos negócios inadiáveis, vedadas novas operações, pelas quais responderão solidária e ilimitadamente.
+Art. 1036. Ocorrida a dissolução, cumpre aos administradores providenciar imediatamente a investidura do liquidante, e restringir a gestão própria aos negócios inadiáveis, vedadas novas operações, pelas quais responderão solidária e ilimitadamente.
 
 Parágrafo único. Dissolvida de pleno direito a sociedade, pode o sócio requerer, desde logo, a liquidação judicial.
 
-Art. 1.037. Ocorrendo a hipótese prevista no inciso V do art. 1.033, o Ministério Público, tão logo lhe comunique a autoridade competente, promoverá a liquidação judicial da sociedade, se os administradores não o tiverem feito nos trinta dias seguintes à perda da autorização, ou se o sócio não houver exercido a faculdade assegurada no parágrafo único do artigo antecedente.
+Art. 1037. Ocorrendo a hipótese prevista no inciso V do art. 1033, o Ministério Público, tão logo lhe comunique a autoridade competente, promoverá a liquidação judicial da sociedade, se os administradores não o tiverem feito nos trinta dias seguintes à perda da autorização, ou se o sócio não houver exercido a faculdade assegurada no parágrafo único do artigo antecedente.
 
 Parágrafo único. Caso o Ministério Público não promova a liquidação judicial da sociedade nos quinze dias subseqüentes ao recebimento da comunicação, a autoridade competente para conceder a autorização nomeará interventor com poderes para requerer a medida e administrar a sociedade até que seja nomeado o liquidante.
 
-Art. 1.038. Se não estiver designado no contrato social, o liquidante será eleito por deliberação dos sócios, podendo a escolha recair em pessoa estranha à sociedade.
+Art. 1038. Se não estiver designado no contrato social, o liquidante será eleito por deliberação dos sócios, podendo a escolha recair em pessoa estranha à sociedade.
 
 § 1 o O liquidante pode ser destituído, a todo tempo:
 
@@ -4001,20 +3995,19 @@ II - em qualquer caso, por via judicial, a requerimento de um ou mais sócios, o
 
 § 2 o A liquidação da sociedade se processa de conformidade com o disposto no Capítulo IX, deste Subtítulo.
 
-CAPÍTULO II
-Da Sociedade em Nome Coletivo
+CAPÍTULO II Da Sociedade em Nome Coletivo
 
-Art. 1.039. Somente pessoas físicas podem tomar parte na sociedade em nome coletivo, respondendo todos os sócios, solidária e ilimitadamente, pelas obrigações sociais.
+Art. 1039. Somente pessoas físicas podem tomar parte na sociedade em nome coletivo, respondendo todos os sócios, solidária e ilimitadamente, pelas obrigações sociais.
 
 Parágrafo único. Sem prejuízo da responsabilidade perante terceiros, podem os sócios, no ato constitutivo, ou por unânime convenção posterior, limitar entre si a responsabilidade de cada um.
 
-Art. 1.040. A sociedade em nome coletivo se rege pelas normas deste Capítulo e, no que seja omisso, pelas do Capítulo antecedente.
+Art. 1040. A sociedade em nome coletivo se rege pelas normas deste Capítulo e, no que seja omisso, pelas do Capítulo antecedente.
 
-Art. 1.041. O contrato deve mencionar, além das indicações referidas no art. 997, a firma social.
+Art. 1041. O contrato deve mencionar, além das indicações referidas no art. 997, a firma social.
 
-Art. 1.042. A administração da sociedade compete exclusivamente a sócios, sendo o uso da firma, nos limites do contrato, privativo dos que tenham os necessários poderes.
+Art. 1042. A administração da sociedade compete exclusivamente a sócios, sendo o uso da firma, nos limites do contrato, privativo dos que tenham os necessários poderes.
 
-Art. 1.043. O credor particular de sócio não pode, antes de dissolver-se a sociedade, pretender a liquidação da quota do devedor.
+Art. 1043. O credor particular de sócio não pode, antes de dissolver-se a sociedade, pretender a liquidação da quota do devedor.
 
 Parágrafo único. Poderá fazê-lo quando:
 
@@ -4022,123 +4015,120 @@ I - a sociedade houver sido prorrogada tacitamente;
 
 II - tendo ocorrido prorrogação contratual, for acolhida judicialmente oposição do credor, levantada no prazo de noventa dias, contado da publicação do ato dilatório.
 
-Art. 1.044. A sociedade se dissolve de pleno direito por qualquer das causas enumeradas no art. 1.033 e, se empresária, também pela declaração da falência.
+Art. 1044. A sociedade se dissolve de pleno direito por qualquer das causas enumeradas no art. 1033 e, se empresária, também pela declaração da falência.
 
-CAPÍTULO III
-Da Sociedade em Comandita Simples
+CAPÍTULO III Da Sociedade em Comandita Simples
 
-Art. 1.045. Na sociedade em comandita simples tomam parte sócios de duas categorias: os comanditados, pessoas físicas, responsáveis solidária e ilimitadamente pelas obrigações sociais; e os comanditários, obrigados somente pelo valor de sua quota.
+Art. 1045. Na sociedade em comandita simples tomam parte sócios de duas categorias: os comanditados, pessoas físicas, responsáveis solidária e ilimitadamente pelas obrigações sociais; e os comanditários, obrigados somente pelo valor de sua quota.
 
 Parágrafo único. O contrato deve discriminar os comanditados e os comanditários.
 
-Art. 1.046. Aplicam-se à sociedade em comandita simples as normas da sociedade em nome coletivo, no que forem compatíveis com as deste Capítulo.
+Art. 1046. Aplicam-se à sociedade em comandita simples as normas da sociedade em nome coletivo, no que forem compatíveis com as deste Capítulo.
 
 Parágrafo único. Aos comanditados cabem os mesmos direitos e obrigações dos sócios da sociedade em nome coletivo.
 
-Art. 1.047. Sem prejuízo da faculdade de participar das deliberações da sociedade e de lhe fiscalizar as operações, não pode o comanditário praticar qualquer ato de gestão, nem ter o nome na firma social, sob pena de ficar sujeito às responsabilidades de sócio comanditado.
+Art. 1047. Sem prejuízo da faculdade de participar das deliberações da sociedade e de lhe fiscalizar as operações, não pode o comanditário praticar qualquer ato de gestão, nem ter o nome na firma social, sob pena de ficar sujeito às responsabilidades de sócio comanditado.
 
 Parágrafo único. Pode o comanditário ser constituído procurador da sociedade, para negócio determinado e com poderes especiais.
 
-Art. 1.048. Somente após averbada a modificação do contrato, produz efeito, quanto a terceiros, a diminuição da quota do comanditário, em conseqüência de ter sido reduzido o capital social, sempre sem prejuízo dos credores preexistentes.
+Art. 1048. Somente após averbada a modificação do contrato, produz efeito, quanto a terceiros, a diminuição da quota do comanditário, em conseqüência de ter sido reduzido o capital social, sempre sem prejuízo dos credores preexistentes.
 
-Art. 1.049. O sócio comanditário não é obrigado à reposição de lucros recebidos de boa-fé e de acordo com o balanço.
+Art. 1049. O sócio comanditário não é obrigado à reposição de lucros recebidos de boa-fé e de acordo com o balanço.
 
 Parágrafo único. Diminuído o capital social por perdas supervenientes, não pode o comanditário receber quaisquer lucros, antes de reintegrado aquele.
 
-Art. 1.050. No caso de morte de sócio comanditário, a sociedade, salvo disposição do contrato, continuará com os seus sucessores, que designarão quem os represente.
+Art. 1050. No caso de morte de sócio comanditário, a sociedade, salvo disposição do contrato, continuará com os seus sucessores, que designarão quem os represente.
 
-Art. 1.051. Dissolve-se de pleno direito a sociedade:
+Excelente! Conforme solicitado, retirei o ponto de separação da casa do milhar na numeração dos artigos do Código Civil que você forneceu (1051 a 1129).
 
-I - por qualquer das causas previstas no art. 1.044;
+📜 Artigos do Código Civil (1051 a 1129) Sem Ponto Separador
+Art. 1051. Dissolve-se de pleno direito a sociedade:
+
+I - por qualquer das causas previstas no art. 1044;
 
 II - quando por mais de cento e oitenta dias perdurar a falta de uma das categorias de sócio.
 
 Parágrafo único. Na falta de sócio comanditado, os comanditários nomearão administrador provisório para praticar, durante o período referido no inciso II e sem assumir a condição de sócio, os atos de administração.
 
-CAPÍTULO IV
-Da Sociedade Limitada
+CAPÍTULO IV Da Sociedade Limitada
 
-Seção I
-Disposições Preliminares
+Seção I Disposições Preliminares
 
-Art. 1.052. Na sociedade limitada, a responsabilidade de cada sócio é restrita ao valor de suas quotas, mas todos respondem solidariamente pela integralização do capital social.
+Art. 1052. Na sociedade limitada, a responsabilidade de cada sócio é restrita ao valor de suas quotas, mas todos respondem solidariamente pela integralização do capital social.
 
-§ 1º  A sociedade limitada pode ser constituída por 1 (uma) ou mais pessoas.     (Incluído pela Lei nº 13.874, de 2019)
+§ 1º A sociedade limitada pode ser constituída por 1 (uma) ou mais pessoas. (Incluído pela Lei nº 13.874, de 2019)
 
-§ 2º  Se for unipessoal, aplicar-se-ão ao documento de constituição do sócio único, no que couber, as disposições sobre o contrato social.     (Incluído pela Lei nº 13.874, de 2019)
+§ 2º Se for unipessoal, aplicar-se-ão ao documento de constituição do sócio único, no que couber, as disposições sobre o contrato social. (Incluído pela Lei nº 13.874, de 2019)
 
-Art. 1.053. A sociedade limitada rege-se, nas omissões deste Capítulo, pelas normas da sociedade simples.
+Art. 1053. A sociedade limitada rege-se, nas omissões deste Capítulo, pelas normas da sociedade simples.
 
 Parágrafo único. O contrato social poderá prever a regência supletiva da sociedade limitada pelas normas da sociedade anônima.
 
-Art. 1.054. O contrato mencionará, no que couber, as indicações do art. 997, e, se for o caso, a firma social.
+Art. 1054. O contrato mencionará, no que couber, as indicações do art. 997, e, se for o caso, a firma social.
 
-Seção II
-Das Quotas
+Seção II Das Quotas
 
-Art. 1.055. O capital social divide-se em quotas, iguais ou desiguais, cabendo uma ou diversas a cada sócio.
+Art. 1055. O capital social divide-se em quotas, iguais ou desiguais, cabendo uma ou diversas a cada sócio.
 
 § 1º Pela exata estimação de bens conferidos ao capital social respondem solidariamente todos os sócios, até o prazo de cinco anos da data do registro da sociedade.
 
 § 2º É vedada contribuição que consista em prestação de serviços.
 
-Art. 1.056. A quota é indivisível em relação à sociedade, salvo para efeito de transferência, caso em que se observará o disposto no artigo seguinte.
+Art. 1056. A quota é indivisível em relação à sociedade, salvo para efeito de transferência, caso em que se observará o disposto no artigo seguinte.
 
 § 1º No caso de condomínio de quota, os direitos a ela inerentes somente podem ser exercidos pelo condômino representante, ou pelo inventariante do espólio de sócio falecido.
 
-§ 2º Sem prejuízo do disposto no art. 1.052, os condôminos de quota indivisa respondem solidariamente pelas prestações necessárias à sua integralização.
+§ 2º Sem prejuízo do disposto no art. 1052, os condôminos de quota indivisa respondem solidariamente pelas prestações necessárias à sua integralização.
 
-Art. 1.057. Na omissão do contrato, o sócio pode ceder sua quota, total ou parcialmente, a quem seja sócio, independentemente de audiência dos outros, ou a estranho, se não houver oposição de titulares de mais de um quarto do capital social.
+Art. 1057. Na omissão do contrato, o sócio pode ceder sua quota, total ou parcialmente, a quem seja sócio, independentemente de audiência dos outros, ou a estranho, se não houver oposição de titulares de mais de um quarto do capital social.
 
-Parágrafo único. A cessão terá eficácia quanto à sociedade e terceiros, inclusive para os fins do parágrafo único do art. 1.003, a partir da averbação do respectivo instrumento, subscrito pelos sócios anuentes.
+Parágrafo único. A cessão terá eficácia quanto à sociedade e terceiros, inclusive para os fins do parágrafo único do art. 1003, a partir da averbação do respectivo instrumento, subscrito pelos sócios anuentes.
 
-Art. 1.058. Não integralizada a quota de sócio remisso, os outros sócios podem, sem prejuízo do disposto no art. 1.004 e seu parágrafo único, tomá-la para si ou transferi-la a terceiros, excluindo o primitivo titular e devolvendo-lhe o que houver pago, deduzidos os juros da mora, as prestações estabelecidas no contrato mais as despesas.
+Art. 1058. Não integralizada a quota de sócio remisso, os outros sócios podem, sem prejuízo do disposto no art. 1004 e seu parágrafo único, tomá-la para si ou transferi-la a terceiros, excluindo o primitivo titular e devolvendo-lhe o que houver pago, deduzidos os juros da mora, as prestações estabelecidas no contrato mais as despesas.
 
-Art. 1.059. Os sócios serão obrigados à reposição dos lucros e das quantias retiradas, a qualquer título, ainda que autorizados pelo contrato, quando tais lucros ou quantia se distribuírem com prejuízo do capital.
+Art. 1059. Os sócios serão obrigados à reposição dos lucros e das quantias retiradas, a qualquer título, ainda que autorizados pelo contrato, quando tais lucros ou quantia se distribuírem com prejuízo do capital.
 
-Seção III
-Da Administração
+Seção III Da Administração
 
-Art. 1.060. A sociedade limitada é administrada por uma ou mais pessoas designadas no contrato social ou em ato separado.
+Art. 1060. A sociedade limitada é administrada por uma ou mais pessoas designadas no contrato social ou em ato separado.
 
 Parágrafo único. A administração atribuída no contrato a todos os sócios não se estende de pleno direito aos que posteriormente adquiram essa qualidade.
 
-Art. 1.061. A designação de administradores não sócios dependerá da aprovação de, no mínimo, 2/3 (dois terços) dos sócios, enquanto o capital não estiver integralizado, e da aprovação de titulares de quotas correspondentes a mais da metade do capital social, após a integralização.     (Redação dada pela Lei nº 14.451, de 2022)     Vigência
+Art. 1061. A designação de administradores não sócios dependerá da aprovação de, no mínimo, 2/3 (dois terços) dos sócios, enquanto o capital não estiver integralizado, e da aprovação de titulares de quotas correspondentes a mais da metade do capital social, após a integralização. (Redação dada pela Lei nº 14.451, de 2022) Vigência
 
-Art. 1.062. O administrador designado em ato separado investir-se-á no cargo mediante termo de posse no livro de atas da administração.
+Art. 1062. O administrador designado em ato separado investir-se-á no cargo mediante termo de posse no livro de atas da administração.
 
 § 1 o Se o termo não for assinado nos trinta dias seguintes à designação, esta se tornará sem efeito.
 
 § 2 o Nos dez dias seguintes ao da investidura, deve o administrador requerer seja averbada sua nomeação no registro competente, mencionando o seu nome, nacionalidade, estado civil, residência, com exibição de documento de identidade, o ato e a data da nomeação e o prazo de gestão.
 
-Art. 1.063. O exercício do cargo de administrador cessa pela destituição, em qualquer tempo, do titular, ou pelo término do prazo se, fixado no contrato ou em ato separado, não houver recondução.
+Art. 1063. O exercício do cargo de administrador cessa pela destituição, em qualquer tempo, do titular, ou pelo término do prazo se, fixado no contrato ou em ato separado, não houver recondução.
 
-§ 1º  Tratando-se de sócio nomeado administrador no contrato, sua destituição somente se opera pela aprovação de titulares de quotas correspondentes a mais da metade do capital social, salvo disposição contratual diversa. (Redação dada pela Lei nº 13.792, de 2019)
+§ 1º Tratando-se de sócio nomeado administrador no contrato, sua destituição somente se opera pela aprovação de titulares de quotas correspondentes a mais da metade do capital social, salvo disposição contratual diversa. (Redação dada pela Lei nº 13.792, de 2019)
 
 § 2 o A cessação do exercício do cargo de administrador deve ser averbada no registro competente, mediante requerimento apresentado nos dez dias seguintes ao da ocorrência.
 
 § 3 o A renúncia de administrador torna-se eficaz, em relação à sociedade, desde o momento em que esta toma conhecimento da comunicação escrita do renunciante; e, em relação a terceiros, após a averbação e publicação.
 
-Art. 1.064. O uso da firma ou denominação social é privativo dos administradores que tenham os necessários poderes.
+Art. 1064. O uso da firma ou denominação social é privativo dos administradores que tenham os necessários poderes.
 
-Art. 1.065. Ao término de cada exercício social, proceder-se-á à elaboração do inventário, do balanço patrimonial e do balanço de resultado econômico.
+Art. 1065. Ao término de cada exercício social, proceder-se-á à elaboração do inventário, do balanço patrimonial e do balanço de resultado econômico.
 
-Seção IV
-Do Conselho Fiscal
+Seção IV Do Conselho Fiscal
 
-Art. 1.066. Sem prejuízo dos poderes da assembléia dos sócios, pode o contrato instituir conselho fiscal composto de três ou mais membros e respectivos suplentes, sócios ou não, residentes no País, eleitos na assembléia anual prevista no art. 1.078.
+Art. 1066. Sem prejuízo dos poderes da assembléia dos sócios, pode o contrato instituir conselho fiscal composto de três ou mais membros e respectivos suplentes, sócios ou não, residentes no País, eleitos na assembléia anual prevista no art. 1078.
 
-§ 1 o Não podem fazer parte do conselho fiscal, além dos inelegíveis enumerados no § 1 o do art. 1.011, os membros dos demais órgãos da sociedade ou de outra por ela controlada, os empregados de quaisquer delas ou dos respectivos administradores, o cônjuge ou parente destes até o terceiro grau.
+§ 1 o Não podem fazer parte do conselho fiscal, além dos inelegíveis enumerados no § 1 o do art. 1011, os membros dos demais órgãos da sociedade ou de outra por ela controlada, os empregados de quaisquer delas ou dos respectivos administradores, o cônjuge ou parente destes até o terceiro grau.
 
 § 2 o É assegurado aos sócios minoritários, que representarem pelo menos um quinto do capital social, o direito de eleger, separadamente, um dos membros do conselho fiscal e o respectivo suplente.
 
-Art. 1.067. O membro ou suplente eleito, assinando termo de posse lavrado no livro de atas e pareceres do conselho fiscal, em que se mencione o seu nome, nacionalidade, estado civil, residência e a data da escolha, ficará investido nas suas funções, que exercerá, salvo cessação anterior, até a subseqüente assembléia anual.
+Art. 1067. O membro ou suplente eleito, assinando termo de posse lavrado no livro de atas e pareceres do conselho fiscal, em que se mencione o seu nome, nacionalidade, estado civil, residência e a data da escolha, ficará investido nas suas funções, que exercerá, salvo cessação anterior, até a subseqüente assembléia anual.
 
 Parágrafo único. Se o termo não for assinado nos trinta dias seguintes ao da eleição, esta se tornará sem efeito.
 
-Art. 1.068. A remuneração dos membros do conselho fiscal será fixada, anualmente, pela assembléia dos sócios que os eleger.
+Art. 1068. A remuneração dos membros do conselho fiscal será fixada, anualmente, pela assembléia dos sócios que os eleger.
 
-Art. 1.069. Além de outras atribuições determinadas na lei ou no contrato social, aos membros do conselho fiscal incumbem, individual ou conjuntamente, os deveres seguintes:
+Art. 1069. Além de outras atribuições determinadas na lei ou no contrato social, aos membros do conselho fiscal incumbem, individual ou conjuntamente, os deveres seguintes:
 
 I - examinar, pelo menos trimestralmente, os livros e papéis da sociedade e o estado da caixa e da carteira, devendo os administradores ou liquidantes prestar-lhes as informações solicitadas;
 
@@ -4152,14 +4142,13 @@ V - convocar a assembléia dos sócios se a diretoria retardar por mais de trint
 
 VI - praticar, durante o período da liquidação da sociedade, os atos a que se refere este artigo, tendo em vista as disposições especiais reguladoras da liquidação.
 
-Art. 1.070. As atribuições e poderes conferidos pela lei ao conselho fiscal não podem ser outorgados a outro órgão da sociedade, e a responsabilidade de seus membros obedece à regra que define a dos administradores (art. 1.016).
+Art. 1070. As atribuições e poderes conferidos pela lei ao conselho fiscal não podem ser outorgados a outro órgão da sociedade, e a responsabilidade de seus membros obedece à regra que define a dos administradores (art. 1016).
 
 Parágrafo único. O conselho fiscal poderá escolher para assisti-lo no exame dos livros, dos balanços e das contas, contabilista legalmente habilitado, mediante remuneração aprovada pela assembléia dos sócios.
 
-Seção V
-Das Deliberações dos Sócios
+Seção V Das Deliberações dos Sócios
 
-Art. 1.071. Dependem da deliberação dos sócios, além de outras matérias indicadas na lei ou no contrato:
+Art. 1071. Dependem da deliberação dos sócios, além de outras matérias indicadas na lei ou no contrato:
 
 I - a aprovação das contas da administração;
 
@@ -4177,11 +4166,11 @@ VII - a nomeação e destituição dos liquidantes e o julgamento das suas conta
 
 VIII - o pedido de concordata.
 
-Art. 1.072. As deliberações dos sócios, obedecido o disposto no art. 1.010, serão tomadas em reunião ou em assembléia, conforme previsto no contrato social, devendo ser convocadas pelos administradores nos casos previstos em lei ou no contrato.
+Art. 1072. As deliberações dos sócios, obedecido o disposto no art. 1010, serão tomadas em reunião ou em assembléia, conforme previsto no contrato social, devendo ser convocadas pelos administradores nos casos previstos em lei ou no contrato.
 
 § 1 o A deliberação em assembléia será obrigatória se o número dos sócios for superior a dez.
 
-§ 2 o Dispensam-se as formalidades de convocação previstas no § 3 o do art. 1.152, quando todos os sócios comparecerem ou se declararem, por escrito, cientes do local, data, hora e ordem do dia.
+§ 2 o Dispensam-se as formalidades de convocação previstas no § 3 o do art. 1152, quando todos os sócios comparecerem ou se declararem, por escrito, cientes do local, data, hora e ordem do dia.
 
 § 3 o A reunião ou a assembléia tornam-se dispensáveis quando todos os sócios decidirem, por escrito, sobre a matéria que seria objeto delas.
 
@@ -4191,19 +4180,19 @@ Art. 1.072. As deliberações dos sócios, obedecido o disposto no art. 1.010, s
 
 § 6 o Aplica-se às reuniões dos sócios, nos casos omissos no contrato, o disposto na presente Seção sobre a assembléia.
 
-Art. 1.073. A reunião ou a assembléia podem também ser convocadas:
+Art. 1073. A reunião ou a assembléia podem também ser convocadas:
 
 I - por sócio, quando os administradores retardarem a convocação, por mais de sessenta dias, nos casos previstos em lei ou no contrato, ou por titulares de mais de um quinto do capital, quando não atendido, no prazo de oito dias, pedido de convocação fundamentado, com indicação das matérias a serem tratadas;
 
-II - pelo conselho fiscal, se houver, nos casos a que se refere o inciso V do art. 1.069.
+II - pelo conselho fiscal, se houver, nos casos a que se refere o inciso V do art. 1069.
 
-Art. 1.074. A assembléia dos sócios instala-se com a presença, em primeira convocação, de titulares de no mínimo três quartos do capital social, e, em segunda, com qualquer número.
+Art. 1074. A assembléia dos sócios instala-se com a presença, em primeira convocação, de titulares de no mínimo três quartos do capital social, e, em segunda, com qualquer número.
 
 § 1 o O sócio pode ser representado na assembléia por outro sócio, ou por advogado, mediante outorga de mandato com especificação dos atos autorizados, devendo o instrumento ser levado a registro, juntamente com a ata.
 
 § 2 o Nenhum sócio, por si ou na condição de mandatário, pode votar matéria que lhe diga respeito diretamente.
 
-Art. 1.075. A assembléia será presidida e secretariada por sócios escolhidos entre os presentes.
+Art. 1075. A assembléia será presidida e secretariada por sócios escolhidos entre os presentes.
 
 § 1 o Dos trabalhos e deliberações será lavrada, no livro de atas da assembléia, ata assinada pelos membros da mesa e por sócios participantes da reunião, quantos bastem à validade das deliberações, mas sem prejuízo dos que queiram assiná-la.
 
@@ -4211,17 +4200,17 @@ Art. 1.075. A assembléia será presidida e secretariada por sócios escolhidos 
 
 § 3 o Ao sócio, que a solicitar, será entregue cópia autenticada da ata.
 
-Art. 1.076.  Ressalvado o disposto no art. 1.061, as deliberações dos sócios serão tomadas (Redação dada pela Lei nº 13.792, de 2019)
+Art. 1076. Ressalvado o disposto no art. 1061, as deliberações dos sócios serão tomadas (Redação dada pela Lei nº 13.792, de 2019)
 
-I - (revogado);        (Redação dada pela Lei nº 14.451, de 2022)     Vigência
+I - (revogado); (Redação dada pela Lei nº 14.451, de 2022) Vigência
 
-II - pelos votos correspondentes a mais da metade do capital social, nos casos previstos nos incisos II, III, IV, V, VI e VIII do caput do art. 1.071 deste Código;        (Redação dada pela Lei nº 14.451, de 2022)     Vigência
+II - pelos votos correspondentes a mais da metade do capital social, nos casos previstos nos incisos II, III, IV, V, VI e VIII do caput do art. 1071 deste Código; (Redação dada pela Lei nº 14.451, de 2022) Vigência
 
 III - pela maioria de votos dos presentes, nos demais casos previstos na lei ou no contrato, se este não exigir maioria mais elevada.
 
-Art. 1.077. Quando houver modificação do contrato, fusão da sociedade, incorporação de outra, ou dela por outra, terá o sócio que dissentiu o direito de retirar-se da sociedade, nos trinta dias subseqüentes à reunião, aplicando-se, no silêncio do contrato social antes vigente, o disposto no art. 1.031.
+Art. 1077. Quando houver modificação do contrato, fusão da sociedade, incorporação de outra, ou dela por outra, terá o sócio que dissentiu o direito de retirar-se da sociedade, nos trinta dias subseqüentes à reunião, aplicando-se, no silêncio do contrato social antes vigente, o disposto no art. 1031.
 
-Art. 1.078. A assembléia dos sócios deve realizar-se ao menos uma vez por ano, nos quatro meses seguintes à ao término do exercício social, com o objetivo de:
+Art. 1078. A assembléia dos sócios deve realizar-se ao menos uma vez por ano, nos quatro meses seguintes à ao término do exercício social, com o objetivo de:
 
 I - tomar as contas dos administradores e deliberar sobre o balanço patrimonial e o de resultado econômico;
 
@@ -4237,34 +4226,33 @@ III - tratar de qualquer outro assunto constante da ordem do dia.
 
 § 4 o Extingue-se em dois anos o direito de anular a aprovação a que se refere o parágrafo antecedente.
 
-Art. 1.079. Aplica-se às reuniões dos sócios, nos casos omissos no contrato, o estabelecido nesta Seção sobre a assembléia, obedecido o disposto no § 1 o do art. 1.072.
+Art. 1079. Aplica-se às reuniões dos sócios, nos casos omissos no contrato, o estabelecido nesta Seção sobre a assembléia, obedecido o disposto no § 1 o do art. 1072.
 
-Art. 1.080. As deliberações infringentes do contrato ou da lei tornam ilimitada a responsabilidade dos que expressamente as aprovaram.
+Art. 1080. As deliberações infringentes do contrato ou da lei tornam ilimitada a responsabilidade dos que expressamente as aprovaram.
 
-Art. 1.080-A.  O sócio poderá participar e votar a distância em reunião ou em assembleia, nos termos do regulamento do órgão competente do Poder Executivo federal.       (Incluído pela Lei nº 14.030, de 2020)
+Art. 1080-A. O sócio poderá participar e votar a distância em reunião ou em assembleia, nos termos do regulamento do órgão competente do Poder Executivo federal. (Incluído pela Lei nº 14.030, de 2020)
 
-Parágrafo único. A reunião ou a assembleia poderá ser realizada de forma digital, respeitados os direitos legalmente previstos de participação e de manifestação dos sócios e os demais requisitos regulamentares.        (Incluído pela Lei nº 14.030, de 2020)
+Parágrafo único. A reunião ou a assembleia poderá ser realizada de forma digital, respeitados os direitos legalmente previstos de participação e de manifestação dos sócios e os demais requisitos regulamentares. (Incluído pela Lei nº 14.030, de 2020)
 
-Seção VI
-Do Aumento e da Redução do Capital
+Seção VI Do Aumento e da Redução do Capital
 
-Art. 1.081. Ressalvado o disposto em lei especial, integralizadas as quotas, pode ser o capital aumentado, com a correspondente modificação do contrato.
+Art. 1081. Ressalvado o disposto em lei especial, integralizadas as quotas, pode ser o capital aumentado, com a correspondente modificação do contrato.
 
 § 1 o Até trinta dias após a deliberação, terão os sócios preferência para participar do aumento, na proporção das quotas de que sejam titulares.
 
-§ 2 o À cessão do direito de preferência, aplica-se o disposto no caput do art. 1.057.
+§ 2 o À cessão do direito de preferência, aplica-se o disposto no caput do art. 1057.
 
 § 3 o Decorrido o prazo da preferência, e assumida pelos sócios, ou por terceiros, a totalidade do aumento, haverá reunião ou assembléia dos sócios, para que seja aprovada a modificação do contrato.
 
-Art. 1.082. Pode a sociedade reduzir o capital, mediante a correspondente modificação do contrato:
+Art. 1082. Pode a sociedade reduzir o capital, mediante a correspondente modificação do contrato:
 
 I - depois de integralizado, se houver perdas irreparáveis;
 
 II - se excessivo em relação ao objeto da sociedade.
 
-Art. 1.083. No caso do inciso I do artigo antecedente, a redução do capital será realizada com a diminuição proporcional do valor nominal das quotas, tornando-se efetiva a partir da averbação, no Registro Público de Empresas Mercantis, da ata da assembléia que a tenha aprovado.
+Art. 1083. No caso do inciso I do artigo antecedente, a redução do capital será realizada com a diminuição proporcional do valor nominal das quotas, tornando-se efetiva a partir da averbação, no Registro Público de Empresas Mercantis, da ata da assembléia que a tenha aprovado.
 
-Art. 1.084. No caso do inciso II do art. 1.082, a redução do capital será feita restituindo-se parte do valor das quotas aos sócios, ou dispensando-se as prestações ainda devidas, com diminuição proporcional, em ambos os casos, do valor nominal das quotas.
+Art. 1084. No caso do inciso II do art. 1082, a redução do capital será feita restituindo-se parte do valor das quotas aos sócios, ou dispensando-se as prestações ainda devidas, com diminuição proporcional, em ambos os casos, do valor nominal das quotas.
 
 § 1 o No prazo de noventa dias, contado da data da publicação da ata da assembléia que aprovar a redução, o credor quirografário, por título líquido anterior a essa data, poderá opor-se ao deliberado.
 
@@ -4272,36 +4260,31 @@ Art. 1.084. No caso do inciso II do art. 1.082, a redução do capital será fei
 
 § 3 o Satisfeitas as condições estabelecidas no parágrafo antecedente, proceder-se-á à averbação, no Registro Público de Empresas Mercantis, da ata que tenha aprovado a redução.
 
-Seção VII
-Da Resolução da Sociedade em Relação a Sócios Minoritários
+Seção VII Da Resolução da Sociedade em Relação a Sócios Minoritários
 
-Art. 1.085. Ressalvado o disposto no art. 1.030, quando a maioria dos sócios, representativa de mais da metade do capital social, entender que um ou mais sócios estão pondo em risco a continuidade da empresa, em virtude de atos de inegável gravidade, poderá excluí-los da sociedade, mediante alteração do contrato social, desde que prevista neste a exclusão por justa causa.
+Art. 1085. Ressalvado o disposto no art. 1030, quando a maioria dos sócios, representativa de mais da metade do capital social, entender que um ou mais sócios estão pondo em risco a continuidade da empresa, em virtude de atos de inegável gravidade, poderá excluí-los da sociedade, mediante alteração do contrato social, desde que prevista neste a exclusão por justa causa.
 
 Parágrafo único. Ressalvado o caso em que haja apenas dois sócios na sociedade, a exclusão de um sócio somente poderá ser determinada em reunião ou assembleia especialmente convocada para esse fim, ciente o acusado em tempo hábil para permitir seu comparecimento e o exercício do direito de defesa. (Redação dada pela Lei nº 13.792, de 2019)
 
-Art. 1.086. Efetuado o registro da alteração contratual, aplicar-se-á o disposto nos arts. 1.031 e 1.032.
+Art. 1086. Efetuado o registro da alteração contratual, aplicar-se-á o disposto nos arts. 1031 e 1032.
 
-Seção VIII
-Da Dissolução
+Seção VIII Da Dissolução
 
-Art. 1.087. A sociedade dissolve-se, de pleno direito, por qualquer das causas previstas no art. 1.044.
+Art. 1087. A sociedade dissolve-se, de pleno direito, por qualquer das causas previstas no art. 1044.
 
-CAPÍTULO V
-Da Sociedade Anônima
+CAPÍTULO V Da Sociedade Anônima
 
-Seção Única
-Da Caracterização
+Seção Única Da Caracterização
 
-Art. 1.088. Na sociedade anônima ou companhia, o capital divide-se em ações, obrigando-se cada sócio ou acionista somente pelo preço de emissão das ações que subscrever ou adquirir.
+Art. 1088. Na sociedade anônima ou companhia, o capital divide-se em ações, obrigando-se cada sócio ou acionista somente pelo preço de emissão das ações que subscrever ou adquirir.
 
-Art. 1.089. A sociedade anônima rege-se por lei especial, aplicando-se-lhe, nos casos omissos, as disposições deste Código.
+Art. 1089. A sociedade anônima rege-se por lei especial, aplicando-se-lhe, nos casos omissos, as disposições deste Código.
 
-CAPÍTULO VI
-Da Sociedade em Comandita por Ações
+CAPÍTULO VI Da Sociedade em Comandita por Ações
 
-Art. 1.090. A sociedade em comandita por ações tem o capital dividido em ações, regendo-se pelas normas relativas à sociedade anônima, sem prejuízo das modificações constantes deste Capítulo, e opera sob firma ou denominação.
+Art. 1090. A sociedade em comandita por ações tem o capital dividido em ações, regendo-se pelas normas relativas à sociedade anônima, sem prejuízo das modificações constantes deste Capítulo, e opera sob firma ou denominação.
 
-Art. 1.091. Somente o acionista tem qualidade para administrar a sociedade e, como diretor, responde subsidiária e ilimitadamente pelas obrigações da sociedade.
+Art. 1091. Somente o acionista tem qualidade para administrar a sociedade e, como diretor, responde subsidiária e ilimitadamente pelas obrigações da sociedade.
 
 § 1 o Se houver mais de um diretor, serão solidariamente responsáveis, depois de esgotados os bens sociais.
 
@@ -4309,14 +4292,13 @@ Art. 1.091. Somente o acionista tem qualidade para administrar a sociedade e, co
 
 § 3 o O diretor destituído ou exonerado continua, durante dois anos, responsável pelas obrigações sociais contraídas sob sua administração.
 
-Art. 1.092. A assembléia geral não pode, sem o consentimento dos diretores, mudar o objeto essencial da sociedade, prorrogar-lhe o prazo de duração, aumentar ou diminuir o capital social, criar debêntures, ou partes beneficiárias.
+Art. 1092. A assembléia geral não pode, sem o consentimento dos diretores, mudar o objeto essencial da sociedade, prorrogar-lhe o prazo de duração, aumentar ou diminuir o capital social, criar debêntures, ou partes beneficiárias.
 
-CAPÍTULO VII
-Da Sociedade Cooperativa
+CAPÍTULO VII Da Sociedade Cooperativa
 
-Art. 1.093. A sociedade cooperativa reger-se-á pelo disposto no presente Capítulo, ressalvada a legislação especial.
+Art. 1093. A sociedade cooperativa reger-se-á pelo disposto no presente Capítulo, ressalvada a legislação especial.
 
-Art. 1.094. São características da sociedade cooperativa:
+Art. 1094. São características da sociedade cooperativa:
 
 I - variabilidade, ou dispensa do capital social;
 
@@ -4326,7 +4308,7 @@ III - limitação do valor da soma de quotas do capital social que cada sócio p
 
 IV - intransferibilidade das quotas do capital a terceiros estranhos à sociedade, ainda que por herança;
 
-V - quorum , para a assembléia geral funcionar e deliberar, fundado no número de sócios presentes à reunião, e não no capital social representado;
+V - quorum, para a assembléia geral funcionar e deliberar, fundado no número de sócios presentes à reunião, e não no capital social representado;
 
 VI - direito de cada sócio a um só voto nas deliberações, tenha ou não capital a sociedade, e qualquer que seja o valor de sua participação;
 
@@ -4334,41 +4316,39 @@ VII - distribuição dos resultados, proporcionalmente ao valor das operações 
 
 VIII - indivisibilidade do fundo de reserva entre os sócios, ainda que em caso de dissolução da sociedade.
 
-Art. 1.095. Na sociedade cooperativa, a responsabilidade dos sócios pode ser limitada ou ilimitada.
+Art. 1095. Na sociedade cooperativa, a responsabilidade dos sócios pode ser limitada ou ilimitada.
 
 § 1 o É limitada a responsabilidade na cooperativa em que o sócio responde somente pelo valor de suas quotas e pelo prejuízo verificado nas operações sociais, guardada a proporção de sua participação nas mesmas operações.
 
 § 2 o É ilimitada a responsabilidade na cooperativa em que o sócio responde solidária e ilimitadamente pelas obrigações sociais.
 
-Art. 1.096. No que a lei for omissa, aplicam-se as disposições referentes à sociedade simples, resguardadas as características estabelecidas no art. 1.094.
+Art. 1096. No que a lei for omissa, aplicam-se as disposições referentes à sociedade simples, resguardadas as características estabelecidas no art. 1094.
 
-CAPÍTULO VIII
-Das Sociedades CoLigadas
+CAPÍTULO VIII Das Sociedades Coligadas
 
-Art. 1.097. Consideram-se coligadas as sociedades que, em suas relações de capital, são controladas, filiadas, ou de simples participação, na forma dos artigos seguintes.
+Art. 1097. Consideram-se coligadas as sociedades que, em suas relações de capital, são controladas, filiadas, ou de simples participação, na forma dos artigos seguintes.
 
-Art. 1.098. É controlada:
+Art. 1098. É controlada:
 
 I - a sociedade de cujo capital outra sociedade possua a maioria dos votos nas deliberações dos quotistas ou da assembléia geral e o poder de eleger a maioria dos administradores;
 
 II - a sociedade cujo controle, referido no inciso antecedente, esteja em poder de outra, mediante ações ou quotas possuídas por sociedades ou sociedades por esta já controladas.
 
-Art. 1.099. Diz-se coligada ou filiada a sociedade de cujo capital outra sociedade participa com dez por cento ou mais, do capital da outra, sem controlá-la.
+Art. 1099. Diz-se coligada ou filiada a sociedade de cujo capital outra sociedade participa com dez por cento ou mais, do capital da outra, sem controlá-la.
 
-Art. 1.100. É de simples participação a sociedade de cujo capital outra sociedade possua menos de dez por cento do capital com direito de voto.
+Art. 1100. É de simples participação a sociedade de cujo capital outra sociedade possua menos de dez por cento do capital com direito de voto.
 
-Art. 1.101. Salvo disposição especial de lei, a sociedade não pode participar de outra, que seja sua sócia, por montante superior, segundo o balanço, ao das próprias reservas, excluída a reserva legal.
+Art. 1101. Salvo disposição especial de lei, a sociedade não pode participar de outra, que seja sua sócia, por montante superior, segundo o balanço, ao das próprias reservas, excluída a reserva legal.
 
 Parágrafo único. Aprovado o balanço em que se verifique ter sido excedido esse limite, a sociedade não poderá exercer o direito de voto correspondente às ações ou quotas em excesso, as quais devem ser alienadas nos cento e oitenta dias seguintes àquela aprovação.
 
-CAPÍTULO IX
-Da Liquidação da Sociedade
+CAPÍTULO IX Da Liquidação da Sociedade
 
-Art. 1.102. Dissolvida a sociedade e nomeado o liquidante na forma do disposto neste Livro, procede-se à sua liquidação, de conformidade com os preceitos deste Capítulo, ressalvado o disposto no ato constitutivo ou no instrumento da dissolução.
+Art. 1102. Dissolvida a sociedade e nomeado o liquidante na forma do disposto neste Livro, procede-se à sua liquidação, de conformidade com os preceitos deste Capítulo, ressalvado o disposto no ato constitutivo ou no instrumento da dissolução.
 
 Parágrafo único. O liquidante, que não seja administrador da sociedade, investir-se-á nas funções, averbada a sua nomeação no registro próprio.
 
-Art. 1.103. Constituem deveres do liquidante:
+Art. 1103. Constituem deveres do liquidante:
 
 I - averbar e publicar a ata, sentença ou instrumento de dissolução da sociedade;
 
@@ -4390,56 +4370,55 @@ IX - averbar a ata da reunião ou da assembléia, ou o instrumento firmado pelos
 
 Parágrafo único. Em todos os atos, documentos ou publicações, o liquidante empregará a firma ou denominação social sempre seguida da cláusula "em liquidação" e de sua assinatura individual, com a declaração de sua qualidade.
 
-Art. 1.104. As obrigações e a responsabilidade do liquidante regem-se pelos preceitos peculiares às dos administradores da sociedade liquidanda.
+Art. 1104. As obrigações e a responsabilidade do liquidante regem-se pelos preceitos peculiares às dos administradores da sociedade liquidanda.
 
-Art. 1.105. Compete ao liquidante representar a sociedade e praticar todos os atos necessários à sua liquidação, inclusive alienar bens móveis ou imóveis, transigir, receber e dar quitação.
+Art. 1105. Compete ao liquidante representar a sociedade e praticar todos os atos necessários à sua liquidação, inclusive alienar bens móveis ou imóveis, transigir, receber e dar quitação.
 
 Parágrafo único. Sem estar expressamente autorizado pelo contrato social, ou pelo voto da maioria dos sócios, não pode o liquidante gravar de ônus reais os móveis e imóveis, contrair empréstimos, salvo quando indispensáveis ao pagamento de obrigações inadiáveis, nem prosseguir, embora para facilitar a liquidação, na atividade social.
 
-Art. 1.106. Respeitados os direitos dos credores preferenciais, pagará o liquidante as dívidas sociais proporcionalmente, sem distinção entre vencidas e vincendas, mas, em relação a estas, com desconto.
+Art. 1106. Respeitados os direitos dos credores preferenciais, pagará o liquidante as dívidas sociais proporcionalmente, sem distinção entre vencidas e vincendas, mas, em relação a estas, com desconto.
 
 Parágrafo único. Se o ativo for superior ao passivo, pode o liquidante, sob sua responsabilidade pessoal, pagar integralmente as dívidas vencidas.
 
-Art. 1.107. Os sócios podem resolver, por maioria de votos, antes de ultimada a liquidação, mas depois de pagos os credores, que o liquidante faça rateios por antecipação da partilha, à medida em que se apurem os haveres sociais.
+Art. 1107. Os sócios podem resolver, por maioria de votos, antes de ultimada a liquidação, mas depois de pagos os credores, que o liquidante faça rateios por antecipação da partilha, à medida em que se apurem os haveres sociais.
 
-Art. 1.108. Pago o passivo e partilhado o remanescente, convocará o liquidante assembléia dos sócios para a prestação final de contas.
+Art. 1108. Pago o passivo e partilhado o remanescente, convocará o liquidante assembléia dos sócios para a prestação final de contas.
 
-Art. 1.109. Aprovadas as contas, encerra-se a liquidação, e a sociedade se extingue, ao ser averbada no registro próprio a ata da assembléia.
+Art. 1109. Aprovadas as contas, encerra-se a liquidação, e a sociedade se extingue, ao ser averbada no registro próprio a ata da assembléia.
 
 Parágrafo único. O dissidente tem o prazo de trinta dias, a contar da publicação da ata, devidamente averbada, para promover a ação que couber.
 
-Art. 1.110. Encerrada a liquidação, o credor não satisfeito só terá direito a exigir dos sócios, individualmente, o pagamento do seu crédito, até o limite da soma por eles recebida em partilha, e a propor contra o liquidante ação de perdas e danos.
+Art. 1110. Encerrada a liquidação, o credor não satisfeito só terá direito a exigir dos sócios, individualmente, o pagamento do seu crédito, até o limite da soma por eles recebida em partilha, e a propor contra o liquidante ação de perdas e danos.
 
-Art. 1.111. No caso de liquidação judicial, será observado o disposto na lei processual.
+Art. 1111. No caso de liquidação judicial, será observado o disposto na lei processual.
 
-Art. 1.112. No curso de liquidação judicial, o juiz convocará, se necessário, reunião ou assembléia para deliberar sobre os interesses da liquidação, e as presidirá, resolvendo sumariamente as questões suscitadas.
+Art. 1112. No curso de liquidação judicial, o juiz convocará, se necessário, reunião ou assembléia para deliberar sobre os interesses da liquidação, e as presidirá, resolvendo sumariamente as questões suscitadas.
 
 Parágrafo único. As atas das assembléias serão, em cópia autêntica, apensadas ao processo judicial.
 
-CAPÍTULO X
-Da Transformação, da Incorporação, da Fusão e da Cisão das Sociedades
+CAPÍTULO X Da Transformação, da Incorporação, da Fusão e da Cisão das Sociedades
 
-Art. 1.113. O ato de transformação independe de dissolução ou liquidação da sociedade, e obedecerá aos preceitos reguladores da constituição e inscrição próprios do tipo em que vai converter-se.
+Art. 1113. O ato de transformação independe de dissolução ou liquidação da sociedade, e obedecerá aos preceitos reguladores da constituição e inscrição próprios do tipo em que vai converter-se.
 
-Art. 1.114. A transformação depende do consentimento de todos os sócios, salvo se prevista no ato constitutivo, caso em que o dissidente poderá retirar-se da sociedade, aplicando-se, no silêncio do estatuto ou do contrato social, o disposto no art. 1.031.
+Art. 1114. A transformação depende do consentimento de todos os sócios, salvo se prevista no ato constitutivo, caso em que o dissidente poderá retirar-se da sociedade, aplicando-se, no silêncio do estatuto ou do contrato social, o disposto no art. 1031.
 
-Art. 1.115. A transformação não modificará nem prejudicará, em qualquer caso, os direitos dos credores.
+Art. 1115. A transformação não modificará nem prejudicará, em qualquer caso, os direitos dos credores.
 
 Parágrafo único. A falência da sociedade transformada somente produzirá efeitos em relação aos sócios que, no tipo anterior, a eles estariam sujeitos, se o pedirem os titulares de créditos anteriores à transformação, e somente a estes beneficiará.
 
-Art. 1.116. Na incorporação, uma ou várias sociedades são absorvidas por outra, que lhes sucede em todos os direitos e obrigações, devendo todas aprová-la, na forma estabelecida para os respectivos tipos.
+Art. 1116. Na incorporação, uma ou várias sociedades são absorvidas por outra, que lhes sucede em todos os direitos e obrigações, devendo todas aprová-la, na forma estabelecida para os respectivos tipos.
 
-Art. 1.117. A deliberação dos sócios da sociedade incorporada deverá aprovar as bases da operação e o projeto de reforma do ato constitutivo.
+Art. 1117. A deliberação dos sócios da sociedade incorporada deverá aprovar as bases da operação e o projeto de reforma do ato constitutivo.
 
 § 1 o A sociedade que houver de ser incorporada tomará conhecimento desse ato, e, se o aprovar, autorizará os administradores a praticar o necessário à incorporação, inclusive a subscrição em bens pelo valor da diferença que se verificar entre o ativo e o passivo.
 
 § 2 o A deliberação dos sócios da sociedade incorporadora compreenderá a nomeação dos peritos para a avaliação do patrimônio líquido da sociedade, que tenha de ser incorporada.
 
-Art. 1.118. Aprovados os atos da incorporação, a incorporadora declarará extinta a incorporada, e promoverá a respectiva averbação no registro próprio.
+Art. 1118. Aprovados os atos da incorporação, a incorporadora declarará extinta a incorporada, e promoverá a respectiva averbação no registro próprio.
 
-Art. 1.119. A fusão determina a extinção das sociedades que se unem, para formar sociedade nova, que a elas sucederá nos direitos e obrigações.
+Art. 1119. A fusão determina a extinção das sociedades que se unem, para formar sociedade nova, que a elas sucederá nos direitos e obrigações.
 
-Art. 1.120. A fusão será decidida, na forma estabelecida para os respectivos tipos, pelas sociedades que pretendam unir-se.
+Art. 1120. A fusão será decidida, na forma estabelecida para os respectivos tipos, pelas sociedades que pretendam unir-se.
 
 § 1 o Em reunião ou assembléia dos sócios de cada sociedade, deliberada a fusão e aprovado o projeto do ato constitutivo da nova sociedade, bem como o plano de distribuição do capital social, serão nomeados os peritos para a avaliação do patrimônio da sociedade.
 
@@ -4447,9 +4426,9 @@ Art. 1.120. A fusão será decidida, na forma estabelecida para os respectivos t
 
 § 3 o É vedado aos sócios votar o laudo de avaliação do patrimônio da sociedade de que façam parte.
 
-Art. 1.121. Constituída a nova sociedade, aos administradores incumbe fazer inscrever, no registro próprio da sede, os atos relativos à fusão.
+Art. 1121. Constituída a nova sociedade, aos administradores incumbe fazer inscrever, no registro próprio da sede, os atos relativos à fusão.
 
-Art. 1.122. Até noventa dias após publicados os atos relativos à incorporação, fusão ou cisão, o credor anterior, por ela prejudicado, poderá promover judicialmente a anulação deles.
+Art. 1122. Até noventa dias após publicados os atos relativos à incorporação, fusão ou cisão, o credor anterior, por ela prejudicado, poderá promover judicialmente a anulação deles.
 
 § 1 o A consignação em pagamento prejudicará a anulação pleiteada.
 
@@ -4457,53 +4436,52 @@ Art. 1.122. Até noventa dias após publicados os atos relativos à incorporaç�
 
 § 3 o Ocorrendo, no prazo deste artigo, a falência da sociedade incorporadora, da sociedade nova ou da cindida, qualquer credor anterior terá direito a pedir a separação dos patrimônios, para o fim de serem os créditos pagos pelos bens das respectivas massas.
 
-CAPÍTULO XI
-Da Sociedade Dependente de Autorização
+CAPÍTULO XI Da Sociedade Dependente de Autorização
 
-Seção I
-Disposições Gerais
+Seção I Disposições Gerais
 
-Art. 1.123. A sociedade que dependa de autorização do Poder Executivo para funcionar reger-se-á por este título, sem prejuízo do disposto em lei especial.
+Art. 1123. A sociedade que dependa de autorização do Poder Executivo para funcionar reger-se-á por este título, sem prejuízo do disposto em lei especial.
 
 Parágrafo único. A competência para a autorização será sempre do Poder Executivo federal.
 
-Art. 1.124. Na falta de prazo estipulado em lei ou em ato do poder público, será considerada caduca a autorização se a sociedade não entrar em funcionamento nos doze meses seguintes à respectiva publicação.
+Art. 1124. Na falta de prazo estipulado em lei ou em ato do poder público, será considerada caduca a autorização se a sociedade não entrar em funcionamento nos doze meses seguintes à respectiva publicação.
 
-Art. 1.125. Ao Poder Executivo é facultado, a qualquer tempo, cassar a autorização concedida a sociedade nacional ou estrangeira que infringir disposição de ordem pública ou praticar atos contrários aos fins declarados no seu estatuto.
+Art. 1125. Ao Poder Executivo é facultado, a qualquer tempo, cassar a autorização concedida a sociedade nacional ou estrangeira que infringir disposição de ordem pública ou praticar atos contrários aos fins declarados no seu estatuto.
 
-Seção II
-Da Sociedade Nacional
+Seção II Da Sociedade Nacional
 
-Art. 1.126. É nacional a sociedade organizada de conformidade com a lei brasileira e que tenha no País a sede de sua administração.
+Art. 1126. É nacional a sociedade organizada de conformidade com a lei brasileira e que tenha no País a sede de sua administração.
 
 Parágrafo único. Quando a lei exigir que todos ou alguns sócios sejam brasileiros, as ações da sociedade anônima revestirão, no silêncio da lei, a forma nominativa. Qualquer que seja o tipo da sociedade, na sua sede ficará arquivada cópia autêntica do documento comprobatório da nacionalidade dos sócios.
 
-Art. 1.127. Não haverá mudança de nacionalidade de sociedade brasileira sem o consentimento unânime dos sócios ou acionistas.
+Art. 1127. Não haverá mudança de nacionalidade de sociedade brasileira sem o consentimento unânime dos sócios ou acionistas.
 
-Art. 1.128. O requerimento de autorização de sociedade nacional deve ser acompanhado de cópia do contrato, assinada por todos os sócios, ou, tratando-se de sociedade anônima, de cópia, autenticada pelos fundadores, dos documentos exigidos pela lei especial.
+Art. 1128. O requerimento de autorização de sociedade nacional deve ser acompanhado de cópia do contrato, assinada por todos os sócios, ou, tratando-se de sociedade anônima, de cópia, autenticada pelos fundadores, dos documentos exigidos pela lei especial.
 
 Parágrafo único. Se a sociedade tiver sido constituída por escritura pública, bastará juntar-se ao requerimento a respectiva certidão.
 
-Art. 1.129. Ao Poder Executivo é facultado exigir que se procedam a alterações ou aditamento no contrato ou no estatuto, devendo os sócios, ou, tratando-se de sociedade anônima, os fundadores, cumprir as formalidades legais para revisão dos atos constitutivos, e juntar ao processo prova regular.
+Art. 1129. Ao Poder Executivo é facultado exigir que se procedam a alterações ou aditamento no contrato a alterações ou aditamento no contrato ou no estatuto, devendo os sócios, ou, tratando-se de sociedade anônima, os fundadores, cumprir as formalidades legais para revisão dos atos constitutivos, e juntar ao processo prova regular.
 
-Art. 1.130. Ao Poder Executivo é facultado recusar a autorização, se a sociedade não atender às condições econômicas, financeiras ou jurídicas especificadas em lei.
+Com certeza! Seguem os artigos de 1130 a 1205 do Código Civil com a remoção do ponto de separação na casa do milhar.
 
-Art. 1.131. Expedido o decreto de autorização, cumprirá à sociedade publicar os atos referidos nos arts. 1.128 e 1.129, em trinta dias, no órgão oficial da União, cujo exemplar representará prova para inscrição, no registro próprio, dos atos constitutivos da sociedade.
+📜 Artigos do Código Civil (1130 a 1205) Sem Ponto Separador
+Art. 1130. Ao Poder Executivo é facultado recusar a autorização, se a sociedade não atender às condições econômicas, financeiras ou jurídicas especificadas em lei.
+
+Art. 1131. Expedido o decreto de autorização, cumprirá à sociedade publicar os atos referidos nos arts. 1128 e 1129, em trinta dias, no órgão oficial da União, cujo exemplar representará prova para inscrição, no registro próprio, dos atos constitutivos da sociedade.
 
 Parágrafo único. A sociedade promoverá, também no órgão oficial da União e no prazo de trinta dias, a publicação do termo de inscrição.
 
-Art. 1.132. As sociedades anônimas nacionais, que dependam de autorização do Poder Executivo para funcionar, não se constituirão sem obtê-la, quando seus fundadores pretenderem recorrer a subscrição pública para a formação do capital.
+Art. 1132. As sociedades anônimas nacionais, que dependam de autorização do Poder Executivo para funcionar, não se constituirão sem obtê-la, quando seus fundadores pretenderem recorrer a subscrição pública para a formação do capital.
 
 § 1 o Os fundadores deverão juntar ao requerimento cópias autênticas do projeto do estatuto e do prospecto.
 
 § 2 o Obtida a autorização e constituída a sociedade, proceder-se-á à inscrição dos seus atos constitutivos.
 
-Art. 1.133. Dependem de aprovação as modificações do contrato ou do estatuto de sociedade sujeita a autorização do Poder Executivo, salvo se decorrerem de aumento do capital social, em virtude de utilização de reservas ou reavaliação do ativo.
+Art. 1133. Dependem de aprovação as modificações do contrato ou do estatuto de sociedade sujeita a autorização do Poder Executivo, salvo se decorrerem de aumento do capital social, em virtude de utilização de reservas ou reavaliação do ativo.
 
-Seção III
-Da Sociedade Estrangeira
+Seção III Da Sociedade Estrangeira
 
-Art. 1.134. A sociedade estrangeira, qualquer que seja o seu objeto, não pode, sem autorização do Poder Executivo, funcionar no País, ainda que por estabelecimentos subordinados, podendo, todavia, ressalvados os casos expressos em lei, ser acionista de sociedade anônima brasileira.
+Art. 1134. A sociedade estrangeira, qualquer que seja o seu objeto, não pode, sem autorização do Poder Executivo, funcionar no País, ainda que por estabelecimentos subordinados, podendo, todavia, ressalvados os casos expressos em lei, ser acionista de sociedade anônima brasileira.
 
 § 1 o Ao requerimento de autorização devem juntar-se:
 
@@ -4521,11 +4499,11 @@ VI - último balanço.
 
 § 2 o Os documentos serão autenticados, de conformidade com a lei nacional da sociedade requerente, legalizados no consulado brasileiro da respectiva sede e acompanhados de tradução em vernáculo.
 
-Art. 1.135. É facultado ao Poder Executivo, para conceder a autorização, estabelecer condições convenientes à defesa dos interesses nacionais.
+Art. 1135. É facultado ao Poder Executivo, para conceder a autorização, estabelecer condições convenientes à defesa dos interesses nacionais.
 
-Parágrafo único. Aceitas as condições, expedirá o Poder Executivo decreto de autorização, do qual constará o montante de capital destinado às operações no País, cabendo à sociedade promover a publicação dos atos referidos no art. 1.131 e no § 1 o do art. 1.134.
+Parágrafo único. Aceitas as condições, expedirá o Poder Executivo decreto de autorização, do qual constará o montante de capital destinado às operações no País, cabendo à sociedade promover a publicação dos atos referidos no art. 1131 e no § 1 o do art. 1134.
 
-Art. 1.136. A sociedade autorizada não pode iniciar sua atividade antes de inscrita no registro próprio do lugar em que se deva estabelecer.
+Art. 1136. A sociedade autorizada não pode iniciar sua atividade antes de inscrita no registro próprio do lugar em que se deva estabelecer.
 
 § 1 o O requerimento de inscrição será instruído com exemplar da publicação exigida no parágrafo único do artigo antecedente, acompanhado de documento do depósito em dinheiro, em estabelecimento bancário oficial, do capital ali mencionado.
 
@@ -4541,69 +4519,65 @@ IV - capital destinado às operações no País;
 
 V - individuação do seu representante permanente.
 
-§ 3 o Inscrita a sociedade, promover-se-á a publicação determinada no parágrafo único do art. 1.131.
+§ 3 o Inscrita a sociedade, promover-se-á a publicação determinada no parágrafo único do art. 1131.
 
-Art. 1.137. A sociedade estrangeira autorizada a funcionar ficará sujeita às leis e aos tribunais brasileiros, quanto aos atos ou operações praticados no Brasil.
+Art. 1137. A sociedade estrangeira autorizada a funcionar ficará sujeita às leis e aos tribunais brasileiros, quanto aos atos ou operações praticados no Brasil.
 
 Parágrafo único. A sociedade estrangeira funcionará no território nacional com o nome que tiver em seu país de origem, podendo acrescentar as palavras "do Brasil" ou "para o Brasil".
 
-Art. 1.138. A sociedade estrangeira autorizada a funcionar é obrigada a ter, permanentemente, representante no Brasil, com poderes para resolver quaisquer questões e receber citação judicial pela sociedade.
+Art. 1138. A sociedade estrangeira autorizada a funcionar é obrigada a ter, permanentemente, representante no Brasil, com poderes para resolver quaisquer questões e receber citação judicial pela sociedade.
 
 Parágrafo único. O representante somente pode agir perante terceiros depois de arquivado e averbado o instrumento de sua nomeação.
 
-Art. 1.139. Qualquer modificação no contrato ou no estatuto dependerá da aprovação do Poder Executivo, para produzir efeitos no território nacional.
+Art. 1139. Qualquer modificação no contrato ou no estatuto dependerá da aprovação do Poder Executivo, para produzir efeitos no território nacional.
 
-Art. 1.140. A sociedade estrangeira deve, sob pena de lhe ser cassada a autorização, reproduzir no órgão oficial da União, e do Estado, se for o caso, as publicações que, segundo a sua lei nacional, seja obrigada a fazer relativamente ao balanço patrimonial e ao de resultado econômico, bem como aos atos de sua administração.
+Art. 1140. A sociedade estrangeira deve, sob pena de lhe ser cassada a autorização, reproduzir no órgão oficial da União, e do Estado, se for o caso, as publicações que, segundo a sua lei nacional, seja obrigada a fazer relativamente ao balanço patrimonial e ao de resultado econômico, bem como aos atos de sua administração.
 
 Parágrafo único. Sob pena, também, de lhe ser cassada a autorização, a sociedade estrangeira deverá publicar o balanço patrimonial e o de resultado econômico das sucursais, filiais ou agências existentes no País.
 
-Art. 1.141. Mediante autorização do Poder Executivo, a sociedade estrangeira admitida a funcionar no País pode nacionalizar-se, transferindo sua sede para o Brasil.
+Art. 1141. Mediante autorização do Poder Executivo, a sociedade estrangeira admitida a funcionar no País pode nacionalizar-se, transferindo sua sede para o Brasil.
 
-§ 1 o Para o fim previsto neste artigo, deverá a sociedade, por seus representantes, oferecer, com o requerimento, os documentos exigidos no art. 1.134, e ainda a prova da realização do capital, pela forma declarada no contrato, ou no estatuto, e do ato em que foi deliberada a nacionalização.
+§ 1 o Para o fim previsto neste artigo, deverá a sociedade, por seus representantes, oferecer, com o requerimento, os documentos exigidos no art. 1134, e ainda a prova da realização do capital, pela forma declarada no contrato, ou no estatuto, e do ato em que foi deliberada a nacionalização.
 
 § 2 o O Poder Executivo poderá impor as condições que julgar convenientes à defesa dos interesses nacionais.
 
 § 3 o Aceitas as condições pelo representante, proceder-se-á, após a expedição do decreto de autorização, à inscrição da sociedade e publicação do respectivo termo.
 
-TÍTULO III
-Do Estabelecimento
+TÍTULO III Do Estabelecimento
 
-CAPÍTULO ÚNICO
-DISPOSIÇÕES GERAIS
+CAPÍTULO ÚNICO DISPOSIÇÕES GERAIS
 
-Art. 1.142. Considera-se estabelecimento todo complexo de bens organizado, para exercício da empresa, por empresário, ou por sociedade empresária.     (Vide Lei nº 14.195, de 2021)
+Art. 1142. Considera-se estabelecimento todo complexo de bens organizado, para exercício da empresa, por empresário, ou por sociedade empresária. (Vide Lei nº 14.195, de 2021)
 
-§ 1º O estabelecimento não se confunde com o local onde se exerce a atividade empresarial, que poderá ser físico ou virtual.   (Incluído pela Lei nº 14.382, de 2022)
+§ 1º O estabelecimento não se confunde com o local onde se exerce a atividade empresarial, que poderá ser físico ou virtual. (Incluído pela Lei nº 14.382, de 2022)
 
-§ 2º Quando o local onde se exerce a atividade empresarial for virtual, o endereço informado para fins de registro poderá ser, conforme o caso, o endereço do empresário individual ou o de um dos sócios da sociedade empresária.   (Incluído pela Lei nº 14.382, de 2022)
+§ 2º Quando o local onde se exerce a atividade empresarial for virtual, o endereço informado para fins de registro poderá ser, conforme o caso, o endereço do empresário individual ou o de um dos sócios da sociedade empresária. (Incluído pela Lei nº 14.382, de 2022)
 
-§ 3º Quando o local onde se exerce a atividade empresarial for físico, a fixação do horário de funcionamento competirá ao Município, observada a regra geral prevista no inciso II do caput do art. 3º da Lei nº 13.874, de 20 de setembro de 2019.   (Incluído pela Lei nº 14.382, de 2022)
+§ 3º Quando o local onde se exerce a atividade empresarial for físico, a fixação do horário de funcionamento competirá ao Município, observada a regra geral prevista no inciso II do caput do art. 3º da Lei nº 13.874, de 20 de setembro de 2019. (Incluído pela Lei nº 14.382, de 2022)
 
-Art. 1.143. Pode o estabelecimento ser objeto unitário de direitos e de negócios jurídicos, translativos ou constitutivos, que sejam compatíveis com a sua natureza.
+Art. 1143. Pode o estabelecimento ser objeto unitário de direitos e de negócios jurídicos, translativos ou constitutivos, que sejam compatíveis com a sua natureza.
 
-Art. 1.144. O contrato que tenha por objeto a alienação, o usufruto ou arrendamento do estabelecimento, só produzirá efeitos quanto a terceiros depois de averbado à margem da inscrição do empresário, ou da sociedade empresária, no Registro Público de Empresas Mercantis, e de publicado na imprensa oficial.
+Art. 1144. O contrato que tenha por objeto a alienação, o usufruto ou arrendamento do estabelecimento, só produzirá efeitos quanto a terceiros depois de averbado à margem da inscrição do empresário, ou da sociedade empresária, no Registro Público de Empresas Mercantis, e de publicado na imprensa oficial.
 
-Art. 1.145. Se ao alienante não restarem bens suficientes para solver o seu passivo, a eficácia da alienação do estabelecimento depende do pagamento de todos os credores, ou do consentimento destes, de modo expresso ou tácito, em trinta dias a partir de sua notificação.
+Art. 1145. Se ao alienante não restarem bens suficientes para solver o seu passivo, a eficácia da alienação do estabelecimento depende do pagamento de todos os credores, ou do consentimento destes, de modo expresso ou tácito, em trinta dias a partir de sua notificação.
 
-Art. 1.146. O adquirente do estabelecimento responde pelo pagamento dos débitos anteriores à transferência, desde que regularmente contabilizados, continuando o devedor primitivo solidariamente obrigado pelo prazo de um ano, a partir, quanto aos créditos vencidos, da publicação, e, quanto aos outros, da data do vencimento.
+Art. 1146. O adquirente do estabelecimento responde pelo pagamento dos débitos anteriores à transferência, desde que regularmente contabilizados, continuando o devedor primitivo solidariamente obrigado pelo prazo de um ano, a partir, quanto aos créditos vencidos, da publicação, e, quanto aos outros, da data do vencimento.
 
-Art. 1.147. Não havendo autorização expressa, o alienante do estabelecimento não pode fazer concorrência ao adquirente, nos cinco anos subseqüentes à transferência.
+Art. 1147. Não havendo autorização expressa, o alienante do estabelecimento não pode fazer concorrência ao adquirente, nos cinco anos subseqüentes à transferência.
 
 Parágrafo único. No caso de arrendamento ou usufruto do estabelecimento, a proibição prevista neste artigo persistirá durante o prazo do contrato.
 
-Art. 1.148. Salvo disposição em contrário, a transferência importa a sub-rogação do adquirente nos contratos estipulados para exploração do estabelecimento, se não tiverem caráter pessoal, podendo os terceiros rescindir o contrato em noventa dias a contar da publicação da transferência, se ocorrer justa causa, ressalvada, neste caso, a responsabilidade do alienante.
+Art. 1148. Salvo disposição em contrário, a transferência importa a sub-rogação do adquirente nos contratos estipulados para exploração do estabelecimento, se não tiverem caráter pessoal, podendo os terceiros rescindir o contrato em noventa dias a contar da publicação da transferência, se ocorrer justa causa, ressalvada, neste caso, a responsabilidade do alienante.
 
-Art. 1.149. A cessão dos créditos referentes ao estabelecimento transferido produzirá efeito em relação aos respectivos devedores, desde o momento da publicação da transferência, mas o devedor ficará exonerado se de boa-fé pagar ao cedente.
+Art. 1149. A cessão dos créditos referentes ao estabelecimento transferido produzirá efeito em relação aos respectivos devedores, desde o momento da publicação da transferência, mas o devedor ficará exonerado se de boa-fé pagar ao cedente.
 
-TÍTULO IV
-Dos Institutos Complementares
+TÍTULO IV Dos Institutos Complementares
 
-CAPÍTULO I
-Do Registro
+CAPÍTULO I Do Registro
 
-Art. 1.150. O empresário e a sociedade empresária vinculam-se ao Registro Público de Empresas Mercantis a cargo das Juntas Comerciais, e a sociedade simples ao Registro Civil das Pessoas Jurídicas, o qual deverá obedecer às normas fixadas para aquele registro, se a sociedade simples adotar um dos tipos de sociedade empresária.
+Art. 1150. O empresário e a sociedade empresária vinculam-se ao Registro Público de Empresas Mercantis a cargo das Juntas Comerciais, e a sociedade simples ao Registro Civil das Pessoas Jurídicas, o qual deverá obedecer às normas fixadas para aquele registro, se a sociedade simples adotar um dos tipos de sociedade empresária.
 
-Art. 1.151. O registro dos atos sujeitos à formalidade exigida no artigo antecedente será requerido pela pessoa obrigada em lei, e, no caso de omissão ou demora, pelo sócio ou qualquer interessado.
+Art. 1151. O registro dos atos sujeitos à formalidade exigida no artigo antecedente será requerido pela pessoa obrigada em lei, e, no caso de omissão ou demora, pelo sócio ou qualquer interessado.
 
 § 1 o Os documentos necessários ao registro deverão ser apresentados no prazo de trinta dias, contado da lavratura dos atos respectivos.
 
@@ -4611,7 +4585,7 @@ Art. 1.151. O registro dos atos sujeitos à formalidade exigida no artigo antece
 
 § 3 o As pessoas obrigadas a requerer o registro responderão por perdas e danos, em caso de omissão ou demora.
 
-Art. 1.152. Cabe ao órgão incumbido do registro verificar a regularidade das publicações determinadas em lei, de acordo com o disposto nos parágrafos deste artigo.
+Art. 1152. Cabe ao órgão incumbido do registro verificar a regularidade das publicações determinadas em lei, de acordo com o disposto nos parágrafos deste artigo.
 
 § 1 o Salvo exceção expressa, as publicações ordenadas neste Livro serão feitas no órgão oficial da União ou do Estado, conforme o local da sede do empresário ou da sociedade, e em jornal de grande circulação.
 
@@ -4619,28 +4593,27 @@ Art. 1.152. Cabe ao órgão incumbido do registro verificar a regularidade das p
 
 § 3 o O anúncio de convocação da assembléia de sócios será publicado por três vezes, ao menos, devendo mediar, entre a data da primeira inserção e a da realização da assembléia, o prazo mínimo de oito dias, para a primeira convocação, e de cinco dias, para as posteriores.
 
-Art. 1.153. Cumpre à autoridade competente, antes de efetivar o registro, verificar a autenticidade e a legitimidade do signatário do requerimento, bem como fiscalizar a observância das prescrições legais concernentes ao ato ou aos documentos apresentados.
+Art. 1153. Cumpre à autoridade competente, antes de efetivar o registro, verificar a autenticidade e a legitimidade do signatário do requerimento, bem como fiscalizar a observância das prescrições legais concernentes ao ato ou aos documentos apresentados.
 
 Parágrafo único. Das irregularidades encontradas deve ser notificado o requerente, que, se for o caso, poderá saná-las, obedecendo às formalidades da lei.
 
-Art. 1.154. O ato sujeito a registro, ressalvadas disposições especiais da lei, não pode, antes do cumprimento das respectivas formalidades, ser oposto a terceiro, salvo prova de que este o conhecia.
+Art. 1154. O ato sujeito a registro, ressalvadas disposições especiais da lei, não pode, antes do cumprimento das respectivas formalidades, ser oposto a terceiro, salvo prova de que este o conhecia.
 
 Parágrafo único. O terceiro não pode alegar ignorância, desde que cumpridas as referidas formalidades.
 
-CAPÍTULO II
-DO NOME EMPRESARIAL
+CAPÍTULO II DO NOME EMPRESARIAL
 
-Art. 1.155. Considera-se nome empresarial a firma ou a denominação adotada, de conformidade com este Capítulo, para o exercício de empresa.
+Art. 1155. Considera-se nome empresarial a firma ou a denominação adotada, de conformidade com este Capítulo, para o exercício de empresa.
 
 Parágrafo único. Equipara-se ao nome empresarial, para os efeitos da proteção da lei, a denominação das sociedades simples, associações e fundações.
 
-Art. 1.156. O empresário opera sob firma constituída por seu nome, completo ou abreviado, aditando-lhe, se quiser, designação mais precisa da sua pessoa ou do gênero de atividade.
+Art. 1156. O empresário opera sob firma constituída por seu nome, completo ou abreviado, aditando-lhe, se quiser, designação mais precisa da sua pessoa ou do gênero de atividade.
 
-Art. 1.157. A sociedade em que houver sócios de responsabilidade ilimitada operará sob firma, na qual somente os nomes daqueles poderão figurar, bastando para formá-la aditar ao nome de um deles a expressão "e companhia" ou sua abreviatura.
+Art. 1157. A sociedade em que houver sócios de responsabilidade ilimitada operará sob firma, na qual somente os nomes daqueles poderão figurar, bastando para formá-la aditar ao nome de um deles a expressão "e companhia" ou sua abreviatura.
 
 Parágrafo único. Ficam solidária e ilimitadamente responsáveis pelas obrigações contraídas sob a firma social aqueles que, por seus nomes, figurarem na firma da sociedade de que trata este artigo.
 
-Art. 1.158. Pode a sociedade limitada adotar firma ou denominação, integradas pela palavra final "limitada" ou a sua abreviatura.
+Art. 1158. Pode a sociedade limitada adotar firma ou denominação, integradas pela palavra final "limitada" ou a sua abreviatura.
 
 § 1 o A firma será composta com o nome de um ou mais sócios, desde que pessoas físicas, de modo indicativo da relação social.
 
@@ -4648,112 +4621,107 @@ Art. 1.158. Pode a sociedade limitada adotar firma ou denominação, integradas 
 
 § 3 o A omissão da palavra "limitada" determina a responsabilidade solidária e ilimitada dos administradores que assim empregarem a firma ou a denominação da sociedade.
 
-Art. 1.159. A sociedade cooperativa funciona sob denominação integrada pelo vocábulo "cooperativa".
+Art. 1159. A sociedade cooperativa funciona sob denominação integrada pelo vocábulo "cooperativa".
 
-Art. 1.160. A sociedade anônima opera sob denominação integrada pelas expressões ‘sociedade anônima’ ou ‘companhia’, por extenso ou abreviadamente, facultada a designação do objeto social.   (Redação dada pela Lei nº 14.382, de 2022)
+Art. 1160. A sociedade anônima opera sob denominação integrada pelas expressões ‘sociedade anônima’ ou ‘companhia’, por extenso ou abreviadamente, facultada a designação do objeto social. (Redação dada pela Lei nº 14.382, de 2022)
 
 Parágrafo único. Pode constar da denominação o nome do fundador, acionista, ou pessoa que haja concorrido para o bom êxito da formação da empresa.
 
-Art. 1.161. A sociedade em comandita por ações pode, em lugar de firma, adotar denominação aditada da expressão ‘comandita por ações’, facultada a designação do objeto social.   (Redação dada pela Lei nº 14.382, de 2022)
+Art. 1161. A sociedade em comandita por ações pode, em lugar de firma, adotar denominação aditada da expressão ‘comandita por ações’, facultada a designação do objeto social. (Redação dada pela Lei nº 14.382, de 2022)
 
-Art. 1.162. A sociedade em conta de participação não pode ter firma ou denominação.
+Art. 1162. A sociedade em conta de participação não pode ter firma ou denominação.
 
-Art. 1.163. O nome de empresário deve distinguir-se de qualquer outro já inscrito no mesmo registro.
+Art. 1163. O nome de empresário deve distinguir-se de qualquer outro já inscrito no mesmo registro.
 
 Parágrafo único. Se o empresário tiver nome idêntico ao de outros já inscritos, deverá acrescentar designação que o distinga.
 
-Art. 1.164. O nome empresarial não pode ser objeto de alienação.
+Art. 1164. O nome empresarial não pode ser objeto de alienação.
 
 Parágrafo único. O adquirente de estabelecimento, por ato entre vivos, pode, se o contrato o permitir, usar o nome do alienante, precedido do seu próprio, com a qualificação de sucessor.
 
-Art. 1.165. O nome de sócio que vier a falecer, for excluído ou se retirar, não pode ser conservado na firma social.
+Art. 1165. O nome de sócio que vier a falecer, for excluído ou se retirar, não pode ser conservado na firma social.
 
-Art. 1.166. A inscrição do empresário, ou dos atos constitutivos das pessoas jurídicas, ou as respectivas averbações, no registro próprio, asseguram o uso exclusivo do nome nos limites do respectivo Estado.
+Art. 1166. A inscrição do empresário, ou dos atos constitutivos das pessoas jurídicas, ou as respectivas averbações, no registro próprio, asseguram o uso exclusivo do nome nos limites do respectivo Estado.
 
 Parágrafo único. O uso previsto neste artigo estender-se-á a todo o território nacional, se registrado na forma da lei especial.
 
-Art. 1.167. Cabe ao prejudicado, a qualquer tempo, ação para anular a inscrição do nome empresarial feita com violação da lei ou do contrato.
+Art. 1167. Cabe ao prejudicado, a qualquer tempo, ação para anular a inscrição do nome empresarial feita com violação da lei ou do contrato.
 
-Art. 1.168. A inscrição do nome empresarial será cancelada, a requerimento de qualquer interessado, quando cessar o exercício da atividade para que foi adotado, ou quando ultimar-se a liquidação da sociedade que o inscreveu.
+Art. 1168. A inscrição do nome empresarial será cancelada, a requerimento de qualquer interessado, quando cessar o exercício da atividade para que foi adotado, ou quando ultimar-se a liquidação da sociedade que o inscreveu.
 
-CAPÍTULO III
-Dos Prepostos
+CAPÍTULO III Dos Prepostos
 
-Seção I
-Disposições Gerais
+Seção I Disposições Gerais
 
-Art. 1.169. O preposto não pode, sem autorização escrita, fazer-se substituir no desempenho da preposição, sob pena de responder pessoalmente pelos atos do substituto e pelas obrigações por ele contraídas.
+Art. 1169. O preposto não pode, sem autorização escrita, fazer-se substituir no desempenho da preposição, sob pena de responder pessoalmente pelos atos do substituto e pelas obrigações por ele contraídas.
 
-Art. 1.170. O preposto, salvo autorização expressa, não pode negociar por conta própria ou de terceiro, nem participar, embora indiretamente, de operação do mesmo gênero da que lhe foi cometida, sob pena de responder por perdas e danos e de serem retidos pelo preponente os lucros da operação.
+Art. 1170. O preposto, salvo autorização expressa, não pode negociar por conta própria ou de terceiro, nem participar, embora indiretamente, de operação do mesmo gênero da que lhe foi cometida, sob pena de responder por perdas e danos e de serem retidos pelo preponente os lucros da operação.
 
-Art. 1.171. Considera-se perfeita a entrega de papéis, bens ou valores ao preposto, encarregado pelo preponente, se os recebeu sem protesto, salvo nos casos em que haja prazo para reclamação.
+Art. 1171. Considera-se perfeita a entrega de papéis, bens ou valores ao preposto, encarregado pelo preponente, se os recebeu sem protesto, salvo nos casos em que haja prazo para reclamação.
 
-Seção II
-Do Gerente
+Seção II Do Gerente
 
-Art. 1.172. Considera-se gerente o preposto permanente no exercício da empresa, na sede desta, ou em sucursal, filial ou agência.
+Art. 1172. Considera-se gerente o preposto permanente no exercício da empresa, na sede desta, ou em sucursal, filial ou agência.
 
-Art. 1.173. Quando a lei não exigir poderes especiais, considera-se o gerente autorizado a praticar todos os atos necessários ao exercício dos poderes que lhe foram outorgados.
+Art. 1173. Quando a lei não exigir poderes especiais, considera-se o gerente autorizado a praticar todos os atos necessários ao exercício dos poderes que lhe foram outorgados.
 
 Parágrafo único. Na falta de estipulação diversa, consideram-se solidários os poderes conferidos a dois ou mais gerentes.
 
-Art. 1.174. As limitações contidas na outorga de poderes, para serem opostas a terceiros, dependem do arquivamento e averbação do instrumento no Registro Público de Empresas Mercantis, salvo se provado serem conhecidas da pessoa que tratou com o gerente.
+Art. 1174. As limitações contidas na outorga de poderes, para serem opostas a terceiros, dependem do arquivamento e averbação do instrumento no Registro Público de Empresas Mercantis, salvo se provado serem conhecidas da pessoa que tratou com o gerente.
 
 Parágrafo único. Para o mesmo efeito e com idêntica ressalva, deve a modificação ou revogação do mandato ser arquivada e averbada no Registro Público de Empresas Mercantis.
 
-Art. 1.175. O preponente responde com o gerente pelos atos que este pratique em seu próprio nome, mas à conta daquele.
+Art. 1175. O preponente responde com o gerente pelos atos que este pratique em seu próprio nome, mas à conta daquele.
 
-Art. 1.176. O gerente pode estar em juízo em nome do preponente, pelas obrigações resultantes do exercício da sua função.
+Art. 1176. O gerente pode estar em juízo em nome do preponente, pelas obrigações resultantes do exercício da sua função.
 
-Seção III
-Do Contabilista e outros Auxiliares
+Seção III Do Contabilista e outros Auxiliares
 
-Art. 1.177. Os assentos lançados nos livros ou fichas do preponente, por qualquer dos prepostos encarregados de sua escrituração, produzem, salvo se houver procedido de má-fé, os mesmos efeitos como se o fossem por aquele.
+Art. 1177. Os assentos lançados nos livros ou fichas do preponente, por qualquer dos prepostos encarregados de sua escrituração, produzem, salvo se houver procedido de má-fé, os mesmos efeitos como se o fossem por aquele.
 
 Parágrafo único. No exercício de suas funções, os prepostos são pessoalmente responsáveis, perante os preponentes, pelos atos culposos; e, perante terceiros, solidariamente com o preponente, pelos atos dolosos.
 
-Art. 1.178. Os preponentes são responsáveis pelos atos de quaisquer prepostos, praticados nos seus estabelecimentos e relativos à atividade da empresa, ainda que não autorizados por escrito.
+Art. 1178. Os preponentes são responsáveis pelos atos de quaisquer prepostos, praticados nos seus estabelecimentos e relativos à atividade da empresa, ainda que não autorizados por escrito.
 
 Parágrafo único. Quando tais atos forem praticados fora do estabelecimento, somente obrigarão o preponente nos limites dos poderes conferidos por escrito, cujo instrumento pode ser suprido pela certidão ou cópia autêntica do seu teor.
 
-CAPÍTULO IV
-Da Escrituração
+CAPÍTULO IV Da Escrituração
 
-Art. 1.179. O empresário e a sociedade empresária são obrigados a seguir um sistema de contabilidade, mecanizado ou não, com base na escrituração uniforme de seus livros, em correspondência com a documentação respectiva, e a levantar anualmente o balanço patrimonial e o de resultado econômico.
+Art. 1179. O empresário e a sociedade empresária são obrigados a seguir um sistema de contabilidade, mecanizado ou não, com base na escrituração uniforme de seus livros, em correspondência com a documentação respectiva, e a levantar anualmente o balanço patrimonial e o de resultado econômico.
 
-§ 1 o Salvo o disposto no art. 1.180, o número e a espécie de livros ficam a critério dos interessados.
+§ 1 o Salvo o disposto no art. 1180, o número e a espécie de livros ficam a critério dos interessados.
 
 § 2 o É dispensado das exigências deste artigo o pequeno empresário a que se refere o art. 970.
 
-Art. 1.180. Além dos demais livros exigidos por lei, é indispensável o Diário, que pode ser substituído por fichas no caso de escrituração mecanizada ou eletrônica.
+Art. 1180. Além dos demais livros exigidos por lei, é indispensável o Diário, que pode ser substituído por fichas no caso de escrituração mecanizada ou eletrônica.
 
 Parágrafo único. A adoção de fichas não dispensa o uso de livro apropriado para o lançamento do balanço patrimonial e do de resultado econômico.
 
-Art. 1.181. Salvo disposição especial de lei, os livros obrigatórios e, se for o caso, as fichas, antes de postos em uso, devem ser autenticados no Registro Público de Empresas Mercantis.
+Art. 1181. Salvo disposição especial de lei, os livros obrigatórios e, se for o caso, as fichas, antes de postos em uso, devem ser autenticados no Registro Público de Empresas Mercantis.
 
 Parágrafo único. A autenticação não se fará sem que esteja inscrito o empresário, ou a sociedade empresária, que poderá fazer autenticar livros não obrigatórios.
 
-Art. 1.182. Sem prejuízo do disposto no art. 1.174, a escrituração ficará sob a responsabilidade de contabilista legalmente habilitado, salvo se nenhum houver na localidade.
+Art. 1182. Sem prejuízo do disposto no art. 1174, a escrituração ficará sob a responsabilidade de contabilista legalmente habilitado, salvo se nenhum houver na localidade.
 
-Art. 1.183. A escrituração será feita em idioma e moeda corrente nacionais e em forma contábil, por ordem cronológica de dia, mês e ano, sem intervalos em branco, nem entrelinhas, borrões, rasuras, emendas ou transportes para as margens.
+Art. 1183. A escrituração será feita em idioma e moeda corrente nacionais e em forma contábil, por ordem cronológica de dia, mês e ano, sem intervalos em branco, nem entrelinhas, borrões, rasuras, emendas ou transportes para as margens.
 
 Parágrafo único. É permitido o uso de código de números ou de abreviaturas, que constem de livro próprio, regularmente autenticado.
 
-Art. 1.184. No Diário serão lançadas, com individuação, clareza e caracterização do documento respectivo, dia a dia, por escrita direta ou reprodução, todas as operações relativas ao exercício da empresa.
+Art. 1184. No Diário serão lançadas, com individuação, clareza e caracterização do documento respectivo, dia a dia, por escrita direta ou reprodução, todas as operações relativas ao exercício da empresa.
 
 § 1 o Admite-se a escrituração resumida do Diário, com totais que não excedam o período de trinta dias, relativamente a contas cujas operações sejam numerosas ou realizadas fora da sede do estabelecimento, desde que utilizados livros auxiliares regularmente autenticados, para registro individualizado, e conservados os documentos que permitam a sua perfeita verificação.
 
 § 2 o Serão lançados no Diário o balanço patrimonial e o de resultado econômico, devendo ambos ser assinados por técnico em Ciências Contábeis legalmente habilitado e pelo empresário ou sociedade empresária.
 
-Art. 1.185. O empresário ou sociedade empresária que adotar o sistema de fichas de lançamentos poderá substituir o livro Diário pelo livro Balancetes Diários e Balanços, observadas as mesmas formalidades extrínsecas exigidas para aquele.
+Art. 1185. O empresário ou sociedade empresária que adotar o sistema de fichas de lançamentos poderá substituir o livro Diário pelo livro Balancetes Diários e Balanços, observadas as mesmas formalidades extrínsecas exigidas para aquele.
 
-Art. 1.186. O livro Balancetes Diários e Balanços será escriturado de modo que registre:
+Art. 1186. O livro Balancetes Diários e Balanços será escriturado de modo que registre:
 
 I - a posição diária de cada uma das contas ou títulos contábeis, pelo respectivo saldo, em forma de balancetes diários;
 
 II - o balanço patrimonial e o de resultado econômico, no encerramento do exercício.
 
-Art. 1.187. Na coleta dos elementos para o inventário serão observados os critérios de avaliação a seguir determinados:
+Art. 1187. Na coleta dos elementos para o inventário serão observados os critérios de avaliação a seguir determinados:
 
 I - os bens destinados à exploração da atividade serão avaliados pelo custo de aquisição, devendo, na avaliação dos que se desgastam ou depreciam com o uso, pela ação do tempo ou outros fatores, atender-se à desvalorização respectiva, criando-se fundos de amortização para assegurar-lhes a substituição ou a conservação do valor;
 
@@ -4771,66 +4739,61 @@ II - os juros pagos aos acionistas da sociedade anônima, no período antecedent
 
 III - a quantia efetivamente paga a título de aviamento de estabelecimento adquirido pelo empresário ou sociedade.
 
-Art. 1.188. O balanço patrimonial deverá exprimir, com fidelidade e clareza, a situação real da empresa e, atendidas as peculiaridades desta, bem como as disposições das leis especiais, indicará, distintamente, o ativo e o passivo.
+Art. 1188. O balanço patrimonial deverá exprimir, com fidelidade e clareza, a situação real da empresa e, atendidas as peculiaridades desta, bem como as disposições das leis especiais, indicará, distintamente, o ativo e o passivo.
 
 Parágrafo único. Lei especial disporá sobre as informações que acompanharão o balanço patrimonial, em caso de sociedades coligadas.
 
-Art. 1.189. O balanço de resultado econômico, ou demonstração da conta de lucros e perdas, acompanhará o balanço patrimonial e dele constarão crédito e débito, na forma da lei especial.
+Art. 1189. O balanço de resultado econômico, ou demonstração da conta de lucros e perdas, acompanhará o balanço patrimonial e dele constarão crédito e débito, na forma da lei especial.
 
-Art. 1.190. Ressalvados os casos previstos em lei, nenhuma autoridade, juiz ou tribunal, sob qualquer pretexto, poderá fazer ou ordenar diligência para verificar se o empresário ou a sociedade empresária observam, ou não, em seus livros e fichas, as formalidades prescritas em lei.
+Art. 1190. Ressalvados os casos previstos em lei, nenhuma autoridade, juiz ou tribunal, sob qualquer pretexto, poderá fazer ou ordenar diligência para verificar se o empresário ou a sociedade empresária observam, ou não, em seus livros e fichas, as formalidades prescritas em lei.
 
-Art. 1.191. O juiz só poderá autorizar a exibição integral dos livros e papéis de escrituração quando necessária para resolver questões relativas a sucessão, comunhão ou sociedade, administração ou gestão à conta de outrem, ou em caso de falência.
+Art. 1191. O juiz só poderá autorizar a exibição integral dos livros e papéis de escrituração quando necessária para resolver questões relativas a sucessão, comunhão ou sociedade, administração ou gestão à conta de outrem, ou em caso de falência.
 
 § 1 o O juiz ou tribunal que conhecer de medida cautelar ou de ação pode, a requerimento ou de ofício, ordenar que os livros de qualquer das partes, ou de ambas, sejam examinados na presença do empresário ou da sociedade empresária a que pertencerem, ou de pessoas por estes nomeadas, para deles se extrair o que interessar à questão.
 
 § 2 o Achando-se os livros em outra jurisdição, nela se fará o exame, perante o respectivo juiz.
 
-Art. 1.192. Recusada a apresentação dos livros, nos casos do artigo antecedente, serão apreendidos judicialmente e, no do seu § 1 o , ter-se-á como verdadeiro o alegado pela parte contrária para se provar pelos livros.
+Art. 1192. Recusada a apresentação dos livros, nos casos do artigo antecedente, serão apreendidos judicialmente e, no do seu § 1 o , ter-se-á como verdadeiro o alegado pela parte contrária para se provar pelos livros.
 
 Parágrafo único. A confissão resultante da recusa pode ser elidida por prova documental em contrário.
 
-Art. 1.193. As restrições estabelecidas neste Capítulo ao exame da escrituração, em parte ou por inteiro, não se aplicam às autoridades fazendárias, no exercício da fiscalização do pagamento de impostos, nos termos estritos das respectivas leis especiais.
+Art. 1193. As restrições estabelecidas neste Capítulo ao exame da escrituração, em parte ou por inteiro, não se aplicam às autoridades fazendárias, no exercício da fiscalização do pagamento de impostos, nos termos estritos das respectivas leis especiais.
 
-Art. 1.194. O empresário e a sociedade empresária são obrigados a conservar em boa guarda toda a escrituração, correspondência e mais papéis concernentes à sua atividade, enquanto não ocorrer prescrição ou decadência no tocante aos atos neles consignados.
+Art. 1194. O empresário e a sociedade empresária são obrigados a conservar em boa guarda toda a escrituração, correspondência e mais papéis concernentes à sua atividade, enquanto não ocorrer prescrição ou decadência no tocante aos atos neles consignados.
 
-Art. 1.195. As disposições deste Capítulo aplicam-se às sucursais, filiais ou agências, no Brasil, do empresário ou sociedade com sede em país estrangeiro.
+Art. 1195. As disposições deste Capítulo aplicam-se às sucursais, filiais ou agências, no Brasil, do empresário ou sociedade com sede em país estrangeiro.
 
-LIVRO III
-Do Direito das Coisas
+LIVRO III Do Direito das Coisas
 
-TÍTULO I
-Da posse
+TÍTULO I Da posse
 
-CAPÍTULO I
-Da Posse e sua Classificação
+CAPÍTULO I Da Posse e sua Classificação
 
-Art. 1.196. Considera-se possuidor todo aquele que tem de fato o exercício, pleno ou não, de algum dos poderes inerentes à propriedade.
+Art. 1196. Considera-se possuidor todo aquele que tem de fato o exercício, pleno ou não, de algum dos poderes inerentes à propriedade.
 
-Art. 1.197. A posse direta, de pessoa que tem a coisa em seu poder, temporariamente, em virtude de direito pessoal, ou real, não anula a indireta, de quem aquela foi havida, podendo o possuidor direto defender a sua posse contra o indireto.
+Art. 1197. A posse direta, de pessoa que tem a coisa em seu poder, temporariamente, em virtude de direito pessoal, ou real, não anula a indireta, de quem aquela foi havida, podendo o possuidor direto defender a sua posse contra o indireto.
 
-Art. 1.198. Considera-se detentor aquele que, achando-se em relação de dependência para com outro, conserva a posse em nome deste e em cumprimento de ordens ou instruções suas.
+Art. 1198. Considera-se detentor aquele que, achando-se em relação de dependência para com outro, conserva a posse em nome deste e em cumprimento de ordens ou instruções suas.
 
 Parágrafo único. Aquele que começou a comportar-se do modo como prescreve este artigo, em relação ao bem e à outra pessoa, presume-se detentor, até que prove o contrário.
 
-Art. 1.199. Se duas ou mais pessoas possuírem coisa indivisa, poderá cada uma exercer sobre ela atos possessórios, contanto que não excluam os dos outros compossuidores.
+Art. 1199. Se duas ou mais pessoas possuírem coisa indivisa, poderá cada uma exercer sobre ela atos possessórios, contanto que não excluam os dos outros compossuidores.
 
-Art. 1.200. É justa a posse que não for violenta, clandestina ou precária.
+Art. 1200. É justa a posse que não for violenta, clandestina ou precária.
 
-Art. 1.201. É de boa-fé a posse, se o possuidor ignora o vício, ou o obstáculo que impede a aquisição da coisa.
+Art. 1201. É de boa-fé a posse, se o possuidor ignora o vício, ou o obstáculo que impede a aquisição da coisa.
 
 Parágrafo único. O possuidor com justo título tem por si a presunção de boa-fé, salvo prova em contrário, ou quando a lei expressamente não admite esta presunção.
 
-Art. 1.202. A posse de boa-fé só perde este caráter no caso e desde o momento em que as circunstâncias façam presumir que o possuidor não ignora que possui indevidamente.
+Art. 1202. A posse de boa-fé só perde este caráter no caso e desde o momento em que as circunstâncias façam presumir que o possuidor não ignora que possui indevidamente.
 
-Art. 1.203. Salvo prova em contrário, entende-se manter a posse o mesmo caráter com que foi adquirida.
+Art. 1203. Salvo prova em contrário, entende-se manter a posse o mesmo caráter com que foi adquirida.
 
-CAPÍTULO II
-Da Aquisição da Posse
+CAPÍTULO II Da Aquisição da Posse
 
-Art. 1.204. Adquire-se a posse desde o momento em que se torna possível o exercício, em nome próprio, de qualquer dos poderes inerentes à propriedade.
+Art. 1204. Adquire-se a posse desde o momento em que se torna possível o exercício, em nome próprio, de qualquer dos poderes inerentes à propriedade.
 
-Art. 1.205. A posse pode ser adquirida:
-
+Art. 1205. A posse pode ser adquirida:
 I - pela própria pessoa que a pretende ou por seu representante;
 
 II - por terceiro sem mandato, dependendo de ratificação.
