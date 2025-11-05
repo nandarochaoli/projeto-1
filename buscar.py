@@ -31,8 +31,12 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
         with open(nome_arquivo, 'r', encoding='utf-8-sig') as f:
             conteudo_completo = f.read()
             
-            # A lógica de divisão por artigo continua a mesma
-            artigos = re.split(r'(\sArt\.\s\d+)', conteudo_completo)
+            # =================================================================
+            # CORREÇÃO APLICADA AQUI:
+            # Trocamos \d+ (apenas dígitos) por [\d\.]+ (dígitos E pontos).
+            # Isso permite que a regex capture "Art. 1.762" corretamente.
+            # =================================================================
+            artigos = re.split(r'(\sArt\.\s[\d\.]+)', conteudo_completo)
 
             for i in range(1, len(artigos), 2):
                 numero_artigo = artigos[i].strip()
@@ -53,7 +57,7 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
     return encontrados
 
 # =========================================================================
-# ESTRUTURA DO APLICATIVO STREAMLIT (CORRIGIDO)
+# ESTRUTURA DO APLICATIVO STREAMLIT (Sem alterações)
 # =========================================================================
 
 # Título e cabeçalho da página
