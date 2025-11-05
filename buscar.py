@@ -46,27 +46,9 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
                 if termo_pesquisa.lower() in texto_do_artigo.lower():
                     preview = formatar_artigo(texto_do_artigo)
                     
-                    # --- INÍCIO DA LÓGICA DE FORMATAÇÃO (CAIXA SUSPENSA) ---
-                    
-                    # 1. Verifica se o texto *original* (sem newlines no início) 
-                    #    começa com indentação (tab ou 4 espaços), o que indica um inciso/parágrafo.
-                    texto_limpo = texto_do_artigo.lstrip('\n')
-                    comeca_com_indentacao = texto_limpo.startswith(('\t', '    '))
-                    
-                    # 2. Verifica se o *preview* contém marcadores de inciso (I., II -, V.) ou parágrafo (§)
-                    #    (r"..." = regex string, \b = limite da palavra, | = OU, \s = espaço, \- = traço)
-                    #    Usamos re.IGNORECASE para pegar "i." ou "I."
-                    contem_marcador = re.search(r'(\b(I|V|X|L|C|D|M)+(\.|\s\-))|(\§)', preview, re.IGNORECASE)
-
-                    # Se qualquer condição for verdadeira, usamos a "caixa suspensa"
-                    if comeca_com_indentacao or contem_marcador:
-                        # Formata com bloco de código Markdown (```) para criar a caixa
-                        resultado_formatado = f"**{numero_artigo}:** \n```\n{preview}\n```"
-                    else:
-                        # Formato normal (corpo de texto)
-                        resultado_formatado = f"**{numero_artigo}:** {preview}"
-                    
-                    # --- FIM DA NOVA LÓGICA ---
+                    # --- FORMATAÇÃO REVERTIDA (AGORA SEM CAIXA SUSPENSA) ---
+                    # O resultado é sempre formatado como corpo de texto Markdown.
+                    resultado_formatado = f"**{numero_artigo}:** {preview}"
                     
                     encontrados.append(resultado_formatado)
                     
