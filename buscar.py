@@ -267,14 +267,14 @@ if termo_pesquisa:
     st.header("3. Código Penal")
 
     # Chama a função de busca
-    resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_penal.txt")
+    resultados_cp = buscar_em_arquivo(termo_pesquisa, "codigo_penal.txt")
     
     # Tratamento do Código Penal (CP)
-    if len(resultados_cc) > 0 and "ERRO" in resultados_cc[0]:
-        st.error(resultados_cc[0])
-    elif len(resultados_cc) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código Penal:")
-        for resultado in resultados_cc:
+    if len(resultados_cp) > 0 and "ERRO" in resultados_cp[0]:
+        st.error(resultados_cp[0])
+    elif len(resultados_cp) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados_cp)} Artigos do Código Penal:")
+        for resultado in resultados_cp:
             st.markdown(resultado)
     else:
         st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Penal.")
@@ -285,14 +285,14 @@ if termo_pesquisa:
     st.header("4. Código de Defesa do Consumidor")
 
     # Chama a função de busca
-    resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_defesa_consumidor.txt")
+    resultados_cdc = buscar_em_arquivo(termo_pesquisa, "codigo_defesa_consumidor.txt")
     
     # Tratamento do Código de Defesa do Consumidor (CDC)
-    if len(resultados_cc) > 0 and "ERRO" in resultados_cc[0]:
-        st.error(resultados_cc[0])
-    elif len(resultados_cc) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código de Defesa do Consumidor:")
-        for resultado in resultados_cc:
+    if len(resultados_cdc) > 0 and "ERRO" in resultados_cdc[0]:
+        st.error(resultados_cdc[0])
+    elif len(resultados_cdc) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados_cdc)} Artigos do Código de Defesa do Consumidor:")
+        for resultado in resultados_cdc:
             st.markdown(resultado)
     else:
         st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código de Defesa do Consumidor.")
