@@ -46,8 +46,29 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
                 if termo_pesquisa.lower() in texto_do_artigo.lower():
                     preview = formatar_artigo(texto_do_artigo)
                     
-                    # Formata o resultado em Markdown para exibição no Streamlit
-                    resultado_formatado = f"**{numero_artigo}:** {preview}"
+                    # --- INÍCIO DA NOVA LÓGICA DE FORMATAÇÃO ---
+                    
+                    # 1. Verifica se o texto *original* (sem newlines no início) 
+                    #    começa com indentação (tab ou 4 espaços), o que indica um inciso/parágrafo.
+                    texto_limpo = texto_do_artigo.lstrip('\n')
+                    comeca_com_indentacao = texto_limpo.startswith(('\t', '    '))
+                    
+                    # 2. Verifica se o *preview* contém marcadores de inciso (I., II -, V.) ou parágrafo (§)
+                    #    (r"..." = regex string, \b = limite da palavra, | = OU, \s = espaço, \- = traço)
+                    #    Usamos re.IGNORECASE para pegar "i." ou "I."
+                    contem_marcador = re.search(r'(\b(I|V|X|L|C|D|M)+(\.|\s\-))|(\§)', preview, re.IGNORECASE)
+
+                    # Se qualquer condição for verdadeira, usamos a "caixa suspensa"
+                    if comeca_com_indentacao or contem_marcador:
+                        # Formata com bloco de código Markdown (```) para criar a caixa
+                        # O "º" foi removido do seu exemplo, então removi daqui também.
+                        resultado_formatado = f"**{numero_artigo}:** \n```\n{preview}\n```"
+                    else:
+                        # Formato normal (corpo de texto)
+                        resultado_formatado = f"**{numero_artigo}:** {preview}"
+                    
+                    # --- FIM DA NOVA LÓGICA ---
+                    
                     encontrados.append(resultado_formatado)
                     
     except FileNotFoundError:
@@ -116,14 +137,16 @@ if termo_pesquisa:
     st.header("3. Código Penal")
 
     # Chama a função de busca
-    resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_penal.txt")
+    # CORREÇÃO: A variável estava errada (era resultados_cc)
+    resultados_cp = buscar_em_arquivo(termo_pesquisa, "codigo_penal.txt")
     
     # Tratamento do Código Penal (CP)
-    if len(resultados_cc) > 0 and "ERRO" in resultados_cc[0]:
-        st.error(resultados_cc[0])
-    elif len(resultados_cc) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código Penal:")
-        for resultado in resultados_cc:
+    # CORREÇÃO: A variável estava errada (era resultados_cc)
+    if len(resultados_cp) > 0 and "ERRO" in resultados_cp[0]:
+        st.error(resultados_cp[0])
+    elif len(resultados_cp) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados_cp)} Artigos do Código Penal:")
+        for resultado in resultados_cp:
             st.markdown(resultado)
     else:
         st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Penal.")
@@ -134,14 +157,16 @@ if termo_pesquisa:
     st.header("4. Código de Defesa do Consumidor")
 
     # Chama a função de busca
-    resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_defesa_consumidor.txt")
+    # CORREÇÃO: A variável estava errada (era resultados_cc)
+    resultados_cdc = buscar_em_arquivo(termo_pesquisa, "codigo_defesa_consumidor.txt")
     
     # Tratamento do Código de Defesa do Consumidor (CDC)
-    if len(resultados_cc) > 0 and "ERRO" in resultados_cc[0]:
-        st.error(resultados_cc[0])
-    elif len(resultados_cc) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código de Defesa do Consumidor:")
-        for resultado in resultados_cc:
+    # CORREÇÃO: A variável estava errada (era resultados_cc)
+    if len(resultados_cdc) > 0 and "ERRO" in resultados_cdc[0]:
+        st.error(resultados_cdc[0])
+    elif len(resultados_cdc) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados_cdc)} Artigos do Código de Defesa do Consumidor:")
+        for resultado in resultados_cdc:
             st.markdown(resultado)
     else:
         st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código de Defesa do Consumidor.")
