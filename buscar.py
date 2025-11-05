@@ -296,6 +296,26 @@ if termo_pesquisa:
             st.markdown(resultado)
     else:
         st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código de Defesa do Consumidor.")
+
+
+     # --- Busca no Código de Processo Penal ---
+    
+    st.markdown("---") # Separador visual
+    st.header("4. Código de Processo Penal")
+
+    # Chama a função de busca
+    resultados_cpp = buscar_em_arquivo(termo_pesquisa, "codigo_processo_penal.txt")
+    
+    # Tratamento do Código de Processo Penal (CPP)
+    if len(resultados_cpp) > 0 and "ERRO" in resultados_cpp[0]:
+        st.error(resultados_XXX[0])
+    elif len(resultados_cpp) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados_cpp)} Artigos do Código de Processo Penal:")
+        for resultado in resultados_cpp:
+            st.markdown(resultado)
+    else:
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código de Processo Penal.")
+
     
     st.markdown("---")
     # ------------------ FIM DO BLOCO INDENTADO ------------------
