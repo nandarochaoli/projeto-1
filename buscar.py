@@ -47,7 +47,7 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
                     preview = formatar_artigo(texto_do_artigo)
                     
                     # Formata o resultado em Markdown para exibição no Streamlit
-                    resultado_formatado = f"**{numero_artigo}º:** *{preview}*"
+                    resultado_formatado = f"**{numero_artigo}º:** {preview}"
                     encontrados.append(resultado_formatado)
                     
     except FileNotFoundError:
