@@ -70,8 +70,13 @@ termo_pesquisa = st.text_input(
     placeholder="Ex: dignidade da pessoa humana"
 )
 
-# 2. BOTÕES DE NAVEGAÇÃO RÁPIDA (inseridos após a caixa de pesquisa)
-if not termo_pesquisa:
+
+# 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
+if termo_pesquisa:
+    
+    # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
+    
+    # 2. BOTÕES DE NAVEGAÇÃO RÁPIDA (Agora só aparecem com o termo de pesquisa)
     st.markdown("---")
     st.markdown("### Navegação Rápida (Clique para rolar até a seção)")
     
@@ -91,12 +96,6 @@ if not termo_pesquisa:
 
     st.markdown("---")
 
-
-# 3. Execução da Lógica: A busca só ocorre se o usuário digitar algo
-if termo_pesquisa:
-    
-    # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
-    
     # --- Busca na Constituição ---
     st.markdown("---") # Separador visual
     # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
