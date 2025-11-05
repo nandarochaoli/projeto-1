@@ -126,8 +126,25 @@ if termo_pesquisa:
         for resultado in resultados_cc:
             st.markdown(resultado)
     else:
-        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Civil.")
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Penal.")
 
+  # --- Busca no Código de Defesa do Consumidor ---
+    
+    st.markdown("---") # Separador visual
+    st.header("4. Código de Defesa do Consumidor")
+
+    # Chama a função de busca
+    resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_defesa_consumidor.txt")
+    
+    # Tratamento do Código de Defesa do Consumidor (CDC)
+    if len(resultados_cc) > 0 and "ERRO" in resultados_cc[0]:
+        st.error(resultados_cc[0])
+    elif len(resultados_cc) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código de Defesa do Consumidor:")
+        for resultado in resultados_cc:
+            st.markdown(resultado)
+    else:
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código de Defesa do Consumidor.")
     
     st.markdown("---")
     # ------------------ FIM DO BLOCO INDENTADO ------------------
