@@ -1,5 +1,75 @@
 import streamlit as st
 import re
+import os
+import time
+from google import genai
+from google.genai.errors import APIError
+
+# =========================================================================
+# CONFIGURAÇÃO E FUNÇÕES DA API (IA)
+# =========================================================================
+
+def configurar_api():
+    """
+    Configura a chave da API Gemini.
+    A chave deve ser definida como um 'Secret' no Streamlit Cloud.
+    """
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        st.error(
+            "🚨 ERRO DE CONFIGURAÇÃO: A chave 'GEMINI_API_KEY' não foi encontrada. "
+            "Por favor, configure-a nos Streamlit Secrets para usar a função de IA."
+        )
+        return None
+    try:
+        return genai.Client(api_key=api_key)
+    except Exception as e:
+        st.error(f"Erro ao inicializar o cliente Gemini: {e}")
+        return None
+
+
+def gerar_explicacao_ia(client, artigo_completo):
+    """
+    Chama a API Gemini para gerar uma explicação simplificada do artigo.
+    """
+    # System Instruction para guiar o comportamento do modelo
+    system_prompt = (
+        "Você é um tutor jurídico prestativo. Sua tarefa é simplificar textos legais "
+        "complexos (artigos de lei) para que sejam compreendidos por leigos. "
+        "Sua resposta deve ser escrita em linguagem clara, acessível e objetiva, "
+        "evitando jargões desnecessários, mantendo a fidelidade ao sentido legal."
+    )
+
+    user_prompt = (
+        "Por favor, analise o seguinte artigo de lei e forneça uma explicação "
+        "com linguagem simples e acessível. Mantenha o tom de um tutor amigo. "
+        f"Artigo: \n\n{artigo_completo}"
+    )
+    
+    # Exponential Backoff para lidar com rate limits
+    MAX_RETRIES = 5
+    delay = 1  # Atraso inicial em segundos
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=user_prompt,
+                system_instruction=system_prompt
+            )
+            return response.text
+        except APIError as e:
+            if attempt < MAX_RETRIES - 1:
+                st.warning(f"Erro na API (Tentativa {attempt + 1}/{MAX_RETRIES}). Tentando novamente em {delay}s...")
+                time.sleep(delay)
+                delay *= 2  # Aumenta o atraso
+            else:
+                st.error(f"Falha ao gerar explicação após {MAX_RETRIES} tentativas. Erro final: {e}")
+                return "Não foi possível gerar a explicação. Tente novamente mais tarde."
+        except Exception as e:
+            st.error(f"Erro inesperado durante a chamada da API: {e}")
+            return "Erro desconhecido ao processar a requisição."
+    return "Falha total na comunicação com a API."
 
 # =========================================================================
 # FUNÇÕES DE BUSCA (Lógica)
@@ -7,23 +77,24 @@ import re
 
 def formatar_artigo(texto_artigo):
     """Pega os primeiros 300 caracteres do artigo para dar um 'preview'."""
-    # Limite do preview aumentado para 300 caracteres.
-    LIMITE_PREVIEW = 300 
-    
+    LIMITE_PREVIEW = 300
     preview = texto_artigo.strip()
-    
+
     if len(preview) > LIMITE_PREVIEW:
         preview = preview[:LIMITE_PREVIEW] + "..."
+
+    # Remove quebras de linha e múltiplos espaços do preview para exibição limpa
+    preview = re.sub(r'\s+', ' ', preview)
     
     return preview
 
 def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
     """
-    Função principal que busca um termo em um arquivo de texto.
-    Retorna uma lista de strings com os resultados.
+    Busca um termo em um arquivo de texto e retorna uma lista de dicionários.
+    Cada dicionário contém o ID, preview e texto completo do artigo.
     """
     encontrados = []
-    
+
     if not termo_pesquisa:
         return []
 
@@ -31,38 +102,77 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
         with open(nome_arquivo, 'r', encoding='utf-8-sig') as f:
             conteudo_completo = f.read()
             
-            # =================================================================
             # Permite a captura de números de artigo com pontos (ex: Art. 1.762)
-            # =================================================================
             artigos = re.split(r'(\sArt\.\s[\d\.]+)', conteudo_completo)
 
             for i in range(1, len(artigos), 2):
                 numero_artigo = artigos[i].strip()
-                texto_do_artigo = artigos[i+1]
-
+                texto_do_artigo = artigos[i+1].strip()
+                
                 # A busca é feita de forma case-insensitive
                 if termo_pesquisa.lower() in texto_do_artigo.lower():
                     preview = formatar_artigo(texto_do_artigo)
                     
-                    # Formato normal (corpo de texto) sem caixas suspensas
-                    resultado_formatado = f"**{numero_artigo}:** {preview}"
-                    
-                    encontrados.append(resultado_formatado)
-                    
+                    encontrados.append({
+                        "id": f"{nome_arquivo}_{numero_artigo}",
+                        "numero": numero_artigo,
+                        "preview": preview,
+                        "texto_completo": f"{numero_artigo}{texto_do_artigo}"
+                    })
+            
     except FileNotFoundError:
-        # Mensagem de erro que será detectada no bloco principal
-        encontrados.append(f"🚨 ERRO: O arquivo '{nome_arquivo}' não foi encontrado!")
-    
+        # Retorna erro no formato esperado para ser tratado na UI
+        return [
+            {"id": "error", "numero": "ERRO", "preview": f"🚨 ERRO: O arquivo '{nome_arquivo}' não foi encontrado!", "texto_completo": ""}
+        ]
+
     return encontrados
 
+def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
+    """Exibe uma seção de busca (CF, CC, etc.) com seus resultados."""
+    st.markdown("---")
+    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
+    st.markdown(f'<a name="{anchor_name}"></a>', unsafe_allow_html=True)
+    st.header(titulo)
+
+    resultados = buscar_em_arquivo(termo_pesquisa, nome_arquivo)
+    
+    # Tratamento de erro de arquivo
+    if resultados and resultados[0]['numero'] == "ERRO":
+        st.error(resultados[0]['preview'])
+        return
+        
+    st.session_state.todos_resultados.extend(resultados)
+    
+    if len(resultados) > 0:
+        st.success(f"✅ Termo encontrado em {len(resultados)} Artigos de {titulo.split('. ')[1]}:")
+        
+        for i, resultado in enumerate(resultados):
+            col_check, col_artigo = st.columns([0.05, 0.95])
+            
+            # Adiciona o checkbox e armazena o estado com uma chave única
+            with col_check:
+                st.checkbox(
+                    "", 
+                    key=f"check_{resultado['id']}", 
+                    value=False,
+                    label_visibility="collapsed"
+                )
+            
+            with col_artigo:
+                # Exibe o preview do artigo
+                st.markdown(f"**{resultado['numero']}:** {resultado['preview']}")
+    else:
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado em {titulo.split('. ')[1]}.")
+
+
 # =========================================================================
-# ESTRUTURA DO APLICATIVO STREAMLIT (Uma única vez)
+# ESTRUTURA DO APLICATIVO STREAMLIT
 # =========================================================================
 
 # Título e cabeçalho da página
 st.title("🏛️ Buscador Jurídico Rápido")
-# 1. SUBTÍTULO ATUALIZADO
-st.subheader("A ferramenta tem como base: CF/88, CC/02, CP/40 , CPP/41, CDC/90 atualizados até o dia 05/11/2025.")
+st.subheader("A ferramenta tem como base: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizados até o dia 05/11/2025.")
 
 # 1. Interação do Usuário
 termo_pesquisa = st.text_input(
@@ -70,132 +180,100 @@ termo_pesquisa = st.text_input(
     placeholder="Ex: dignidade da pessoa humana"
 )
 
+# Inicialização do Session State
+if 'todos_resultados' not in st.session_state:
+    st.session_state.todos_resultados = []
+if 'explicacoes_geradas' not in st.session_state:
+    st.session_state.explicacoes_geradas = []
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
-    
+    # Limpa o estado para uma nova busca
+    st.session_state.todos_resultados = []
+    st.session_state.explicacoes_geradas = []
+
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
-    # 2. BOTÕES DE NAVEGAÇÃO RÁPIDA (Agora só aparecem com o termo de pesquisa)
+    # 2. BOTÕES DE NAVEGAÇÃO RÁPIDA (Aparecem com o termo de pesquisa)
     st.markdown("---")
     st.markdown("### Navegação Rápida (Clique para rolar até a seção)")
     
-    # Layout dos botões em colunas para melhor visualização
     col1, col2, col3, col4, col5 = st.columns(5)
     
-    with col1:
-        st.markdown("[🇧🇷 CF](#cf_anchor)", unsafe_allow_html=True)
-    with col2:
-        st.markdown("[🤵 CC](#cc_anchor)", unsafe_allow_html=True)
-    with col3:
-        st.markdown("[🚨 CP](#cp_anchor)", unsafe_allow_html=True)
-    with col4:
-        st.markdown("[⚖️ CPP](#cpp_anchor)", unsafe_allow_html=True)
-    with col5:
-        st.markdown("[🛍️ CDC](#cdc_anchor)", unsafe_allow_html=True)
+    # Usando st.markdown com links de âncora
+    with col1: st.markdown("[🇧🇷 CF](#cf_anchor)", unsafe_allow_html=True)
+    with col2: st.markdown("[🤵 CC](#cc_anchor)", unsafe_allow_html=True)
+    with col3: st.markdown("[🚨 CP](#cp_anchor)", unsafe_allow_html=True)
+    with col4: st.markdown("[⚖️ CPP](#cpp_anchor)", unsafe_allow_html=True)
+    with col5: st.markdown("[🛍️ CDC](#cdc_anchor)", unsafe_allow_html=True)
 
     st.markdown("---")
-
-    # --- Busca na Constituição ---
-    st.markdown("---") # Separador visual
-    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
-    st.markdown('<a name="cf_anchor"></a>', unsafe_allow_html=True)
-    st.header("1. Constituição Federal")
     
-    # Chama a função de busca
-    resultados_cf = buscar_em_arquivo(termo_pesquisa, "constituicao.txt")
-
-    # Tratamento da Constituição Federal (CF)
-    if len(resultados_cf) > 0 and "ERRO" in resultados_cf[0]:
-        st.error(resultados_cf[0]) 
-    elif len(resultados_cf) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados_cf)} Artigos da CF:")
-        for resultado in resultados_cf:
-            st.markdown(resultado)
-    else:
-        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado na Constituição Federal.")
-
-    # --- Busca no Código Civil ---
+    # --- Execução das Buscas ---
     
-    st.markdown("---") # Separador visual
-    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
-    st.markdown('<a name="cc_anchor"></a>', unsafe_allow_html=True)
-    st.header("2. Código Civil")
+    exibir_secao("1. Constituição Federal", "constituicao.txt", termo_pesquisa, "cf_anchor", "cf")
+    exibir_secao("2. Código Civil", "codigo_civil.txt", termo_pesquisa, "cc_anchor", "cc")
+    exibir_secao("3. Código Penal", "codigo_penal.txt", termo_pesquisa, "cp_anchor", "cp")
+    exibir_secao("4. Código de Defesa do Consumidor", "codigo_defesa_consumidor.txt", termo_pesquisa, "cdc_anchor", "cdc")
+    exibir_secao("5. Código de Processo Penal", "codigo_processo_penal.txt", termo_pesquisa, "cpp_anchor", "cpp")
 
-    # Chama a função de busca
-    resultados_cc = buscar_em_arquivo(termo_pesquisa, "codigo_civil.txt")
+    # =========================================================================
+    # BOTÃO E LÓGICA DE EXPLICAÇÃO POR IA
+    # =========================================================================
     
-    # Tratamento do Código Civil (CC)
-    if len(resultados_cc) > 0 and "ERRO" in resultados_cc[0]:
-        st.error(resultados_cc[0])
-    elif len(resultados_cc) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados_cc)} Artigos do Código Civil:")
-        for resultado in resultados_cc:
-            st.markdown(resultado)
-    else:
-        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Civil.")
-
-    # --- Busca no Código Penal ---
+    st.markdown("---")
     
-    st.markdown("---") # Separador visual
-    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
-    st.markdown('<a name="cp_anchor"></a>', unsafe_allow_html=True)
-    st.header("3. Código Penal")
-
-    # Chama a função de busca
-    resultados_cp = buscar_em_arquivo(termo_pesquisa, "codigo_penal.txt")
+    if len(st.session_state.todos_resultados) > 0:
+        
+        # O botão que aciona a explicação
+        if st.button("🤖 Explique os artigos selecionados para mim"):
+            artigos_selecionados = []
+            
+            # 1. Coleta os artigos marcados
+            for resultado in st.session_state.todos_resultados:
+                if st.session_state.get(f"check_{resultado['id']}", False):
+                    artigos_selecionados.append(resultado)
+            
+            if not artigos_selecionados:
+                st.warning("⚠️ Selecione pelo menos um artigo para que eu possa explicar.")
+            else:
+                # 2. Configura a API
+                client = configurar_api()
+                
+                if client:
+                    st.session_state.explicacoes_geradas = []
+                    # 3. Gera as explicações com um spinner de carregamento
+                    with st.spinner(f"Processando {len(artigos_selecionados)} artigo(s)... A inteligência artificial está trabalhando para simplificar o texto legal."):
+                        
+                        for artigo in artigos_selecionados:
+                            explicacao = gerar_explicacao_ia(client, artigo['texto_completo'])
+                            
+                            st.session_state.explicacoes_geradas.append({
+                                "numero": artigo['numero'],
+                                "texto_completo": artigo['texto_completo'],
+                                "explicacao": explicacao
+                            })
+                    
+                    st.success("✅ Explicações geradas com sucesso! Role para baixo.")
     
-    # Tratamento do Código Penal (CP)
-    if len(resultados_cp) > 0 and "ERRO" in resultados_cp[0]:
-        st.error(resultados_cp[0])
-    elif len(resultados_cp) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados_cp)} Artigos do Código Penal:")
-        for resultado in resultados_cp:
-            st.markdown(resultado)
-    else:
-        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código Penal.")
-
-    # --- Busca no Código de Defesa do Consumidor ---
+    # =========================================================================
+    # EXIBIÇÃO DAS EXPLICAÇÕES GERADAS
+    # =========================================================================
     
-    st.markdown("---") # Separador visual
-    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
-    st.markdown('<a name="cdc_anchor"></a>', unsafe_allow_html=True)
-    st.header("4. Código de Defesa do Consumidor")
-
-    # Chama a função de busca
-    resultados_cdc = buscar_em_arquivo(termo_pesquisa, "codigo_defesa_consumidor.txt")
-    
-    # Tratamento do Código de Defesa do Consumidor (CDC)
-    if len(resultados_cdc) > 0 and "ERRO" in resultados_cdc[0]:
-        st.error(resultados_cdc[0])
-    elif len(resultados_cdc) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados_cdc)} Artigos do Código de Defesa do Consumidor:")
-        for resultado in resultados_cdc:
-            st.markdown(resultado)
-    else:
-        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código de Defesa do Consumidor.")
-    
-
-    # --- Busca no Código de Processo Penal ---
-    
-    st.markdown("---") # Separador visual
-    # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
-    st.markdown('<a name="cpp_anchor"></a>', unsafe_allow_html=True)
-    st.header("5. Código de Processo Penal")
-
-    # Chama a função de busca
-    resultados_cpp = buscar_em_arquivo(termo_pesquisa, "codigo_processo_penal.txt")
-    
-    # Tratamento do Código de Processo Penal (CPP)
-    if len(resultados_cpp) > 0 and "ERRO" in resultados_cpp[0]:
-        st.error(resultados_cpp[0])
-    elif len(resultados_cpp) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados_cpp)} Artigos do Código de Processo Penal:")
-        for resultado in resultados_cpp:
-            st.markdown(resultado)
-    else:
-        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado no Código de Processo Penal.")
-
-    
+    if st.session_state.explicacoes_geradas:
+        st.markdown('<a name="explicacoes_anchor"></a>', unsafe_allow_html=True)
+        st.markdown("## 🧠 Explicações Jurídicas Simplificadas")
+        
+        for item in st.session_state.explicacoes_geradas:
+            st.markdown(f"### {item['numero']}")
+            
+            # Exibe o artigo completo
+            st.code(item['texto_completo'], language='markdown')
+            
+            # Exibe a explicação da IA
+            st.markdown("**✍️ Explicação Acessível (Tutor IA):**")
+            st.markdown(item['explicacao'])
+            st.markdown("---")
+            
     st.markdown("---")
     # ------------------ FIM DO BLOCO INDENTADO ------------------
