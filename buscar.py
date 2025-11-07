@@ -284,8 +284,8 @@ if termo_pesquisa:
     # 1. Executa todas as buscas e armazena os resultados
     resultados_por_lei = executar_busca_completa(termo_pesquisa)
     
-    # 2. Exibe os Atalhos Legais (Vertical e com Contagem)
-    st.markdown("### Atalhos legais:")
+    # 2. Exibe os Atalhos Jurídicos (Vertical e com Contagem)
+    st.markdown("### Atalhos jurídicos:")
     
     for titulo, config in LEIS_CONFIG.items():
         resultados = resultados_por_lei[titulo]
@@ -319,7 +319,7 @@ if termo_pesquisa:
         
         # 1. Componente Multiselect para seleção dos artigos (Máximo 3)
         selecao_labels = st.multiselect(
-            "Selecione **até 3** artigos para que a IA explique:",
+            "Selecione **até 3** artigos:",
             options=labels_disponiveis,
             key='selecao_artigos_ia_multiselect'
         )
@@ -332,7 +332,7 @@ if termo_pesquisa:
         st.info(f"Artigos prontos para explicação: **{len(selecionados_final)} / 3**")
         
         # 2. Botão para acionar a IA
-        if st.button("🤖 Explique os artigos selecionados para mim", key="explicar_button"):
+        if st.button("Explicar artigos", key="explicar_button"):
             
             if not selecionados_final:
                 st.warning("⚠️ Selecione pelo menos um artigo para que eu possa explicar.")
@@ -367,7 +367,7 @@ if termo_pesquisa:
     
     if st.session_state.explicacoes_geradas:
         st.markdown('<a name="explicacoes_anchor"></a>', unsafe_allow_html=True)
-        st.markdown("## 🧠 Explicações Jurídicas")
+        st.markdown("##🔎 Decifrando Artigos")
         
         for item in st.session_state.explicacoes_geradas:
             st.markdown(f"### {item['numero']}")
@@ -376,7 +376,7 @@ if termo_pesquisa:
             st.code(item['texto_completo'], language='markdown')
             
             # Exibe a explicação da IA
-            st.markdown("**✍️ Artigos Decifrados:**")
+            st.markdown("**✍️ Explicação cuidadosa do texto legal:**")
             st.markdown(item['explicacao'])
             st.markdown("---")
             
