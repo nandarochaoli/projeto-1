@@ -320,7 +320,7 @@ if termo_pesquisa:
         # >>> INSERÇÃO DO SEPARADOR E TÍTULO DA SEÇÃO DE IA <<<
         st.markdown("---")
         st.subheader("💡 Tradução do Jurisdiquês")
-        st.txt("Te ajudo a entender o que está confuso.")
+    
         # >>> FIM DA INSERÇÃO <<<
 
         # Lista de labels formatados para o multiselect
