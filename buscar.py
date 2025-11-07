@@ -1,4 +1,3 @@
-
 import streamlit as st
 import re
 import os
@@ -343,4 +342,3 @@ if termo_pesquisa:
             
     st.markdown("---")
     # ------------------ FIM DO BLOCO INDENTADO ------------------
- 
