@@ -17,7 +17,7 @@ LEIS_CONFIG = {
     "4. Código de Processo Civil": {"file": "codigo_processo_civil.txt", "sigla": "CPC", "anchor": "cpc_anchor", "emoji": "👥"},    
     "5. Código de Processo Penal": {"file": "codigo_processo_penal.txt", "sigla": "CPP", "anchor": "cpp_anchor", "emoji": "👨‍⚖️"},
     "6. Código de Defesa do Consumidor": {"file": "codigo_defesa_consumidor.txt", "sigla": "CDC", "anchor": "cdc_anchor", "emoji": "🛍️"},
-    "7. Código Tributário Nacional": {"file": "codigo_tributário_nacional.txt", "sigla": "CTN", "anchor": "ctn_anchor", "emoji": "💵"},
+    "7. Código Tributário Nacional": {"file": "codigo_tributario_nacional.txt", "sigla": "CTN", "anchor": "ctn_anchor", "emoji": "💵"},
     "8. Consolidação das Leis de Trabalho": {"file": "consolidação_leis_trabalho.txt", "sigla": "CLT", "anchor": "clt_anchor", "emoji": "👷"},
 }
 
@@ -319,7 +319,8 @@ if termo_pesquisa:
         
         # >>> INSERÇÃO DO SEPARADOR E TÍTULO DA SEÇÃO DE IA <<<
         st.markdown("---")
-        st.subheader("💡 Tradução do Jurisdiques (Explicação por IA)")
+        st.subheader("💡 Tradução do Jurisdiquês")
+        st.txt("Te ajudo a entender o que está confuso.")
         # >>> FIM DA INSERÇÃO <<<
 
         # Lista de labels formatados para o multiselect
