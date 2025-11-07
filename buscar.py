@@ -6,6 +6,16 @@ from google import genai
 from google.genai.errors import APIError
 
 # =========================================================================
+# CONFIGURAÇÃO DE PÁGINA (ADICIONADO PARA USAR TELA TODA)
+# =========================================================================
+
+st.set_page_config(
+    page_title="📍Mapa da Lei",
+    layout="wide", # <-- MODO WIDE ATIVADO PARA USAR A LARGURA MÁXIMA
+    initial_sidebar_state="auto"
+)
+
+# =========================================================================
 # CONFIGURAÇÃO CENTRALIZADA
 # =========================================================================
 
