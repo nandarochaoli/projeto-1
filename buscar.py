@@ -193,18 +193,34 @@ if 'todos_resultados' not in st.session_state:
     st.session_state.todos_resultados = []
 if 'explicacoes_geradas' not in st.session_state:
     st.session_state.explicacoes_geradas = []
-if 'selecao_atual_multiselect' not in st.session_state:
-    st.session_state.selecao_atual_multiselect = []
+# Removendo 'selecao_atual_multiselect' pois não é usado
+# Novo: Variável para rastrear o termo de pesquisa anterior
+if 'termo_anterior' not in st.session_state:
+    st.session_state.termo_anterior = ""
 
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
+    
     # -----------------------------------------------------------
-    # FIX: Limpa os resultados, a seleção do multiselect e as explicações anteriores.
+    # NOVO FIX: Verifica se o termo mudou para decidir se limpa o multiselect.
     # -----------------------------------------------------------
+    termo_mudou = (termo_pesquisa != st.session_state.termo_anterior)
+
+    # Limpa os resultados da busca (sempre que o termo está preenchido)
     st.session_state.todos_resultados = []
-    st.session_state.selecao_artigos_ia_multiselect = [] # Limpa a seleção anterior
-    st.session_state.explicacoes_geradas = []
+    
+    # Limpa as explicações (sempre que o termo está preenchido)
+    st.session_state.explicacoes_geradas = [] 
+
+    # SÓ LIMPA O MULTISELECT SE O TERMO DE PESQUISA MUDOU (ou se a busca foi iniciada)
+    # Isso impede que o clique no botão apague a seleção.
+    if termo_mudou:
+        if 'selecao_artigos_ia_multiselect' in st.session_state:
+            st.session_state.selecao_artigos_ia_multiselect = []
+
+    # Atualiza o termo anterior para rastreamento
+    st.session_state.termo_anterior = termo_pesquisa
 
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
@@ -243,6 +259,7 @@ if termo_pesquisa:
         labels_disponiveis = [res['label'] for res in st.session_state.todos_resultados]
         
         # 1. Componente Multiselect para seleção dos artigos (Máximo 3)
+        # O valor é persistido pelo key='selecao_artigos_ia_multiselect'
         selecao_labels = st.multiselect(
             "Selecione **até 3** artigos para que a IA explique:",
             options=labels_disponiveis,
