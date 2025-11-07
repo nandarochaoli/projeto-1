@@ -139,6 +139,7 @@ def get_selected_count():
     count = 0
     # Verifica o estado de todos os checkboxes no session_state
     for key, value in st.session_state.items():
+        # A chave de um checkbox de artigo SEMPRE contém o nome do arquivo, ex: "cf_constituicao.txt_Art. 5"
         if isinstance(key, str) and '.txt' in key and value is True:
             count += 1
     return count
@@ -216,14 +217,10 @@ if 'explicacoes_geradas' not in st.session_state:
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
     # -----------------------------------------------------------
-    # FIX CRÍTICO: Limpa todas as chaves de checkbox antigas
-    # Garante que o Streamlit não confunda componentes de renderizações passadas.
-    keys_to_delete = [k for k in st.session_state if isinstance(k, str) and ('.txt' in k or k.startswith('cf_') or k.startswith('cc_'))]
-    for k in keys_to_delete:
-        try:
-            del st.session_state[k]
-        except KeyError:
-            pass # Ignora se a chave já foi deletada
+    # FIX REMOVIDO: O bloco de limpeza agressiva foi removido.
+    # Ele estava deletando o estado do checkbox após a seleção,
+    # fazendo com que o artigo voltasse a ser desmarcado
+    # e o contador ficasse em 0.
     # -----------------------------------------------------------
 
     # Limpa a lista de resultados (mantendo as explicações geradas até o novo clique)
