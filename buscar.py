@@ -134,15 +134,33 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
 def get_selected_count():
     """
     Retorna a contagem de artigos selecionados na página.
-    Procura por chaves que contenham '.txt', pois são os identificadores dos artigos.
+    CORREÇÃO: Conta baseado nos checkboxes ativos na sessão atual.
     """
     count = 0
     # Verifica o estado de todos os checkboxes no session_state
     for key, value in st.session_state.items():
-        # A chave de um checkbox de artigo SEMPRE contém o nome do arquivo, ex: "cf_constituicao.txt_Art. 5"
-        if isinstance(key, str) and '.txt' in key and value is True:
+        # CORREÇÃO: Verifica se a chave começa com um dos prefixos conhecidos e é True
+        if (isinstance(key, str) and 
+            (key.startswith('cf_') or key.startswith('cc_') or key.startswith('cp_') or 
+             key.startswith('cdc_') or key.startswith('cpp_')) and 
+            value is True):
             count += 1
     return count
+
+def get_selected_articles():
+    """
+    CORREÇÃO: Retorna a lista de artigos selecionados baseado nos checkboxes ativos.
+    """
+    selected = []
+    for key, value in st.session_state.items():
+        if (isinstance(key, str) and 
+            (key.startswith('cf_') or key.startswith('cc_') or key.startswith('cp_') or 
+             key.startswith('cdc_') or key.startswith('cpp_')) and 
+            value is True):
+            # Extrai o ID do artigo da chave
+            article_id = key[3:]  # Remove o prefixo (ex: "cf_")
+            selected.append(article_id)
+    return selected
 
 def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
     """Exibe uma seção de busca (CF, CC, etc.) com seus resultados."""
@@ -167,9 +185,14 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
             
             # 1. Lógica de Limite de Seleção
             limite_excedido = get_selected_count() >= 3
-            # CORREÇÃO: Chave única com índice para evitar duplicação
-            chave_completa = f"{key_prefix}_{resultado['id']}_{i}" 
-            esta_marcado = st.session_state.get(chave_completa, False)
+            # CORREÇÃO: Chave simples e consistente
+            chave_completa = f"{key_prefix}_{resultado['id']}"
+            
+            # CORREÇÃO: Verifica se já existe estado para este checkbox
+            if chave_completa not in st.session_state:
+                st.session_state[chave_completa] = False
+                
+            esta_marcado = st.session_state[chave_completa]
             
             # O checkbox é desabilitado se o limite for atingido E o artigo não estiver marcado
             disabled = limite_excedido and not esta_marcado
@@ -178,13 +201,20 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
             
             # Adiciona o checkbox com a regra de 'disabled'
             with col_check:
+                # CORREÇÃO: Usando on_change para atualizar o estado imediatamente
+                def create_callback(checkbox_key):
+                    def callback():
+                        # Atualiza o contador imediatamente
+                        st.session_state[f"last_updated_{checkbox_key}"] = time.time()
+                    return callback
+                
                 st.checkbox(
                     "", 
-                    # CORREÇÃO: Chave única com índice
-                    key=chave_completa, 
-                    value=esta_marcado, # Usa o estado real para manter a marcação
+                    key=chave_completa,
+                    value=esta_marcado,
                     label_visibility="collapsed",
-                    disabled=disabled
+                    disabled=disabled,
+                    on_change=create_callback(chave_completa)
                 )
             
             with col_artigo:
@@ -213,21 +243,28 @@ if 'todos_resultados' not in st.session_state:
     st.session_state.todos_resultados = []
 if 'explicacoes_geradas' not in st.session_state:
     st.session_state.explicacoes_geradas = []
+if 'pesquisa_anterior' not in st.session_state:
+    st.session_state.pesquisa_anterior = ""
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
-    # CORREÇÃO: Limpeza mais agressiva do estado anterior
-    # Remove todos os checkboxes antigos do session_state
-    keys_to_remove = []
-    for key in st.session_state.keys():
-        if isinstance(key, str) and ('.txt' in key or key.startswith(('cf_', 'cc_', 'cp_', 'cdc_', 'cpp_'))):
-            keys_to_remove.append(key)
-    
-    for key in keys_to_remove:
-        del st.session_state[key]
-    
-    # Limpa a lista de resultados
-    st.session_state.todos_resultados = []
+    # CORREÇÃO: Limpeza inteligente - só limpa se for uma nova pesquisa
+    if st.session_state.pesquisa_anterior != termo_pesquisa:
+        # Remove apenas os checkboxes relacionados aos resultados anteriores
+        keys_to_remove = []
+        for key in st.session_state.keys():
+            if (isinstance(key, str) and 
+                (key.startswith('cf_') or key.startswith('cc_') or key.startswith('cp_') or 
+                 key.startswith('cdc_') or key.startswith('cpp_'))):
+                keys_to_remove.append(key)
+        
+        for key in keys_to_remove:
+            del st.session_state[key]
+        
+        # Limpa a lista de resultados e explicações
+        st.session_state.todos_resultados = []
+        st.session_state.explicacoes_geradas = []
+        st.session_state.pesquisa_anterior = termo_pesquisa
 
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
@@ -260,9 +297,11 @@ if termo_pesquisa:
     
     st.markdown("---")
     
+    # CORREÇÃO: Exibe a contagem em tempo real
+    selecionados = get_selected_count()
+    
     # Exibe a contagem e aviso de limite
     if len(st.session_state.todos_resultados) > 0:
-        selecionados = get_selected_count()
         if selecionados >= 3:
             st.warning("⛔ Limite de artigos selecionados (máximo de 3) atingido.")
         st.info(f"Artigos selecionados para explicação: **{selecionados} / 3**")
@@ -271,32 +310,12 @@ if termo_pesquisa:
         if st.button("🤖 Explique os artigos selecionados para mim", key="explicar_button"):
             artigos_selecionados = []
             
-            # 1. Coleta os artigos marcados
+            # CORREÇÃO: Busca direta pelos artigos selecionados
+            selected_ids = get_selected_articles()
+            
             for resultado in st.session_state.todos_resultados:
-                
-                # Obtemos o prefixo da seção a partir do nome do arquivo (necessário para reconstruir a chave)
-                if resultado['id'].startswith("constituicao.txt"):
-                    prefixo = 'cf'
-                elif resultado['id'].startswith("codigo_civil.txt"):
-                    prefixo = 'cc'
-                elif resultado['id'].startswith("codigo_penal.txt"):
-                    prefixo = 'cp'
-                elif resultado['id'].startswith("codigo_defesa_consumidor.txt"):
-                    prefixo = 'cdc'
-                elif resultado['id'].startswith("codigo_processo_penal.txt"):
-                    prefixo = 'cpp'
-                else:
-                    continue # Pula resultados inválidos
-                
-                # CORREÇÃO: Reconstruir a chave com o índice
-                # Precisamos encontrar o índice correto
-                chave_encontrada = None
-                for i, res in enumerate(st.session_state.todos_resultados):
-                    if res['id'] == resultado['id'] and res['numero'] == resultado['numero']:
-                        chave_encontrada = f"{prefixo}_{resultado['id']}_{i}"
-                        break
-                
-                if chave_encontrada and st.session_state.get(chave_encontrada, False):
+                # Verifica se este resultado está na lista de selecionados
+                if resultado['id'] in selected_ids:
                     artigos_selecionados.append(resultado)
             
             if not artigos_selecionados:
