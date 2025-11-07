@@ -178,8 +178,9 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
 # =========================================================================
 
 # Título e cabeçalho da página
-st.title("🏛️ Buscador Jurídico Rápido")
-st.subheader("A ferramenta tem como base: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizados até o dia 05/11/2025.")
+st.title("📍Mapa da Lei")
+st.subheader("Encontre o caminho nas leis sem se perder.")
+st.text("A ferramenta tem como base: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizados até o dia XX/11/2025.")
 
 # 1. Interação do Usuário
 termo_pesquisa = st.text_input(
