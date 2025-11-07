@@ -179,9 +179,9 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
             with col_check:
                 st.checkbox(
                     "", 
-                    # Corrigido: Chave única usando o prefixo da seção para evitar conflitos
+                    # Chave única garantida
                     key=chave_completa, 
-                    value=False,
+                    value=esta_marcado, # Usa o estado real para manter a marcação
                     label_visibility="collapsed",
                     disabled=disabled
                 )
@@ -215,9 +215,19 @@ if 'explicacoes_geradas' not in st.session_state:
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
-    # Limpa o estado para uma nova busca
+    # -----------------------------------------------------------
+    # FIX CRÍTICO: Limpa todas as chaves de checkbox antigas
+    # Garante que o Streamlit não confunda componentes de renderizações passadas.
+    keys_to_delete = [k for k in st.session_state if isinstance(k, str) and ('.txt' in k or k.startswith('cf_') or k.startswith('cc_'))]
+    for k in keys_to_delete:
+        try:
+            del st.session_state[k]
+        except KeyError:
+            pass # Ignora se a chave já foi deletada
+    # -----------------------------------------------------------
+
+    # Limpa a lista de resultados (mantendo as explicações geradas até o novo clique)
     st.session_state.todos_resultados = []
-    # Não zera st.session_state.explicacoes_geradas aqui, pois queremos que elas persistam até uma nova busca
 
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
@@ -263,9 +273,8 @@ if termo_pesquisa:
             
             # 1. Coleta os artigos marcados
             for resultado in st.session_state.todos_resultados:
-                # A chave de busca agora usa o prefixo da seção (que foi mantido) para encontrar o estado do checkbox
-                # É necessário recriar a chave_completa para verificar
-                # Obtemos o prefixo da seção a partir do nome do arquivo
+                
+                # Obtemos o prefixo da seção a partir do nome do arquivo (necessário para reconstruir a chave)
                 if resultado['id'].startswith("constituicao.txt"):
                     prefixo = 'cf'
                 elif resultado['id'].startswith("codigo_civil.txt"):
@@ -281,6 +290,7 @@ if termo_pesquisa:
                 
                 chave_completa = f"{prefixo}_{resultado['id']}"
                 
+                # Verifica se o checkbox para esta chave foi marcado
                 if st.session_state.get(chave_completa, False):
                     artigos_selecionados.append(resultado)
             
