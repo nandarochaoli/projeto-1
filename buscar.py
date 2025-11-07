@@ -105,27 +105,69 @@ def formatar_artigo(texto_artigo):
 
 def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
     """
-    Busca um termo em um arquivo de texto e retorna uma lista de dicionários.
-    Cada dicionário contém o ID, preview, texto completo e o label com a sigla da lei.
+    Busca um termo em um arquivo de texto. Se o termo estiver entre aspas,
+    a busca é exata. Caso contrário, a busca é tolerante (por palavras-chave).
     """
     encontrados = []
 
-    if not termo_pesquisa:
+    termo_limpo = termo_pesquisa.strip()
+    is_exact_search = termo_limpo.startswith('"') and termo_limpo.endswith('"')
+    
+    if is_exact_search:
+        search_target = termo_limpo.strip('"') # Termo exato
+    else:
+        search_target = termo_limpo # Termo para busca tolerante
+        
+    if not search_target:
         return []
+
+    search_target_lower = search_target.lower()
+
+    # Prepara para busca tolerante (se não for exata)
+    if not is_exact_search:
+        # Stopwords comuns em português
+        stopwords = set(["de", "do", "da", "e", "o", "a", "em", "por", "para", "com", "sem", "se", "ao", "aos", "às", "nos", "nas", "pelo", "pela", "um", "uma", "uns", "umas", "é", "são", "ser", "ter", "haver", "que", "qual", "cujo"])
+        
+        # Tokeniza o termo, remove stopwords e palavras curtas (< 3 letras)
+        keywords = [w for w in re.findall(r'\b\w+\b', search_target_lower) if w not in stopwords and len(w) > 2]
+        
+        # Se após a limpeza não houver keywords, usa a string original completa
+        if not keywords:
+             keywords = [search_target_lower]
+
 
     try:
         with open(nome_arquivo, 'r', encoding='utf-8-sig') as f:
             conteudo_completo = f.read()
             
-            # Permite a captura de números de artigo com pontos (ex: Art. 1.762)
+            # Divide o conteúdo da lei em artigos
             artigos = re.split(r'(\sArt\.\s[\d\.]+)', conteudo_completo)
 
             for i in range(1, len(artigos), 2):
                 numero_artigo = artigos[i].strip()
                 texto_do_artigo = artigos[i+1].strip()
+                texto_do_artigo_lower = texto_do_artigo.lower()
+
+                match = False
                 
-                # A busca é feita de forma case-insensitive
-                if termo_pesquisa.lower() in texto_do_artigo.lower():
+                if is_exact_search:
+                    # MODO EXATO: O termo DEVE estar contido como substring
+                    if search_target_lower in texto_do_artigo_lower:
+                        match = True
+                else:
+                    # MODO TOLERANTE: Verifica se a maioria dos keywords está presente
+                    if keywords:
+                        # Contagem de keywords que aparecem no texto do artigo
+                        keyword_matches = sum(1 for keyword in keywords if keyword in texto_do_artigo_lower)
+                        
+                        # Regra de Match Tolerante: Pelo menos 75% dos keywords DEVE bater (mínimo de 1)
+                        min_matches_required = max(1, int(len(keywords) * 0.75))
+                        
+                        if keyword_matches >= min_matches_required:
+                            match = True
+                            
+                
+                if match:
                     preview = formatar_artigo(texto_do_artigo)
                     
                     # O label inclui a sigla da lei para melhor identificação
@@ -192,7 +234,7 @@ st.text("Base de dados conta com: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizado
 
 # 1. Interação do Usuário
 termo_pesquisa = st.text_input(
-    "Digite a palavra ou expressão exata que deseja buscar:",
+    "Digite a palavra ou expressão para buscar (Use aspas \"\" para busca exata):",
     placeholder="Ex: dignidade da pessoa humana"
 )
 
@@ -258,11 +300,6 @@ if termo_pesquisa:
     # =========================================================================
     # MULTISELECT PARA SELEÇÃO E LÓGICA DE EXPLICAÇÃO POR IA
     # =========================================================================
-    
-    # A última chamada a exibir_resultados_secao adiciona um st.markdown("---")
-    # se quisermos um separador antes do multiselect, é só mantê-lo ou adicioná-lo.
-    # Vou adicionar um aqui para garantir a separação, já que a função exibir_resultados_secao não inclui.
-    # st.markdown("---") # Removido para ter apenas 1 linha divisória
     
     if len(st.session_state.todos_resultados) > 0:
         
