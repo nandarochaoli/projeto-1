@@ -22,14 +22,13 @@ st.set_page_config(
 # Configuração de todas as leis, incluindo arquivo, sigla e âncora
 LEIS_CONFIG = {
     "1. Constituição Federal": {"file": "constituicao.txt", "sigla": "CF", "anchor": "cf_anchor", "emoji": "🇧🇷"},
-    "2. Código Civil": {"file": "codigo_civil.txt", "sigla": "CC", "anchor": "cc_anchor", "emoji": "👨‍👩‍👧"},
+    "2. Código Civil": {"file": "codigo_civil.txt", "sigla": "CC", "anchor": "cc_anchor", "emoji": "🙋‍♀️"},
     "3. Código Penal": {"file": "codigo_penal.txt", "sigla": "CP", "anchor": "cp_anchor", "emoji": "🚨"},
     "4. Código de Processo Civil": {"file": "codigo_processo_civil.txt", "sigla": "CPC", "anchor": "cpc_anchor", "emoji": "👥"},    
-    "5. Código de Processo Penal": {"file": "codigo_processo_penal.txt", "sigla": "CPP", "anchor": "cpp_anchor", "emoji": "👨🏽‍⚖️"},
+    "5. Código de Processo Penal": {"file": "codigo_processo_penal.txt", "sigla": "CPP", "anchor": "cpp_anchor", "emoji": "👨‍⚖️"},
     "6. Código de Defesa do Consumidor": {"file": "codigo_defesa_consumidor.txt", "sigla": "CDC", "anchor": "cdc_anchor", "emoji": "🛍️"},
     "7. Código Tributário Nacional": {"file": "codigo_tributario_nacional.txt", "sigla": "CTN", "anchor": "ctn_anchor", "emoji": "💵"},
-    "8. Consolidação das Leis de Trabalho": {"file": "consolidacao_leis_trabalho.txt", "sigla": "CLT", "anchor": "clt_anchor", "emoji": "👷🏼"},
-    "9. Estatuto da Criança e do Adolescente": {"file": "estatuto_crianca_adolescente.txt", "sigla": "ECA", "anchor": "eca_anchor", "emoji": "👶🏻"}
+    "8. Consolidação das Leis de Trabalho": {"file": "consolidação_leis_trabalho.txt", "sigla": "CLT", "anchor": "clt_anchor", "emoji": "👷"},
 }
 
 # =========================================================================
@@ -119,48 +118,20 @@ def formatar_artigo(texto_artigo):
 
 def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
     """
-    Busca um termo em um arquivo de texto. Se o termo estiver entre aspas,
-    a busca é exata. Caso contrário, a busca é tolerante (por palavras-chave).
+    Busca um termo em um arquivo de texto. A busca é sempre exata (substring literal).
     """
     encontrados = []
 
     termo_limpo = termo_pesquisa.strip()
     
-    # 1. Detecção de aspas: verifica se o termo começa E termina com aspas duplas padrão ou smart quotes.
-    # Esta detecção é crítica para definir o modo de busca.
-    is_exact_search = (termo_limpo.startswith('"') and termo_limpo.endswith('"')) or \
-                      (termo_limpo.startswith('“') and termo_limpo.endswith('”'))
-
-    # Inicializa keywords. Será preenchido apenas no modo tolerante.
-    keywords = []
-    
-    if is_exact_search:
-        # MODO EXATO: Remove as aspas detectadas ('"', '“', '”') para obter a frase literal.
-        # Usa regex para remover as aspas do início e do fim, cobrindo aspas duplas padrão e smart quotes.
-        # O strip final remove qualquer espaço extra deixado após a remoção das aspas.
-        search_target = re.sub(r'^["“]|[”"]$', '', termo_limpo).strip()
-    else:
-        # MODO TOLERANTE:
-        search_target = termo_limpo # Termo completo para tokenização
+    # MUDANÇA: O alvo de busca é sempre o termo limpo, sem processamento de aspas ou keywords.
+    search_target = termo_limpo
     
     if not search_target:
         return []
 
     search_target_lower = search_target.lower()
-
-    # Prepara Keywords APENAS se não for busca exata
-    if not is_exact_search:
-        # Stopwords comuns em português
-        stopwords = set(["de", "do", "da", "e", "o", "a", "em", "por", "para", "com", "sem", "se", "ao", "aos", "às", "nos", "nas", "pelo", "pela", "um", "uma", "uns", "umas", "é", "são", "ser", "ter", "haver", "que", "qual", "cujo"])
-        
-        # Tokeniza o termo, remove stopwords e palavras curtas (< 3 letras)
-        keywords = [w for w in re.findall(r'\b\w+\b', search_target_lower) if w not in stopwords and len(w) > 2]
-        
-        # Se após a limpeza não houver keywords, usa a string original completa (fallback)
-        if not keywords:
-              keywords = [search_target_lower]
-
-
+    
     try:
         with open(nome_arquivo, 'r', encoding='utf-8-sig') as f:
             conteudo_completo = f.read()
@@ -173,26 +144,9 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
                 texto_do_artigo = artigos[i+1].strip()
                 texto_do_artigo_lower = texto_do_artigo.lower()
 
-                match = False
-                
-                if is_exact_search:
-                    # MODO EXATO: O termo DEVE estar contido como substring literal.
-                    if search_target_lower in texto_do_artigo_lower:
-                        match = True
-                else:
-                    # MODO TOLERANTE: Verifica se a maioria dos keywords está presente
-                    if keywords:
-                        # Contagem de keywords que aparecem no texto do artigo
-                        keyword_matches = sum(1 for keyword in keywords if keyword in texto_do_artigo_lower)
-                        
-                        # Regra de Match Tolerante: Pelo menos 75% dos keywords DEVE bater (mínimo de 1)
-                        min_matches_required = max(1, int(len(keywords) * 0.75))
-                        
-                        if keyword_matches >= min_matches_required:
-                            match = True
-                            
-                
-                if match:
+                # MUDANÇA: Verifica se a substring completa está presente
+                if search_target_lower in texto_do_artigo_lower:
+                    
                     preview = formatar_artigo(texto_do_artigo)
                     
                     # O label inclui a sigla da lei para melhor identificação
@@ -205,14 +159,14 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
                     })
             
     except FileNotFoundError:
-        # AQUI ESTÁ O FIX: Adiciona o campo 'label' para evitar KeyError na seção de IA.
+        # Adiciona o campo 'label' para evitar KeyError na seção de IA.
         error_message = f"🚨 ERRO: O arquivo '{nome_arquivo}' não foi encontrado!"
         return [
             {
                 "id": "error", 
                 "numero": "ERRO", 
                 "preview": error_message,
-                "label": error_message, # Adicionado para evitar o KeyError
+                "label": error_message,
                 "texto_completo": ""
             }
         ]
@@ -264,14 +218,15 @@ def exibir_resultados_secao(titulo, resultados, anchor_name):
 # ESTRUTURA DO APLICATIVO STREAMLIT
 # =========================================================================
 
-# Título e cabeçalho da página
+# NOTA: O título e cabeçalho da página foram movidos para st.set_page_config
 st.title("📍Mapa da Lei")
 st.subheader("Encontre o caminho nas leis sem se perder.")
-st.text("Base de dados conta com: CF/88, CC/02, CP/40, CPP/41, CPC/73, CDC/90, CTN/66, CLT/43, ECA/90 atualizados até o dia XX/11/2025.")
+st.text("Base de dados conta com: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizados até o dia XX/11/2025.")
 
 # 1. Interação do Usuário
+# O placeholder foi atualizado para remover a instrução sobre aspas
 termo_pesquisa = st.text_input(
-    "Digite a palavra ou expressão para buscar (Use aspas \"\" para busca exata):",
+    "Digite a palavra ou expressão para buscar (A busca é exata, por substring):",
     placeholder="Ex: dignidade da pessoa humana"
 )
 
@@ -352,7 +307,6 @@ if termo_pesquisa:
         # >>> FIM DA INSERÇÃO <<<
 
         # Lista de labels formatados para o multiselect
-        # ESTA LINHA FOI ONDE O ERRO OCORREU, AGORA PROTEGIDA PELO FIX NA FUNÇÃO DE BUSCA
         labels_disponiveis = [res['label'] for res in st.session_state.todos_resultados]
         
         # Filtra quaisquer labels de erro que possam ter sido adicionados
