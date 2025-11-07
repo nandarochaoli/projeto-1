@@ -1,3 +1,4 @@
+
 import streamlit as st
 import re
 import os
@@ -167,8 +168,8 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
             
             # 1. Lógica de Limite de Seleção
             limite_excedido = get_selected_count() >= 3
-            # A chave completa agora é usada para verificar o estado
-            chave_completa = f"{key_prefix}_{resultado['id']}" 
+            # CORREÇÃO: Chave única com índice para evitar duplicação
+            chave_completa = f"{key_prefix}_{resultado['id']}_{i}" 
             esta_marcado = st.session_state.get(chave_completa, False)
             
             # O checkbox é desabilitado se o limite for atingido E o artigo não estiver marcado
@@ -180,7 +181,7 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
             with col_check:
                 st.checkbox(
                     "", 
-                    # Chave única garantida
+                    # CORREÇÃO: Chave única com índice
                     key=chave_completa, 
                     value=esta_marcado, # Usa o estado real para manter a marcação
                     label_visibility="collapsed",
@@ -216,14 +217,17 @@ if 'explicacoes_geradas' not in st.session_state:
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
-    # -----------------------------------------------------------
-    # FIX REMOVIDO: O bloco de limpeza agressiva foi removido.
-    # Ele estava deletando o estado do checkbox após a seleção,
-    # fazendo com que o artigo voltasse a ser desmarcado
-    # e o contador ficasse em 0.
-    # -----------------------------------------------------------
-
-    # Limpa a lista de resultados (mantendo as explicações geradas até o novo clique)
+    # CORREÇÃO: Limpeza mais agressiva do estado anterior
+    # Remove todos os checkboxes antigos do session_state
+    keys_to_remove = []
+    for key in st.session_state.keys():
+        if isinstance(key, str) and ('.txt' in key or key.startswith(('cf_', 'cc_', 'cp_', 'cdc_', 'cpp_'))):
+            keys_to_remove.append(key)
+    
+    for key in keys_to_remove:
+        del st.session_state[key]
+    
+    # Limpa a lista de resultados
     st.session_state.todos_resultados = []
 
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
@@ -285,10 +289,15 @@ if termo_pesquisa:
                 else:
                     continue # Pula resultados inválidos
                 
-                chave_completa = f"{prefixo}_{resultado['id']}"
+                # CORREÇÃO: Reconstruir a chave com o índice
+                # Precisamos encontrar o índice correto
+                chave_encontrada = None
+                for i, res in enumerate(st.session_state.todos_resultados):
+                    if res['id'] == resultado['id'] and res['numero'] == resultado['numero']:
+                        chave_encontrada = f"{prefixo}_{resultado['id']}_{i}"
+                        break
                 
-                # Verifica se o checkbox para esta chave foi marcado
-                if st.session_state.get(chave_completa, False):
+                if chave_encontrada and st.session_state.get(chave_encontrada, False):
                     artigos_selecionados.append(resultado)
             
             if not artigos_selecionados:
@@ -334,3 +343,4 @@ if termo_pesquisa:
             
     st.markdown("---")
     # ------------------ FIM DO BLOCO INDENTADO ------------------
+ 
