@@ -18,7 +18,7 @@ LEIS_CONFIG = {
     "5. Código de Processo Penal": {"file": "codigo_processo_penal.txt", "sigla": "CPP", "anchor": "cpp_anchor", "emoji": "👨‍⚖️"},
     "6. Código de Defesa do Consumidor": {"file": "codigo_defesa_consumidor.txt", "sigla": "CDC", "anchor": "cdc_anchor", "emoji": "🛍️"},
     "7. Código Tributário Nacional": {"file": "codigo_tributario_nacional.txt", "sigla": "CTN", "anchor": "ctn_anchor", "emoji": "💵"},
-    "8. Consolidação das Leis de Trabalho": {"file": "consolidação_leis_trabalho.txt", "sigla": "CLT", "anchor": "clt_anchor", "emoji": "👷"},
+    "8. Consolidação das Leis de Trabalho": {"file": "consolidacao_leis_trabalho.txt", "sigla": "CLT", "anchor": "clt_anchor", "emoji": "👷"},
 }
 
 # =========================================================================
@@ -131,7 +131,7 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
     else:
         # MODO TOLERANTE:
         search_target = termo_limpo # Termo completo para tokenização
-        
+    
     if not search_target:
         return []
 
@@ -147,7 +147,7 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
         
         # Se após a limpeza não houver keywords, usa a string original completa (fallback)
         if not keywords:
-             keywords = [search_target_lower]
+              keywords = [search_target_lower]
 
 
     try:
@@ -194,8 +194,16 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
                     })
             
     except FileNotFoundError:
+        # AQUI ESTÁ O FIX: Adiciona o campo 'label' para evitar KeyError na seção de IA.
+        error_message = f"🚨 ERRO: O arquivo '{nome_arquivo}' não foi encontrado!"
         return [
-            {"id": "error", "numero": "ERRO", "preview": f"🚨 ERRO: O arquivo '{nome_arquivo}' não foi encontrado!", "texto_completo": ""}
+            {
+                "id": "error", 
+                "numero": "ERRO", 
+                "preview": error_message,
+                "label": error_message, # Adicionado para evitar o KeyError
+                "texto_completo": ""
+            }
         ]
 
     return encontrados
@@ -223,7 +231,11 @@ def exibir_resultados_secao(titulo, resultados, anchor_name):
     st.header(titulo) # Título da Seção (ex: 1. Constituição Federal)
 
     if resultados and resultados[0]['numero'] == "ERRO":
-        st.error(resultados[0]['preview'])
+        # Verifica se é um erro de FileNotFoundError
+        if resultados[0]['id'] == "error":
+             st.error(resultados[0]['preview'])
+        else:
+             st.error("🚨 ERRO: Resultado inesperado durante a busca.")
         return
 
     num_encontrados = len(resultados)
@@ -300,7 +312,12 @@ if termo_pesquisa:
         # Display: [Emoji] Nome da Lei com link (vertical)
         st.markdown(f"**{config['emoji']} [{nome_limpo}](#{config['anchor']})**", unsafe_allow_html=True)
         # Display: X artigos mapeados
-        st.caption(f"**{num_encontrados}** artigos mapeados") 
+        
+        # Exibe a contagem, tratando o caso de erro de arquivo
+        if resultados and resultados[0]['numero'] == "ERRO":
+             st.caption(f"**Falha ao carregar o arquivo.**")
+        else:
+             st.caption(f"**{num_encontrados}** artigos mapeados") 
 
     # Separador único solicitado, após os atalhos e antes dos resultados detalhados
     st.markdown("---")
@@ -324,12 +341,17 @@ if termo_pesquisa:
         # >>> FIM DA INSERÇÃO <<<
 
         # Lista de labels formatados para o multiselect
+        # ESTA LINHA FOI ONDE O ERRO OCORREU, AGORA PROTEGIDA PELO FIX NA FUNÇÃO DE BUSCA
         labels_disponiveis = [res['label'] for res in st.session_state.todos_resultados]
         
+        # Filtra quaisquer labels de erro que possam ter sido adicionados
+        labels_validos = [label for label in labels_disponiveis if not label.startswith("🚨 ERRO")]
+
+
         # 1. Componente Multiselect para seleção dos artigos (Máximo 3)
         selecao_labels = st.multiselect(
             "Selecione **até 3** artigos:",
-            options=labels_disponiveis,
+            options=labels_validos,
             key='selecao_artigos_ia_multiselect'
         )
         
