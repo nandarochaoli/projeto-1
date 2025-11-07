@@ -54,7 +54,7 @@ def gerar_explicacao_ia(client, artigo_completo):
 
     for attempt in range(MAX_RETRIES):
         try:
-            # CHAMADA DA API CORRIGIDA: Removido o argumento 'system_instruction'
+            # CHAMADA DA API
             response = client.models.generate_content(
                 model='gemini-2.5-flash',
                 contents=user_prompt
@@ -116,51 +116,22 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
                 if termo_pesquisa.lower() in texto_do_artigo.lower():
                     preview = formatar_artigo(texto_do_artigo)
                     
+                    # O ID agora contém o número do artigo para facilitar a reconstrução do label
                     encontrados.append({
                         "id": f"{nome_arquivo}_{numero_artigo}",
                         "numero": numero_artigo,
                         "preview": preview,
+                        "label": f"{numero_artigo} | {preview}", # Novo campo para o multiselect
                         "texto_completo": f"{numero_artigo}{texto_do_artigo}"
                     })
             
     except FileNotFoundError:
-        # Retorna erro no formato esperado para ser tratado na UI
         return [
             {"id": "error", "numero": "ERRO", "preview": f"🚨 ERRO: O arquivo '{nome_arquivo}' não foi encontrado!", "texto_completo": ""}
         ]
 
     return encontrados
 
-def get_selected_count():
-    """
-    Retorna a contagem de artigos selecionados na página.
-    CORREÇÃO: Conta baseado nos checkboxes ativos na sessão atual.
-    """
-    count = 0
-    # Verifica o estado de todos os checkboxes no session_state
-    for key, value in st.session_state.items():
-        # CORREÇÃO: Verifica se a chave começa com um dos prefixos conhecidos e é True
-        if (isinstance(key, str) and 
-            (key.startswith('cf_') or key.startswith('cc_') or key.startswith('cp_') or 
-             key.startswith('cdc_') or key.startswith('cpp_')) and 
-            value is True):
-            count += 1
-    return count
-
-def get_selected_articles():
-    """
-    CORREÇÃO: Retorna a lista de artigos selecionados baseado nos checkboxes ativos.
-    """
-    selected = []
-    for key, value in st.session_state.items():
-        if (isinstance(key, str) and 
-            (key.startswith('cf_') or key.startswith('cc_') or key.startswith('cp_') or 
-             key.startswith('cdc_') or key.startswith('cpp_')) and 
-            value is True):
-            # Extrai o ID do artigo da chave
-            article_id = key[3:]  # Remove o prefixo (ex: "cf_")
-            selected.append(article_id)
-    return selected
 
 def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
     """Exibe uma seção de busca (CF, CC, etc.) com seus resultados."""
@@ -181,45 +152,9 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
     if len(resultados) > 0:
         st.success(f"✅ Termo encontrado em {len(resultados)} Artigos de {titulo.split('. ')[1]}:")
         
-        for i, resultado in enumerate(resultados):
-            
-            # 1. Lógica de Limite de Seleção
-            limite_excedido = get_selected_count() >= 3
-            # CORREÇÃO: Chave simples e consistente
-            chave_completa = f"{key_prefix}_{resultado['id']}"
-            
-            # CORREÇÃO: Verifica se já existe estado para este checkbox
-            if chave_completa not in st.session_state:
-                st.session_state[chave_completa] = False
-                
-            esta_marcado = st.session_state[chave_completa]
-            
-            # O checkbox é desabilitado se o limite for atingido E o artigo não estiver marcado
-            disabled = limite_excedido and not esta_marcado
-
-            col_check, col_artigo = st.columns([0.05, 0.95])
-            
-            # Adiciona o checkbox com a regra de 'disabled'
-            with col_check:
-                # CORREÇÃO: Usando on_change para atualizar o estado imediatamente
-                def create_callback(checkbox_key):
-                    def callback():
-                        # Atualiza o contador imediatamente
-                        st.session_state[f"last_updated_{checkbox_key}"] = time.time()
-                    return callback
-                
-                st.checkbox(
-                    "", 
-                    key=chave_completa,
-                    value=esta_marcado,
-                    label_visibility="collapsed",
-                    disabled=disabled,
-                    on_change=create_callback(chave_completa)
-                )
-            
-            with col_artigo:
-                # Exibe o preview do artigo
-                st.markdown(f"**{resultado['numero']}:** {resultado['preview']}")
+        # Exibe os resultados em uma lista simples (sem checkboxes)
+        for resultado in resultados:
+            st.markdown(f"**{resultado['numero']}:** {resultado['preview']}")
     else:
         st.info(f"❌ Termo '{termo_pesquisa}' não encontrado em {titulo.split('. ')[1]}.")
 
@@ -243,28 +178,18 @@ if 'todos_resultados' not in st.session_state:
     st.session_state.todos_resultados = []
 if 'explicacoes_geradas' not in st.session_state:
     st.session_state.explicacoes_geradas = []
-if 'pesquisa_anterior' not in st.session_state:
-    st.session_state.pesquisa_anterior = ""
+if 'selecao_atual_multiselect' not in st.session_state:
+    st.session_state.selecao_atual_multiselect = []
+
 
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
-    # CORREÇÃO: Limpeza inteligente - só limpa se for uma nova pesquisa
-    if st.session_state.pesquisa_anterior != termo_pesquisa:
-        # Remove apenas os checkboxes relacionados aos resultados anteriores
-        keys_to_remove = []
-        for key in st.session_state.keys():
-            if (isinstance(key, str) and 
-                (key.startswith('cf_') or key.startswith('cc_') or key.startswith('cp_') or 
-                 key.startswith('cdc_') or key.startswith('cpp_'))):
-                keys_to_remove.append(key)
-        
-        for key in keys_to_remove:
-            del st.session_state[key]
-        
-        # Limpa a lista de resultados e explicações
-        st.session_state.todos_resultados = []
-        st.session_state.explicacoes_geradas = []
-        st.session_state.pesquisa_anterior = termo_pesquisa
+    # -----------------------------------------------------------
+    # FIX: A limpeza garante que a nova busca não seja afetada pela anterior
+    # Limpa apenas os resultados da busca e a seleção do multiselect
+    # -----------------------------------------------------------
+    st.session_state.todos_resultados = []
+    st.session_state.selecao_atual_multiselect = [] # Limpa a seleção anterior
 
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
@@ -292,41 +217,46 @@ if termo_pesquisa:
     exibir_secao("5. Código de Processo Penal", "codigo_processo_penal.txt", termo_pesquisa, "cpp_anchor", "cpp")
 
     # =========================================================================
-    # BOTÃO E LÓGICA DE EXPLICAÇÃO POR IA
+    # MULTISELECT PARA SELEÇÃO E LÓGICA DE EXPLICAÇÃO POR IA
     # =========================================================================
     
     st.markdown("---")
     
-    # CORREÇÃO: Exibe a contagem em tempo real
-    selecionados = get_selected_count()
-    
-    # Exibe a contagem e aviso de limite
     if len(st.session_state.todos_resultados) > 0:
-        if selecionados >= 3:
-            st.warning("⛔ Limite de artigos selecionados (máximo de 3) atingido.")
-        st.info(f"Artigos selecionados para explicação: **{selecionados} / 3**")
         
-        # O botão que aciona a explicação
+        # Lista de labels formatados para o multiselect
+        labels_disponiveis = [res['label'] for res in st.session_state.todos_resultados]
+        
+        # 1. Componente Multiselect para seleção dos artigos (Máximo 3)
+        selecao_labels = st.multiselect(
+            "Selecione **até 3** artigos para que a IA explique:",
+            options=labels_disponiveis,
+            key='selecao_artigos_ia_multiselect'
+        )
+        
+        selecionados_final = selecao_labels[:3]
+        
+        if len(selecao_labels) > 3:
+            st.warning("⛔ Você selecionou mais de 3 artigos. Apenas os 3 primeiros serão processados.")
+
+        st.info(f"Artigos prontos para explicação: **{len(selecionados_final)} / 3**")
+        
+        # 2. Botão para acionar a IA
         if st.button("🤖 Explique os artigos selecionados para mim", key="explicar_button"):
-            artigos_selecionados = []
             
-            # CORREÇÃO: Busca direta pelos artigos selecionados
-            selected_ids = get_selected_articles()
-            
-            for resultado in st.session_state.todos_resultados:
-                # Verifica se este resultado está na lista de selecionados
-                if resultado['id'] in selected_ids:
-                    artigos_selecionados.append(resultado)
-            
-            if not artigos_selecionados:
+            if not selecionados_final:
                 st.warning("⚠️ Selecione pelo menos um artigo para que eu possa explicar.")
             else:
-                # 2. Configura a API
+                # 3. Mapeia os labels selecionados de volta para os objetos de artigo
+                mapa_resultados = {res['label']: res for res in st.session_state.todos_resultados}
+                artigos_selecionados = [mapa_resultados[label] for label in selecionados_final]
+
+                # 4. Configura e Chama a API
                 client = configurar_api()
                 
                 if client:
                     st.session_state.explicacoes_geradas = []
-                    # 3. Gera as explicações com um spinner de carregamento
+                    
                     with st.spinner(f"Processando {len(artigos_selecionados)} artigo(s)... A inteligência artificial está trabalhando para simplificar o texto legal."):
                         
                         for artigo in artigos_selecionados:
