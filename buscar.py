@@ -31,17 +31,19 @@ def configurar_api():
 def gerar_explicacao_ia(client, artigo_completo):
     """
     Chama a API Gemini para gerar uma explicação simplificada do artigo.
+    O 'system_prompt' foi incorporado ao 'user_prompt' para contornar o erro de SDK.
     """
-    # System Instruction para guiar o comportamento do modelo
-    system_prompt = (
-        "Você é um tutor jurídico prestativo. Sua tarefa é simplificar textos legais "
+    # System Instruction incorporada ao prompt para garantir a compatibilidade com o SDK
+    system_instruction = (
+        "INSTRUÇÃO DE ROLEPLAY: Você é um tutor jurídico prestativo. Sua tarefa é simplificar textos legais "
         "complexos (artigos de lei) para que sejam compreendidos por leigos. "
         "Sua resposta deve ser escrita em linguagem clara, acessível e objetiva, "
         "evitando jargões desnecessários, mantendo a fidelidade ao sentido legal."
     )
 
     user_prompt = (
-        "Por favor, analise o seguinte artigo de lei e forneça uma explicação "
+        f"{system_instruction}\n\n"
+        "Com base no seu roleplay, por favor, analise o seguinte artigo de lei e forneça uma explicação "
         "com linguagem simples e acessível. Mantenha o tom de um tutor amigo. "
         f"Artigo: \n\n{artigo_completo}"
     )
@@ -52,10 +54,10 @@ def gerar_explicacao_ia(client, artigo_completo):
 
     for attempt in range(MAX_RETRIES):
         try:
+            # CHAMADA DA API CORRIGIDA: Removido o argumento 'system_instruction'
             response = client.models.generate_content(
                 model='gemini-2.5-flash',
-                contents=user_prompt,
-                system_instruction=system_prompt
+                contents=user_prompt
             )
             return response.text
         except APIError as e:
@@ -67,6 +69,7 @@ def gerar_explicacao_ia(client, artigo_completo):
                 st.error(f"Falha ao gerar explicação após {MAX_RETRIES} tentativas. Erro final: {e}")
                 return "Não foi possível gerar a explicação. Tente novamente mais tarde."
         except Exception as e:
+            # Captura o erro anterior e o loga para depuração
             st.error(f"Erro inesperado durante a chamada da API: {e}")
             return "Erro desconhecido ao processar a requisição."
     return "Falha total na comunicação com a API."
