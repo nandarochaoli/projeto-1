@@ -131,6 +131,15 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
 
     return encontrados
 
+def get_selected_count():
+    """Retorna a contagem de artigos selecionados na página."""
+    count = 0
+    # Verifica o estado de todos os checkboxes no session_state
+    for key, value in st.session_state.items():
+        if key.startswith("check_") and value is True:
+            count += 1
+    return count
+
 def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
     """Exibe uma seção de busca (CF, CC, etc.) com seus resultados."""
     st.markdown("---")
@@ -151,15 +160,24 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
         st.success(f"✅ Termo encontrado em {len(resultados)} Artigos de {titulo.split('. ')[1]}:")
         
         for i, resultado in enumerate(resultados):
+            
+            # 1. Lógica de Limite de Seleção
+            limite_excedido = get_selected_count() >= 3
+            esta_marcado = st.session_state.get(f"check_{resultado['id']}", False)
+            
+            # O checkbox é desabilitado se o limite for atingido E o artigo não estiver marcado
+            disabled = limite_excedido and not esta_marcado
+
             col_check, col_artigo = st.columns([0.05, 0.95])
             
-            # Adiciona o checkbox e armazena o estado com uma chave única
+            # Adiciona o checkbox com a regra de 'disabled'
             with col_check:
                 st.checkbox(
                     "", 
                     key=f"check_{resultado['id']}", 
                     value=False,
-                    label_visibility="collapsed"
+                    label_visibility="collapsed",
+                    disabled=disabled
                 )
             
             with col_artigo:
@@ -193,7 +211,7 @@ if 'explicacoes_geradas' not in st.session_state:
 if termo_pesquisa:
     # Limpa o estado para uma nova busca
     st.session_state.todos_resultados = []
-    st.session_state.explicacoes_geradas = []
+    # Não zera st.session_state.explicacoes_geradas aqui, pois queremos que elas persistam até uma nova busca
 
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
@@ -226,10 +244,15 @@ if termo_pesquisa:
     
     st.markdown("---")
     
+    # Exibe a contagem e aviso de limite
     if len(st.session_state.todos_resultados) > 0:
+        selecionados = get_selected_count()
+        if selecionados >= 3:
+            st.warning("⛔ Limite de artigos selecionados (máximo de 3) atingido.")
+        st.info(f"Artigos selecionados para explicação: **{selecionados} / 3**")
         
         # O botão que aciona a explicação
-        if st.button("🤖 Explique os artigos selecionados para mim"):
+        if st.button("🤖 Explique os artigos selecionados para mim", key="explicar_button"):
             artigos_selecionados = []
             
             # 1. Coleta os artigos marcados
