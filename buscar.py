@@ -12,13 +12,14 @@ from google.genai.errors import APIError
 # Configuração de todas as leis, incluindo arquivo, sigla e âncora
 LEIS_CONFIG = {
     "1. Constituição Federal": {"file": "constituicao.txt", "sigla": "CF", "anchor": "cf_anchor", "emoji": "🇧🇷"},
-    "2. Código Civil": {"file": "codigo_civil.txt", "sigla": "CC", "anchor": "cc_anchor", "emoji": "🙋‍♀️"},
+    "2. Código Civil": {"file": "codigo_civil.txt", "sigla": "CC", "anchor": "cc_anchor", "emoji": "👨‍👩‍👧"},
     "3. Código Penal": {"file": "codigo_penal.txt", "sigla": "CP", "anchor": "cp_anchor", "emoji": "🚨"},
     "4. Código de Processo Civil": {"file": "codigo_processo_civil.txt", "sigla": "CPC", "anchor": "cpc_anchor", "emoji": "👥"},    
-    "5. Código de Processo Penal": {"file": "codigo_processo_penal.txt", "sigla": "CPP", "anchor": "cpp_anchor", "emoji": "👨‍⚖️"},
+    "5. Código de Processo Penal": {"file": "codigo_processo_penal.txt", "sigla": "CPP", "anchor": "cpp_anchor", "emoji": "👨🏽‍⚖️"},
     "6. Código de Defesa do Consumidor": {"file": "codigo_defesa_consumidor.txt", "sigla": "CDC", "anchor": "cdc_anchor", "emoji": "🛍️"},
     "7. Código Tributário Nacional": {"file": "codigo_tributario_nacional.txt", "sigla": "CTN", "anchor": "ctn_anchor", "emoji": "💵"},
-    "8. Consolidação das Leis de Trabalho": {"file": "consolidacao_leis_trabalho.txt", "sigla": "CLT", "anchor": "clt_anchor", "emoji": "👷"},
+    "8. Consolidação das Leis de Trabalho": {"file": "consolidacao_leis_trabalho.txt", "sigla": "CLT", "anchor": "clt_anchor", "emoji": "👷🏼"},
+    "9. Estatuto da Criança e do Adolescente": {"file": "estatuto_crianca_adolescente.txt", "sigla": "ECA", "anchor": "eca_anchor", "emoji": "👶🏻"}
 }
 
 # =========================================================================
@@ -256,7 +257,7 @@ def exibir_resultados_secao(titulo, resultados, anchor_name):
 # Título e cabeçalho da página
 st.title("📍Mapa da Lei")
 st.subheader("Encontre o caminho nas leis sem se perder.")
-st.text("Base de dados conta com: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizados até o dia XX/11/2025.")
+st.text("Base de dados conta com: CF/88, CC/02, CP/40, CPP/41, CPC/73, CDC/90, CTN/66, CLT/43, ECA/90 atualizados até o dia XX/11/2025.")
 
 # 1. Interação do Usuário
 termo_pesquisa = st.text_input(
