@@ -118,20 +118,31 @@ def formatar_artigo(texto_artigo):
 
 def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
     """
-    Busca um termo em um arquivo de texto. A busca é sempre exata (substring literal).
+    Busca um termo em um arquivo de texto. A busca é exata (substring literal).
+    
+    Se o termo_pesquisa contiver vírgulas (,), a busca exigirá que TODAS 
+    as expressões separadas por vírgula estejam presentes no artigo (lógica AND).
     """
     encontrados = []
 
     termo_limpo = termo_pesquisa.strip()
     
-    # MUDANÇA: O alvo de busca é sempre o termo limpo, sem processamento de aspas ou keywords.
-    search_target = termo_limpo
-    
-    if not search_target:
+    # 1. Determina os termos OBRIGATÓRIOS (requeridos)
+    if not termo_limpo:
         return []
 
-    search_target_lower = search_target.lower()
+    if ',' in termo_limpo:
+        # Se houver vírgula, dividimos em termos exatos obrigatórios (lógica AND)
+        # Limpa espaços e converte para minúsculas
+        required_terms = [t.strip().lower() for t in termo_limpo.split(',') if t.strip()]
+    else:
+        # Se for um termo único, a lista de requeridos é apenas ele
+        required_terms = [termo_limpo.lower()]
     
+    # Se a lista de termos requeridos estiver vazia após a limpeza (ex: só vírgulas), retorna vazio.
+    if not required_terms:
+        return []
+
     try:
         with open(nome_arquivo, 'r', encoding='utf-8-sig') as f:
             conteudo_completo = f.read()
@@ -144,8 +155,10 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
                 texto_do_artigo = artigos[i+1].strip()
                 texto_do_artigo_lower = texto_do_artigo.lower()
 
-                # MUDANÇA: Verifica se a substring completa está presente
-                if search_target_lower in texto_do_artigo_lower:
+                # 2. Verifica se TODAS as substrings requeridas estão presentes
+                match = all(req_term in texto_do_artigo_lower for req_term in required_terms)
+                
+                if match:
                     
                     preview = formatar_artigo(texto_do_artigo)
                     
@@ -212,7 +225,6 @@ def exibir_resultados_secao(titulo, resultados, anchor_name):
             st.markdown(f"**{resultado['numero']}:** {resultado['preview']}")
     else:
         st.info(f"❌ Termo '{termo_pesquisa}' não encontrado.")
-
 
 # =========================================================================
 # ESTRUTURA DO APLICATIVO STREAMLIT
