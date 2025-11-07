@@ -314,6 +314,11 @@ if termo_pesquisa:
     
     if len(st.session_state.todos_resultados) > 0:
         
+        # >>> INSERÇÃO DO SEPARADOR E TÍTULO DA SEÇÃO DE IA <<<
+        st.markdown("---")
+        st.subheader("💡 Tradução do Jurisdiques (Explicação por IA)")
+        # >>> FIM DA INSERÇÃO <<<
+
         # Lista de labels formatados para o multiselect
         labels_disponiveis = [res['label'] for res in st.session_state.todos_resultados]
         
@@ -367,7 +372,7 @@ if termo_pesquisa:
     
     if st.session_state.explicacoes_geradas:
         st.markdown('<a name="explicacoes_anchor"></a>', unsafe_allow_html=True)
-        st.markdown("##🔎 Decifrando Artigos")
+        st.markdown("🔎 Decifrando Artigos")
         
         for item in st.session_state.explicacoes_geradas:
             st.markdown(f"### {item['numero']}")
