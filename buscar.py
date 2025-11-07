@@ -44,7 +44,7 @@ def gerar_explicacao_ia(client, artigo_completo):
     user_prompt = (
         f"{system_instruction}\n\n"
         "Com base no seu roleplay, por favor, analise o seguinte artigo de lei e forneça uma explicação "
-        "com linguagem simples e acessível. Mantenha o tom de um tutor amigo. "
+        "com linguagem simples e acessível. Mantenha o tom de um tutor amigo. Ao final, apenas conclua, não ofereça responder dúvidas. "
         f"Artigo: \n\n{artigo_completo}"
     )
     
