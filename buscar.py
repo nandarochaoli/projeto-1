@@ -180,7 +180,7 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
 # Título e cabeçalho da página
 st.title("📍Mapa da Lei")
 st.subheader("Encontre o caminho nas leis sem se perder.")
-st.text("A ferramenta tem como base: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizados até o dia XX/11/2025.")
+st.text("Base de dados conta com: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizados até o dia XX/11/2025.")
 
 # 1. Interação do Usuário
 termo_pesquisa = st.text_input(
@@ -210,16 +210,16 @@ if termo_pesquisa:
     
     # 2. BOTÕES DE NAVEGAÇÃO RÁPIDA (Aparecem com o termo de pesquisa)
     st.markdown("---")
-    st.markdown("### Navegação Rápida (Clique para rolar até a seção)")
+    st.markdown("### Atalhos legais:")
     
     col1, col2, col3, col4, col5 = st.columns(5)
     
     # Usando st.markdown com links de âncora
-    with col1: st.markdown("[🇧🇷 CF](#cf_anchor)", unsafe_allow_html=True)
-    with col2: st.markdown("[🤵 CC](#cc_anchor)", unsafe_allow_html=True)
-    with col3: st.markdown("[🚨 CP](#cp_anchor)", unsafe_allow_html=True)
-    with col4: st.markdown("[⚖️ CPP](#cpp_anchor)", unsafe_allow_html=True)
-    with col5: st.markdown("[🛍️ CDC](#cdc_anchor)", unsafe_allow_html=True)
+    with col1: st.markdown("[🇧🇷 Constituição Federal](#cf_anchor)", unsafe_allow_html=True)
+    with col2: st.markdown("[🤵 Código Civil](#cc_anchor)", unsafe_allow_html=True)
+    with col3: st.markdown("[🚨 Código Penal](#cp_anchor)", unsafe_allow_html=True)
+    with col4: st.markdown("[⚖️ Código de Processo Penal](#cpp_anchor)", unsafe_allow_html=True)
+    with col5: st.markdown("[🛍️ Código de Defesa do Consumidor](#cdc_anchor)", unsafe_allow_html=True)
 
     st.markdown("---")
     
@@ -292,7 +292,7 @@ if termo_pesquisa:
     
     if st.session_state.explicacoes_geradas:
         st.markdown('<a name="explicacoes_anchor"></a>', unsafe_allow_html=True)
-        st.markdown("## 🧠 Explicações Jurídicas Simplificadas")
+        st.markdown("## 🧠 Explicações Jurídicas")
         
         for item in st.session_state.explicacoes_geradas:
             st.markdown(f"### {item['numero']}")
@@ -301,7 +301,7 @@ if termo_pesquisa:
             st.code(item['texto_completo'], language='markdown')
             
             # Exibe a explicação da IA
-            st.markdown("**✍️ Explicação Acessível (Tutor IA):**")
+            st.markdown("**✍️ Artigos Decifrados:**")
             st.markdown(item['explicacao'])
             st.markdown("---")
             
