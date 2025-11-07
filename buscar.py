@@ -186,10 +186,11 @@ if 'selecao_atual_multiselect' not in st.session_state:
 if termo_pesquisa:
     # -----------------------------------------------------------
     # FIX: A limpeza garante que a nova busca não seja afetada pela anterior
-    # Limpa apenas os resultados da busca e a seleção do multiselect
+    # Limpa os resultados da busca, a seleção do multiselect E as explicações anteriores.
     # -----------------------------------------------------------
     st.session_state.todos_resultados = []
     st.session_state.selecao_atual_multiselect = [] # Limpa a seleção anterior
+    st.session_state.explicacoes_geradas = [] # <-- AQUI ESTÁ A NOVIDADE
 
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
@@ -255,10 +256,13 @@ if termo_pesquisa:
                 client = configurar_api()
                 
                 if client:
-                    st.session_state.explicacoes_geradas = []
+                    # Note: st.session_state.explicacoes_geradas não precisa ser limpo aqui
+                    # porque ele já é limpo na linha 257 (início do if termo_pesquisa)
                     
                     with st.spinner(f"Processando {len(artigos_selecionados)} artigo(s)... A inteligência artificial está trabalhando para simplificar o texto legal."):
                         
+                        # Limpa o estado e gera a nova lista de explicações
+                        st.session_state.explicacoes_geradas = []
                         for artigo in artigos_selecionados:
                             explicacao = gerar_explicacao_ia(client, artigo['texto_completo'])
                             
