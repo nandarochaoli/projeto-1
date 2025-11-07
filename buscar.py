@@ -44,7 +44,7 @@ def gerar_explicacao_ia(client, artigo_completo):
     user_prompt = (
         f"{system_instruction}\n\n"
         "Com base no seu roleplay, por favor, analise o seguinte artigo de lei e forneça uma explicação "
-        "com linguagem simples e acessível. Mantenha o tom de um tutor amigo. Ao final, apenas conclua, não ofereça responder dúvidas. "
+        "com linguagem simples e acessível. Mantenha o tom de um tutor amigo. "
         f"Artigo: \n\n{artigo_completo}"
     )
     
@@ -91,10 +91,11 @@ def formatar_artigo(texto_artigo):
     
     return preview
 
-def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
+def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
     """
     Busca um termo em um arquivo de texto e retorna uma lista de dicionários.
     Cada dicionário contém o ID, preview e texto completo do artigo.
+    AGORA RECEBE A SIGLA DA LEI PARA MONTAR O LABEL.
     """
     encontrados = []
 
@@ -116,12 +117,12 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
                 if termo_pesquisa.lower() in texto_do_artigo.lower():
                     preview = formatar_artigo(texto_do_artigo)
                     
-                    # O ID agora contém o número do artigo para facilitar a reconstrução do label
+                    # O label agora inclui a sigla da lei
                     encontrados.append({
                         "id": f"{nome_arquivo}_{numero_artigo}",
                         "numero": numero_artigo,
                         "preview": preview,
-                        "label": f"{numero_artigo} | {preview}", # Novo campo para o multiselect
+                        "label": f"{sigla_lei} - {numero_artigo} | {preview}", 
                         "texto_completo": f"{numero_artigo}{texto_do_artigo}"
                     })
             
@@ -140,7 +141,20 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
     st.markdown(f'<a name="{anchor_name}"></a>', unsafe_allow_html=True)
     st.header(titulo)
 
-    resultados = buscar_em_arquivo(termo_pesquisa, nome_arquivo)
+    # Dicionário para mapear títulos para siglas
+    siglas_map = {
+        "Constituição Federal": "CF",
+        "Código Civil": "CC",
+        "Código Penal": "CP",
+        "Código de Defesa do Consumidor": "CDC",
+        "Código de Processo Penal": "CPP"
+    }
+    # Extrai o nome da lei sem o número ("1. Constituição Federal" -> "Constituição Federal")
+    nome_lei_limpo = titulo.split(". ", 1)[-1].strip()
+    sigla = siglas_map.get(nome_lei_limpo, "Lei")
+
+    # Passa a sigla para a função de busca
+    resultados = buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla)
     
     # Tratamento de erro de arquivo
     if resultados and resultados[0]['numero'] == "ERRO":
@@ -185,12 +199,11 @@ if 'selecao_atual_multiselect' not in st.session_state:
 # 2. Execução da Lógica: A busca só ocorre se o usuário digitar algo
 if termo_pesquisa:
     # -----------------------------------------------------------
-    # FIX: A limpeza garante que a nova busca não seja afetada pela anterior
-    # Limpa os resultados da busca, a seleção do multiselect E as explicações anteriores.
+    # FIX: Limpa os resultados, a seleção do multiselect e as explicações anteriores.
     # -----------------------------------------------------------
     st.session_state.todos_resultados = []
-    st.session_state.selecao_atual_multiselect = [] # Limpa a seleção anterior
-    st.session_state.explicacoes_geradas = [] # <-- AQUI ESTÁ A NOVIDADE
+    st.session_state.selecao_artigos_ia_multiselect = [] # Limpa a seleção anterior
+    st.session_state.explicacoes_geradas = []
 
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
@@ -256,8 +269,6 @@ if termo_pesquisa:
                 client = configurar_api()
                 
                 if client:
-                    # Note: st.session_state.explicacoes_geradas não precisa ser limpo aqui
-                    # porque ele já é limpo na linha 257 (início do if termo_pesquisa)
                     
                     with st.spinner(f"Processando {len(artigos_selecionados)} artigo(s)... A inteligência artificial está trabalhando para simplificar o texto legal."):
                         
