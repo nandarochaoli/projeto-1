@@ -132,11 +132,14 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo):
     return encontrados
 
 def get_selected_count():
-    """Retorna a contagem de artigos selecionados na página."""
+    """
+    Retorna a contagem de artigos selecionados na página.
+    Procura por chaves que contenham '.txt', pois são os identificadores dos artigos.
+    """
     count = 0
     # Verifica o estado de todos os checkboxes no session_state
     for key, value in st.session_state.items():
-        if key.startswith("check_") and value is True:
+        if isinstance(key, str) and '.txt' in key and value is True:
             count += 1
     return count
 
@@ -163,7 +166,9 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
             
             # 1. Lógica de Limite de Seleção
             limite_excedido = get_selected_count() >= 3
-            esta_marcado = st.session_state.get(f"check_{resultado['id']}", False)
+            # A chave completa agora é usada para verificar o estado
+            chave_completa = f"{key_prefix}_{resultado['id']}" 
+            esta_marcado = st.session_state.get(chave_completa, False)
             
             # O checkbox é desabilitado se o limite for atingido E o artigo não estiver marcado
             disabled = limite_excedido and not esta_marcado
@@ -174,7 +179,8 @@ def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
             with col_check:
                 st.checkbox(
                     "", 
-                    key=f"check_{resultado['id']}", 
+                    # Corrigido: Chave única usando o prefixo da seção para evitar conflitos
+                    key=chave_completa, 
                     value=False,
                     label_visibility="collapsed",
                     disabled=disabled
@@ -257,7 +263,25 @@ if termo_pesquisa:
             
             # 1. Coleta os artigos marcados
             for resultado in st.session_state.todos_resultados:
-                if st.session_state.get(f"check_{resultado['id']}", False):
+                # A chave de busca agora usa o prefixo da seção (que foi mantido) para encontrar o estado do checkbox
+                # É necessário recriar a chave_completa para verificar
+                # Obtemos o prefixo da seção a partir do nome do arquivo
+                if resultado['id'].startswith("constituicao.txt"):
+                    prefixo = 'cf'
+                elif resultado['id'].startswith("codigo_civil.txt"):
+                    prefixo = 'cc'
+                elif resultado['id'].startswith("codigo_penal.txt"):
+                    prefixo = 'cp'
+                elif resultado['id'].startswith("codigo_defesa_consumidor.txt"):
+                    prefixo = 'cdc'
+                elif resultado['id'].startswith("codigo_processo_penal.txt"):
+                    prefixo = 'cpp'
+                else:
+                    continue # Pula resultados inválidos
+                
+                chave_completa = f"{prefixo}_{resultado['id']}"
+                
+                if st.session_state.get(chave_completa, False):
                     artigos_selecionados.append(resultado)
             
             if not artigos_selecionados:
