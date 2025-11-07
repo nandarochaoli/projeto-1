@@ -6,6 +6,19 @@ from google import genai
 from google.genai.errors import APIError
 
 # =========================================================================
+# CONFIGURAÇÃO CENTRALIZADA
+# =========================================================================
+
+# Configuração de todas as leis, incluindo arquivo, sigla e âncora
+LEIS_CONFIG = {
+    "1. Constituição Federal": {"file": "constituicao.txt", "sigla": "CF", "anchor": "cf_anchor", "emoji": "🇧🇷"},
+    "2. Código Civil": {"file": "codigo_civil.txt", "sigla": "CC", "anchor": "cc_anchor", "emoji": "🤵"},
+    "3. Código Penal": {"file": "codigo_penal.txt", "sigla": "CP", "anchor": "cp_anchor", "emoji": "🚨"},
+    "4. Código de Defesa do Consumidor": {"file": "codigo_defesa_consumidor.txt", "sigla": "CDC", "anchor": "cdc_anchor", "emoji": "🛍️"},
+    "5. Código de Processo Penal": {"file": "codigo_processo_penal.txt", "sigla": "CPP", "anchor": "cpp_anchor", "emoji": "⚖️"},
+}
+
+# =========================================================================
 # CONFIGURAÇÃO E FUNÇÕES DA API (IA)
 # =========================================================================
 
@@ -31,7 +44,6 @@ def configurar_api():
 def gerar_explicacao_ia(client, artigo_completo):
     """
     Chama a API Gemini para gerar uma explicação simplificada do artigo.
-    O 'system_prompt' foi incorporado ao 'user_prompt' para contornar o erro de SDK.
     """
     # System Instruction incorporada ao prompt para garantir a compatibilidade com o SDK
     system_instruction = (
@@ -94,8 +106,7 @@ def formatar_artigo(texto_artigo):
 def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
     """
     Busca um termo em um arquivo de texto e retorna uma lista de dicionários.
-    Cada dicionário contém o ID, preview e texto completo do artigo.
-    AGORA RECEBE A SIGLA DA LEI PARA MONTAR O LABEL.
+    Cada dicionário contém o ID, preview, texto completo e o label com a sigla da lei.
     """
     encontrados = []
 
@@ -117,7 +128,7 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
                 if termo_pesquisa.lower() in texto_do_artigo.lower():
                     preview = formatar_artigo(texto_do_artigo)
                     
-                    # O label agora inclui a sigla da lei
+                    # O label inclui a sigla da lei para melhor identificação
                     encontrados.append({
                         "id": f"{nome_arquivo}_{numero_artigo}",
                         "numero": numero_artigo,
@@ -134,43 +145,40 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
     return encontrados
 
 
-def exibir_secao(titulo, nome_arquivo, termo_pesquisa, anchor_name, key_prefix):
-    """Exibe uma seção de busca (CF, CC, etc.) com seus resultados."""
-    st.markdown("---")
+def executar_busca_completa(termo_pesquisa):
+    """Executa a busca em todas as leis, armazena o total e retorna os resultados agrupados por lei."""
+    resultados_por_lei = {}
+    st.session_state.todos_resultados = [] # Reset lista total para o multiselect
+
+    for titulo, config in LEIS_CONFIG.items():
+        resultados = buscar_em_arquivo(termo_pesquisa, config['file'], config['sigla'])
+        resultados_por_lei[titulo] = resultados
+        st.session_state.todos_resultados.extend(resultados)
+        
+    return resultados_por_lei
+
+def exibir_resultados_secao(titulo, resultados, anchor_name):
+    """Exibe os resultados detalhados de uma única seção."""
+    # Não inclui st.markdown("---") no início (única linha é após os atalhos)
+    termo_pesquisa = st.session_state.termo_anterior
+
     # ÂNCORA HTML INSERIDA PARA NAVEGAÇÃO
     st.markdown(f'<a name="{anchor_name}"></a>', unsafe_allow_html=True)
-    st.header(titulo)
+    st.header(titulo) # Título da Seção (ex: 1. Constituição Federal)
 
-    # Dicionário para mapear títulos para siglas
-    siglas_map = {
-        "Constituição Federal": "CF",
-        "Código Civil": "CC",
-        "Código Penal": "CP",
-        "Código de Defesa do Consumidor": "CDC",
-        "Código de Processo Penal": "CPP"
-    }
-    # Extrai o nome da lei sem o número ("1. Constituição Federal" -> "Constituição Federal")
-    nome_lei_limpo = titulo.split(". ", 1)[-1].strip()
-    sigla = siglas_map.get(nome_lei_limpo, "Lei")
-
-    # Passa a sigla para a função de busca
-    resultados = buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla)
-    
-    # Tratamento de erro de arquivo
     if resultados and resultados[0]['numero'] == "ERRO":
         st.error(resultados[0]['preview'])
         return
+
+    num_encontrados = len(resultados)
         
-    st.session_state.todos_resultados.extend(resultados)
-    
-    if len(resultados) > 0:
-        st.success(f"✅ Termo encontrado em {len(resultados)} Artigos de {titulo.split('. ')[1]}:")
+    if num_encontrados > 0:
+        st.success(f"✅ Termo encontrado em {num_encontrados} Artigos:")
         
-        # Exibe os resultados em uma lista simples (sem checkboxes)
         for resultado in resultados:
             st.markdown(f"**{resultado['numero']}:** {resultado['preview']}")
     else:
-        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado em {titulo.split('. ')[1]}.")
+        st.info(f"❌ Termo '{termo_pesquisa}' não encontrado.")
 
 
 # =========================================================================
@@ -193,8 +201,7 @@ if 'todos_resultados' not in st.session_state:
     st.session_state.todos_resultados = []
 if 'explicacoes_geradas' not in st.session_state:
     st.session_state.explicacoes_geradas = []
-# Removendo 'selecao_atual_multiselect' pois não é usado
-# Novo: Variável para rastrear o termo de pesquisa anterior
+# Variável para rastrear o termo de pesquisa anterior
 if 'termo_anterior' not in st.session_state:
     st.session_state.termo_anterior = ""
 
@@ -203,18 +210,15 @@ if 'termo_anterior' not in st.session_state:
 if termo_pesquisa:
     
     # -----------------------------------------------------------
-    # NOVO FIX: Verifica se o termo mudou para decidir se limpa o multiselect.
+    # FIX: Verifica se o termo mudou para decidir se limpa o multiselect.
     # -----------------------------------------------------------
     termo_mudou = (termo_pesquisa != st.session_state.termo_anterior)
 
-    # Limpa os resultados da busca (sempre que o termo está preenchido)
+    # Limpa os resultados da busca e as explicações (sempre que o termo está preenchido)
     st.session_state.todos_resultados = []
-    
-    # Limpa as explicações (sempre que o termo está preenchido)
     st.session_state.explicacoes_geradas = [] 
 
-    # SÓ LIMPA O MULTISELECT SE O TERMO DE PESQUISA MUDOU (ou se a busca foi iniciada)
-    # Isso impede que o clique no botão apague a seleção.
+    # SÓ LIMPA O MULTISELECT SE O TERMO DE PESQUISA MUDOU
     if termo_mudou:
         if 'selecao_artigos_ia_multiselect' in st.session_state:
             st.session_state.selecao_artigos_ia_multiselect = []
@@ -224,34 +228,41 @@ if termo_pesquisa:
 
     # ------------------ INÍCIO DO BLOCO INDENTADO ------------------
     
-    # 2. BOTÕES DE NAVEGAÇÃO RÁPIDA (Aparecem com o termo de pesquisa)
-    st.markdown("---")
+    # 1. Executa todas as buscas e armazena os resultados
+    resultados_por_lei = executar_busca_completa(termo_pesquisa)
+    
+    # 2. Exibe os Atalhos Legais (Vertical e com Contagem)
     st.markdown("### Atalhos legais:")
     
-    col1, col2, col3, col4, col5 = st.columns(5)
-    
-    # Usando st.markdown com links de âncora
-    with col1: st.markdown("[🇧🇷 Constituição Federal](#cf_anchor)", unsafe_allow_html=True)
-    with col2: st.markdown("[🤵 Código Civil](#cc_anchor)", unsafe_allow_html=True)
-    with col3: st.markdown("[🚨 Código Penal](#cp_anchor)", unsafe_allow_html=True)
-    with col4: st.markdown("[⚖️ Código de Processo Penal](#cpp_anchor)", unsafe_allow_html=True)
-    with col5: st.markdown("[🛍️ Código de Defesa do Consumidor](#cdc_anchor)", unsafe_allow_html=True)
+    for titulo, config in LEIS_CONFIG.items():
+        resultados = resultados_por_lei[titulo]
+        num_encontrados = len(resultados)
+        
+        # Obtém o nome da lei sem a numeração (ex: Constituição Federal)
+        nome_limpo = titulo.split(". ", 1)[-1].strip()
+        
+        # Display: [Emoji] Nome da Lei com link (vertical)
+        st.markdown(f"**{config['emoji']} [{nome_limpo}](#{config['anchor']})**", unsafe_allow_html=True)
+        # Display: X artigos mapeados
+        st.caption(f"**{num_encontrados}** artigos mapeados") 
 
+    # Separador único solicitado, após os atalhos e antes dos resultados detalhados
     st.markdown("---")
     
-    # --- Execução das Buscas ---
-    
-    exibir_secao("1. Constituição Federal", "constituicao.txt", termo_pesquisa, "cf_anchor", "cf")
-    exibir_secao("2. Código Civil", "codigo_civil.txt", termo_pesquisa, "cc_anchor", "cc")
-    exibir_secao("3. Código Penal", "codigo_penal.txt", termo_pesquisa, "cp_anchor", "cp")
-    exibir_secao("4. Código de Defesa do Consumidor", "codigo_defesa_consumidor.txt", termo_pesquisa, "cdc_anchor", "cdc")
-    exibir_secao("5. Código de Processo Penal", "codigo_processo_penal.txt", termo_pesquisa, "cpp_anchor", "cpp")
+    # 3. Exibe os Resultados Detalhados das Seções
+    for titulo, resultados in resultados_por_lei.items():
+        config = LEIS_CONFIG[titulo]
+        # Esta função exibe a âncora, o título e os resultados da busca
+        exibir_resultados_secao(titulo, resultados, config['anchor']) 
 
     # =========================================================================
     # MULTISELECT PARA SELEÇÃO E LÓGICA DE EXPLICAÇÃO POR IA
     # =========================================================================
     
-    st.markdown("---")
+    # A última chamada a exibir_resultados_secao adiciona um st.markdown("---")
+    # se quisermos um separador antes do multiselect, é só mantê-lo ou adicioná-lo.
+    # Vou adicionar um aqui para garantir a separação, já que a função exibir_resultados_secao não inclui.
+    # st.markdown("---") # Removido para ter apenas 1 linha divisória
     
     if len(st.session_state.todos_resultados) > 0:
         
@@ -259,7 +270,6 @@ if termo_pesquisa:
         labels_disponiveis = [res['label'] for res in st.session_state.todos_resultados]
         
         # 1. Componente Multiselect para seleção dos artigos (Máximo 3)
-        # O valor é persistido pelo key='selecao_artigos_ia_multiselect'
         selecao_labels = st.multiselect(
             "Selecione **até 3** artigos para que a IA explique:",
             options=labels_disponiveis,
