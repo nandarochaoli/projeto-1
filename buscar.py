@@ -111,19 +111,30 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
     encontrados = []
 
     termo_limpo = termo_pesquisa.strip()
-    is_exact_search = termo_limpo.startswith('"') and termo_limpo.endswith('"')
+    
+    # 1. Detecção de aspas: verifica se o termo começa E termina com aspas duplas padrão ou smart quotes.
+    # Esta detecção é crítica para definir o modo de busca.
+    is_exact_search = (termo_limpo.startswith('"') and termo_limpo.endswith('"')) or \
+                      (termo_limpo.startswith('“') and termo_limpo.endswith('”'))
+
+    # Inicializa keywords. Será preenchido apenas no modo tolerante.
+    keywords = []
     
     if is_exact_search:
-        search_target = termo_limpo.strip('"') # Termo exato
+        # MODO EXATO: Remove as aspas detectadas ('"', '“', '”') para obter a frase literal.
+        # Usa regex para remover as aspas do início e do fim, cobrindo aspas duplas padrão e smart quotes.
+        # O strip final remove qualquer espaço extra deixado após a remoção das aspas.
+        search_target = re.sub(r'^["“]|[”"]$', '', termo_limpo).strip()
     else:
-        search_target = termo_limpo # Termo para busca tolerante
+        # MODO TOLERANTE:
+        search_target = termo_limpo # Termo completo para tokenização
         
     if not search_target:
         return []
 
     search_target_lower = search_target.lower()
 
-    # Prepara para busca tolerante (se não for exata)
+    # Prepara Keywords APENAS se não for busca exata
     if not is_exact_search:
         # Stopwords comuns em português
         stopwords = set(["de", "do", "da", "e", "o", "a", "em", "por", "para", "com", "sem", "se", "ao", "aos", "às", "nos", "nas", "pelo", "pela", "um", "uma", "uns", "umas", "é", "são", "ser", "ter", "haver", "que", "qual", "cujo"])
@@ -131,7 +142,7 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
         # Tokeniza o termo, remove stopwords e palavras curtas (< 3 letras)
         keywords = [w for w in re.findall(r'\b\w+\b', search_target_lower) if w not in stopwords and len(w) > 2]
         
-        # Se após a limpeza não houver keywords, usa a string original completa
+        # Se após a limpeza não houver keywords, usa a string original completa (fallback)
         if not keywords:
              keywords = [search_target_lower]
 
@@ -151,7 +162,7 @@ def buscar_em_arquivo(termo_pesquisa, nome_arquivo, sigla_lei):
                 match = False
                 
                 if is_exact_search:
-                    # MODO EXATO: O termo DEVE estar contido como substring
+                    # MODO EXATO: O termo DEVE estar contido como substring literal.
                     if search_target_lower in texto_do_artigo_lower:
                         match = True
                 else:
@@ -370,4 +381,3 @@ if termo_pesquisa:
             st.markdown("---")
             
     st.markdown("---")
-    # ------------------ FIM DO BLOCO INDENTADO ------------------
