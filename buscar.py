@@ -28,7 +28,7 @@ LEIS_CONFIG = {
     "5. Código de Processo Penal": {"file": "codigo_processo_penal.txt", "sigla": "CPP", "anchor": "cpp_anchor", "emoji": "👨‍⚖️"},
     "6. Código de Defesa do Consumidor": {"file": "codigo_defesa_consumidor.txt", "sigla": "CDC", "anchor": "cdc_anchor", "emoji": "🛍️"},
     "7. Código Tributário Nacional": {"file": "codigo_tributario_nacional.txt", "sigla": "CTN", "anchor": "ctn_anchor", "emoji": "💵"},
-    "8. Consolidação das Leis de Trabalho": {"file": "consolidação_leis_trabalho.txt", "sigla": "CLT", "anchor": "clt_anchor", "emoji": "👷"},
+    "8. Consolidação das Leis de Trabalho": {"file": "consolidacao_leis_trabalho.txt", "sigla": "CLT", "anchor": "clt_anchor", "emoji": "👷"},
 }
 
 # =========================================================================
