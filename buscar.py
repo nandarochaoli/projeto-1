@@ -233,12 +233,12 @@ def exibir_resultados_secao(titulo, resultados, anchor_name):
 # NOTA: O título e cabeçalho da página foram movidos para st.set_page_config
 st.title("📍Mapa da Lei")
 st.subheader("Encontre o caminho nas leis sem se perder.")
-st.text("Base de dados conta com: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizados até o dia XX/11/2025.")
+st.text("Base de dados conta com: CF/88, CC/02, CP/40, CPP/41, CDC/90 atualizados até o dia 10/11/2025.")
 
 # 1. Interação do Usuário
 # O placeholder foi atualizado para remover a instrução sobre aspas
 termo_pesquisa = st.text_input(
-    "Digite a palavra ou expressão para buscar (A busca é exata, por substring):",
+    "Digite a palavra ou expressão para buscar (Se quiser buscar dois termos, use vírgula para separá-los):",
     placeholder="Ex: dignidade da pessoa humana"
 )
 
